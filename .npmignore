@@ -1,0 +1,11 @@
+/node_modules
+/samples
+/public
+/test
+/tsconfig.json
+/*.config.js
+/*.js.map
+/.gitattributes
+/.gitignore
+/.npmignore
+/.vscode

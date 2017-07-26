@@ -1,0 +1,9 @@
+node_modules
+built
+.vscode
+
+public/*.js
+public/*.js.map
+onix-chess-game.js
+onix-chess-game.js.map
+npm-debug.log

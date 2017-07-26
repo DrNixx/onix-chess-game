@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "declaration": true,
+        "module": "commonjs",
+        "target": "es5",
+        "outDir": "./built/",
+        "jsx": "react",
+        "lib": [
+            "dom",
+            "es2017"
+        ],
+        "sourceMap": true,
+        "noImplicitAny": false,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
+    },
+    "files": [
+        "src/index.ts",
+        "src/test/index.ts"
+    ]
+}
