@@ -5,8 +5,7 @@ module.exports = {
     entry: {
         react: ['react', 'react-dom'],
         app: ["./built/index.js"],
-        "tests": ["./built/test/index.js"],
-        
+        tests: ["./built/test/index.js"]
     },
 
     output: {
@@ -17,7 +16,10 @@ module.exports = {
     },
 
     plugins:[
-        new webpack.optimize.CommonsChunkPlugin({ name: "react" }),
+        new webpack.optimize.CommonsChunkPlugin({ 
+            name: "react",
+            minChunks: Infinity,
+        }),
     ],
 
     // Enable sourcemaps for debugging webpack's output.

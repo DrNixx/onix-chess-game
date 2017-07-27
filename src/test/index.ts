@@ -1,0 +1,1 @@
+export { ViewGameTest } from './ViewGameTest';

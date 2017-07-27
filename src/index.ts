@@ -1,0 +1,1 @@
+export { ViewGame } from './chess/ViewGame';

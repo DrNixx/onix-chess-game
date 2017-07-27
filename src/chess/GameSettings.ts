@@ -1,0 +1,31 @@
+import { BoardSize, BoardMode } from 'onix-board';
+import { IUser } from 'onix-core';
+
+export interface GameSettings {
+    id?: number,
+    load?: boolean,
+    insite?: boolean,
+    white?: IUser,
+    black?: IUser,
+    event?: string,
+    trn_id?: number,
+    trn_name?: string,
+    limit?: string,
+    can_pause?: boolean,
+    rated?: boolean,
+    private?: boolean,
+    advance?: boolean,
+    started?: Date,
+    completed?: Date,
+    result?: number,
+    result_name?: string,
+    legal?: false,
+    chat_pub?: string,
+    chat_pvt?: string,
+    channel?: string,
+    mode?: BoardMode,
+    color: number,
+    pgn?: string,
+    fen?: string,
+    moves?: any[],
+}

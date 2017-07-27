@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title>Position setup test</title>
+        <link href="assets/css/bootstrap.css" rel="stylesheet" />
+        <link href="assets/css/chess.css" rel="stylesheet" />
+        <link href="assets/boards/common.css" rel="stylesheet" />
+        <link id="boardBgSet" href="assets/boards/bg/color.css" rel="stylesheet" />
+        <link id="boardSqueareSet" href="assets/boards/squares/color-brown.css" rel="stylesheet" />
+        <link id="boardPieceSet" href="assets/boards/pieces/alpha.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="page-container row-fluid">
+            <div class="page-content ">
+                <div class="content">
+                    <div class="container-fluid">
+                        <div id="boardHere"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="chess-game.react.js"></script>
+        <script src="chess-game.tests.js"></script>
+        <script>
+            var props = {
+                board: {
+                    size: 4, 
+                    flip: false,
+                },
+                game: {
+                    color: 2,
+                    moves: [[1804,"e4",1799,7,null,null],[6322,"c5",2183,7,null,null],[1350,"Nf3",1351,7,null,null],[6899,"d6",2759,7,null,null],[1739,"d4",1735,7,null,null],[5858,"cxd4",1734,7,null,null],[1749,"Nxd4",1742,7,null,null],[7038,"Nf6",2887,7,null,null],[1153,"Nc3",1159,7,null,null],[6704,"a6",2567,7,null,null],[1282,"Be3",1287,7,null,null],[6452,"e5",2311,7,null,null],[1115,"Nb3",1095,7,null,null],[6970,"Be6",2823,7,null,null],[707,"Qd2",711,7,null,null],[7417,"Nbd7",3271,7,null,null],[1357,"f3",1351,7,null,null],[6647,"h5",2503,7,null,null],[2258,"Nd5",2247,7,null,null],[6380,"Bxd5",2245,7,null,null],[2268,"exd5",2252,7,null,null],[7094,"g6",2951,7,null,null],[132,"O-O-O",135,7,null,null],[7355,"Qc7",3207,7,null,null],[66,"Kb1",71,7,null,null],[7613,"Bg7",3463,7,null,null],[1487,"h3",1479,7,null,null],[7864,"Rc8",3719,7,null,null],[1674,"c4",1671,7,null,null],[6769,"b6",2631,7,null,null],[773,"Be2",775,7,null,null],[6323,"Nc5",2183,7,null,null],[1934,"g4",1927,7,null,null],[8124,"O-O",3975,7,null,null],[2452,"Bg5",2439,7,null,null],[5924,"e4",1799,7,null,null],[2918,"Bxf6",2893,7,null,null],[7030,"Bxf6",2884,7,null,null],[2526,"gxh5",2510,7,null,null],[5468,"exf3",1350,7,null,null],[1356,"Bxf3",1358,7,null,null],[5666,"Na4",1543,7,null,null],[1745,"Nd4",1735,7,null,null],[5810,"Qxc4",1670,7,null,null],[789,"Be2",775,7,null,null],[5850,"Qxd4",1733,7,null,null],[1739,"Qxd4",1738,7,null,null],[5869,"Bxd4",1730,7,null,null],[1731,"Rxd4",1740,7,null,null],[6249,"b5",2119,7,null,null],[391,"Rg1",391,7,null,null],[6296,"Nc5",2183,7,null,null],[204,"Bd1",199,7,null,null],[7354,"Rc7",3207,7,null,null]]
+                }
+            };
+            
+            onix.ViewGameTest(props, document.getElementById("boardHere"));
+        </script>
+    </body>
+</html>
