@@ -28,7 +28,7 @@
     "onix-app": "^1.0.4",
     "onix-board": "^1.0.10",
     "onix-chess": "^1.0.6",
-    "onix-core": "^1.1.23",
+    "onix-core": "^1.1.24",
     "onix-ui": "^1.0.23",
     "react": "^15.6.1",
     "react-dnd": "^2.4.0",
