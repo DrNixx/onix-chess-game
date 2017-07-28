@@ -1,6 +1,7 @@
 import { BoardMode } from 'onix-board';
 import { Chess as ChessGame } from 'onix-chess';
 import { IUser } from 'onix-core';
+import { AnalysisResult } from './AnalysisResult';
 
 export interface GameState {
     /**
@@ -76,6 +77,10 @@ export interface GameState {
     color: number,
 
     pgn?: string,
+
+    last_fen?: string,
+
+    analysis?: AnalysisResult,
 
     /**
      * Объект партии

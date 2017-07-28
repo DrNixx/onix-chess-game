@@ -108,6 +108,23 @@ export const gameLoadInsite = (store: PlayStore, id: number) => {
     );
 }
 
+export const gameLoadAnalysis = (store: PlayStore, id: number) => {
+    Observable.ajax({ 
+        url:'https://www.chess-online.com/api/analyse/game/' + id.toString(), 
+        method: 'GET', 
+        crossDomain: true
+    }).subscribe(
+        function (data) {
+            if (data && data.response) {
+                store.dispatch({type: gameActions.READ_ANALYSIS, analysis: data.response} as GameAction);
+            }
+        },
+        function (error) {
+            // Log the error
+        }
+    );
+}
+
 export const gameTakePgn = (store: PlayStore, pgn: string) => {
     const body = {
         pgn: pgn

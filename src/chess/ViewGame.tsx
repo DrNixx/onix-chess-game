@@ -8,7 +8,7 @@ import { FenStandartStart, Piece, Square, Chess } from 'onix-chess';
 import { BoardSize, BoardSettings, BoardActions as ba, BoardActionConsts as bac } from 'onix-board';
 import { GameSettings } from './GameSettings';
 import { DumbGame } from './DumbGame';
-import { createPlayStore, PlayState, PlayStore, gameTakePgn, gameLoadInsite } from './GameStore';
+import { createPlayStore, PlayState, PlayStore, gameTakePgn, gameLoadInsite, gameLoadAnalysis } from './GameStore';
 import { createGameState } from './GameReducer';
 
 export interface ChessGameProps {
@@ -79,8 +79,14 @@ export class ViewGame extends React.Component<ChessGameProps, ChessGameState> {
         );
 
         const { game } = this.props;
-        if (game.id && game.load) {
-            this.loadGame(game.id, game.insite);
+        if (game.id) {
+            if (game.load) {
+                this.loadGame(game.id, game.insite);
+            }
+            
+            if (game.insite && game.completed) {
+                this.loadAnalysis(game.id);
+            }
         }
     }
 
@@ -156,6 +162,12 @@ export class ViewGame extends React.Component<ChessGameProps, ChessGameState> {
 
     pubChatHandler = (msg) => {
         console.log(msg);
+    }
+
+    loadAnalysis = (id: number) => {
+        console.log("loadAnalysis");
+        const { store } = this;
+        gameLoadAnalysis(store, id);
     }
 
     loadGame = (id: number, insite: boolean) => {

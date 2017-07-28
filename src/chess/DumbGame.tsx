@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
+import { ResponsiveContainer, AreaChart, XAxis, YAxis, Area, Tooltip, CartesianGrid } from 'recharts';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import { registerStrings } from '../Intl';
@@ -8,8 +9,8 @@ import { MovesMode, NavigatorMode } from './Constants';
 import { BoardMode, BoardSize, BoardSizeClass, ChessBoard, ChessDragLayer } from 'onix-board';
 import { ChessMoves } from './ChessMoves';
 import { ChessCaptured } from './ChessCaptured';
-import { PlayStore } from './GameStore';
-import { Tabs, Tab, Row, Col, Button } from 'onix-ui';
+import { PlayStore, PlayState } from './GameStore';
+import { Tabs, Tab, Row, Col, Button, FormGroup, ControlLabel, TextWithCopy } from 'onix-ui';
 
 
 export interface DumbGameProps {
@@ -91,11 +92,99 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
         );
     }
 
+    private anTooltipValFmt = (...params) => {
+        console.log(params);
+    }
+
+    private anTooltipLabFmt = (...params) => {
+        console.log(params);
+    }
+
+    private renderAnalysis? = (state: PlayState) => {
+        const { game } = state;
+
+        if (game === null) {
+            return null;
+        }
+
+        const { analysis } = game;
+
+        if (analysis && (analysis.state != "empty")) {
+            if (analysis.state == "unanalysed") {
+                return (
+                    <span>Запросить анализ...</span>
+                );
+            } else if (analysis.state == "inprogress") {
+                return (
+                    <span>Анализируется...</span>
+                );
+            } else if (analysis.state == "ready") {
+                return (
+                    <ResponsiveContainer width="100%" height={400}>
+                        <AreaChart data={analysis.analysis} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
+                            <XAxis dataKey="move" />
+                            <YAxis />
+                            <CartesianGrid strokeDasharray="3 3" />
+                            <Tooltip formatter={this.anTooltipValFmt} labelFormatter={this.anTooltipLabFmt} />
+                            <Area type="monotone" dataKey="evalPawn" stroke="#8884d8" fill="#8884d8" />
+                        </AreaChart>
+                    </ResponsiveContainer>
+                );
+            }
+        }
+        
+        return (
+            <span>Загрузка...</span>
+        );
+    }
+
+    private renderCounters? = (store: PlayStore) => {
+        const state = store.getState();
+        const { pgn, key, last_fen } = state.game;
+
+        return (
+            <Row>
+                <Col md={6} sm={15}>
+                    <div className="counters">
+                        <Tabs className="tabs" id={key + "-tabs2"}>
+                            <Tab eventKey="analysis" title="Computer analysis">
+                                { this.renderAnalysis(state) }
+                            </Tab>
+                            <Tab eventKey="movetime" title="Move times">
+                                ---
+                            </Tab>
+                            {this.renderPgn(store)}
+                            <Tab eventKey="fenpgn" title="FEN &amp; PGN">
+                                <Row>
+                                    <Col md={12}>
+                                        <FormGroup controlId="fen">
+                                            <ControlLabel>{Intl.t("chess", "fen")}</ControlLabel>
+                                            <TextWithCopy value={last_fen} scale="small" placeholder={Intl.t("chess", "fen")} />
+                                        </FormGroup>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col md={12}>
+                                        <div className="pgn-wrapper">
+                                            <div className="pgn-text">
+                                                <textarea className="pgn-body" defaultValue={pgn} readOnly={true} rows={12} spellCheck={false}></textarea>
+                                            </div>
+                                        </div>
+                                    </Col>
+                                </Row>
+                            </Tab>
+                        </Tabs>
+                    </div>
+                </Col>
+            </Row>
+        );
+    }
+
     render() {
         const { store } = this.props;
         const state = store.getState();
         const { size, position } = state.board;
-        const { key, mode, legal } = state.game;
+        const { key, mode, legal, insite, completed } = state.game;
 
         const dnd = (mode === BoardMode.Setup) || (mode >= BoardMode.Analyze);
 
@@ -116,6 +205,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
                         </div>
                     </Col>
                 </Row>
+                { (insite && completed) ? this.renderCounters(store) : null }
             </div>
         );
     }

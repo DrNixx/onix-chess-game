@@ -6,11 +6,14 @@ import { Color, FenStandartStart, Chess } from 'onix-chess';
 import { GameState } from './GameState';
 import { GameAction } from './GameActions';
 import * as gameActions from './GameActionConsts';
+import { AnalysisResult } from "./AnalysisResult";
+import { AnalysisItem } from "./AnalysisItem";
 
 const INITIAL_STATE: GameState = {
     color: Color.NoColor,
     mode: BoardMode.Observe,
-    game: null
+    game: null,
+    analysis: null,
 };
 
 export const createGameState = (settings: GameSettings, fen?: string): GameState => {
@@ -65,6 +68,31 @@ export const gameReducer: Reducer<GameState> = (state: GameState = INITIAL_STATE
             const { game } = state;
             return createGameState(action.settings);
         }
+
+        case gameActions.READ_ANALYSIS: {
+            let result = action.analysis;
+
+            const analysis = new AnalysisResult();
+            analysis.state = result.state;
+            analysis.analysis = [];
+
+            for (let i = 0; i < result.analysis.length; i++) {
+                let item = new AnalysisItem(result.analysis[i]);
+                analysis.analysis[i] = item;
+            }
+
+            let prev = 0;
+            for (let i = 0; i < analysis.analysis.length; i++) {
+                analysis.analysis[i].normalize(prev);
+                prev = analysis.analysis[i].eval;
+            }
+
+            return {
+                ...state,
+                analysis: analysis
+            };
+        }
+
 
         default:
             return state;

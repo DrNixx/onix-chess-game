@@ -22,8 +22,14 @@ export type GameSetSettingsAction = {
     settings: GameSettings,
 }
 
+export type GameReadAnalysisAction = {
+    type: types.READ_ANALYSIS,
+    analysis: any,
+}
+
 export type GameAction = 
     GameNavigateToPlyAction | 
     GameNavigateToKeyAction |
     GameNavigateToMoveAction |
-    GameSetSettingsAction;
+    GameSetSettingsAction |
+    GameReadAnalysisAction;
