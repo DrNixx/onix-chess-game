@@ -85,7 +85,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
                     <Tab eventKey="info" title="Info">
                         12345
                     </Tab>
-                    {this.renderPgn(store)}
+                    {BoardMode.Pgn ? this.renderPgn(store) : null}
                     <Tab eventKey="settings" title="Settings">
                         12345
                     </Tab>
