@@ -40,6 +40,7 @@ export class ChessMoves extends React.Component<ChessMovesProps, {}> {
             return (
                 <DumbMoveTable 
                     startPly={game.StartPlyCount}
+                    game={game}
                     currentMove={currMove}
                     nav={nav} 
                     onChangePos={this.onChangePos} 
@@ -50,6 +51,7 @@ export class ChessMoves extends React.Component<ChessMovesProps, {}> {
             return (
                 <DumbMoveList 
                     startPly={game.StartPlyCount}
+                    game={game}
                     currentMove={currMove} 
                     nav={nav} 
                     onChangePos={this.onChangePos} 

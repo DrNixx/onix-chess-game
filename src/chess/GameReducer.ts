@@ -6,8 +6,7 @@ import { Color, FenStandartStart, Chess } from 'onix-chess';
 import { GameState } from './GameState';
 import { GameAction } from './GameActions';
 import * as gameActions from './GameActionConsts';
-import { AnalysisResult } from "./AnalysisResult";
-import { AnalysisItem } from "./AnalysisItem";
+import { AnalysisResult } from "onix-chess-analyse";
 
 const INITIAL_STATE: GameState = {
     color: Color.NoColor,
@@ -36,6 +35,8 @@ export const createGameState = (settings: GameSettings, fen?: string): GameState
         moves: moves,
     });
 
+    game.Result = result;
+
     return {
         ...gameProps,
         mode: mode,
@@ -46,6 +47,15 @@ export const createGameState = (settings: GameSettings, fen?: string): GameState
 
 export const gameReducer: Reducer<GameState> = (state: GameState = INITIAL_STATE, action: GameAction) => {
     switch (action.type) {
+        case gameActions.NAVIGATE_TO_PLY: {
+            const { game } = state;
+            game.moveToPly(action.ply);
+            return {
+                ...state,
+                game: game
+            };
+        }
+
         case gameActions.NAVIGATE_TO_MOVE: {
             const { game } = state;
             game.moveToPly(action.move.PlyCount);
@@ -72,21 +82,8 @@ export const gameReducer: Reducer<GameState> = (state: GameState = INITIAL_STATE
         case gameActions.READ_ANALYSIS: {
             let result = action.analysis;
 
-            const analysis = new AnalysisResult();
-            analysis.state = result.state;
-            analysis.analysis = [];
-
-            for (let i = 0; i < result.analysis.length; i++) {
-                let item = new AnalysisItem(result.analysis[i]);
-                analysis.analysis[i] = item;
-            }
-
-            let prev = 0;
-            for (let i = 0; i < analysis.analysis.length; i++) {
-                analysis.analysis[i].normalize(prev);
-                prev = analysis.analysis[i].eval;
-            }
-
+            const analysis = new AnalysisResult(result);
+            
             return {
                 ...state,
                 analysis: analysis

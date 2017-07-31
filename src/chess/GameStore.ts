@@ -72,6 +72,14 @@ const msgHandler = (msg) => {
     console.log(msg);  
 }
 
+export const gameNavigateToPly = (store: PlayStore, ply: number) => {
+    store.dispatch({ type: gameActions.NAVIGATE_TO_PLY, ply: ply } as GameAction);
+    const state = store.getState();
+    const { game } = state.game;
+    store.dispatch({type: bac.SET_POSITION, position: game.CurrentPos } as ba.BoardAction);
+    gameSetSelection(store, game.CurrentMove);
+}
+
 export const gameNavigateToMove = (store: PlayStore, move: Move) => {
     store.dispatch({ type: gameActions.NAVIGATE_TO_MOVE, move: move } as GameAction);
     const state = store.getState();
@@ -118,6 +126,21 @@ export const gameLoadAnalysis = (store: PlayStore, id: number) => {
             if (data && data.response) {
                 store.dispatch({type: gameActions.READ_ANALYSIS, analysis: data.response} as GameAction);
             }
+        },
+        function (error) {
+            // Log the error
+        }
+    );
+}
+
+export const gameRequestAnalysis = (store: PlayStore, id: number) => {
+    Observable.ajax({ 
+        url:'https://www.chess-online.com/fishnet/create/' + id.toString(), 
+        method: 'GET', 
+        crossDomain: true
+    }).subscribe(
+        function (data) {
+            
         },
         function (error) {
             // Log the error

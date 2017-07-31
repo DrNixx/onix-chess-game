@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Chess as ChessGame } from 'onix-chess';
 import { NavigatorMode } from './Constants';
 import { PlayStore } from './GameStore';
 import { MoveNavigator } from './MoveNavigator';
@@ -7,6 +8,7 @@ import { Color, Move } from 'onix-chess';
 
 export interface DumbMoveListProps {
     nav: NavigatorMode,
+    game: ChessGame,
     startPly: number,
     currentMove: Move,
     onChangePos: (move: Move) => void,
@@ -76,7 +78,7 @@ export class DumbMoveList extends React.Component<DumbMoveListProps, {}> {
     }
 
     private renderMoves = () => {
-        const { currentMove } = this.props;
+        const { currentMove, game } = this.props;
         let moves = []; 
         let move = currentMove.First.Next;
 
@@ -96,6 +98,10 @@ export class DumbMoveList extends React.Component<DumbMoveListProps, {}> {
                 move = move.Next;
             } while (!move.isEnd());
         }
+
+        moves.push(
+            <span className="game_result">{game.getResultName('short')}</span>
+        );
 
         return moves;
     }

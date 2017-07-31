@@ -27,6 +27,6 @@ export interface GameSettings {
     color: number,
     pgn?: string,
     fen?: string,
-    last_fen?: string,
+    final_fen?: string,
     moves?: any[],
 }

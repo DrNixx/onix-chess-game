@@ -4,7 +4,7 @@ import { GameSettings } from './GameSettings';
 
 export type GameNavigateToPlyAction = {
     type: types.NAVIGATE_TO_PLY,
-    move: number,
+    ply: number,
 }
 
 export type GameNavigateToKeyAction = {

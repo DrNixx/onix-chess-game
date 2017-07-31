@@ -1,7 +1,7 @@
 import { BoardMode } from 'onix-board';
 import { Chess as ChessGame } from 'onix-chess';
 import { IUser } from 'onix-core';
-import { AnalysisResult } from './AnalysisResult';
+import { AnalysisResult } from 'onix-chess-analyse';
 
 export interface GameState {
     /**
@@ -78,7 +78,7 @@ export interface GameState {
 
     pgn?: string,
 
-    last_fen?: string,
+    final_fen?: string,
 
     analysis?: AnalysisResult,
 
