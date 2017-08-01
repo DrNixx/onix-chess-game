@@ -25,6 +25,7 @@ export interface GameSettings {
     channel?: string,
     mode?: BoardMode,
     color: number,
+    startply?: number,
     pgn?: string,
     fen?: string,
     final_fen?: string,

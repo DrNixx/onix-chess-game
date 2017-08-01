@@ -6,17 +6,15 @@ import { Color, FenStandartStart, Chess } from 'onix-chess';
 import { GameState } from './GameState';
 import { GameAction } from './GameActions';
 import * as gameActions from './GameActionConsts';
-import { AnalysisResult } from "onix-chess-analyse";
 
 const INITIAL_STATE: GameState = {
     color: Color.NoColor,
     mode: BoardMode.Observe,
-    game: null,
-    analysis: null,
+    game: null
 };
 
 export const createGameState = (settings: GameSettings, fen?: string): GameState => {
-    const { id, pgn, result } = settings;
+    const { id, pgn, result, startply } = settings;
     const { moves, fen: feng, ...gameProps } = settings;
     let { mode, color } = settings;
 
@@ -35,6 +33,7 @@ export const createGameState = (settings: GameSettings, fen?: string): GameState
         moves: moves,
     });
 
+    game.StartPlyCount = startply;
     game.Result = result;
 
     return {
@@ -78,18 +77,6 @@ export const gameReducer: Reducer<GameState> = (state: GameState = INITIAL_STATE
             const { game } = state;
             return createGameState(action.settings);
         }
-
-        case gameActions.READ_ANALYSIS: {
-            let result = action.analysis;
-
-            const analysis = new AnalysisResult(result);
-            
-            return {
-                ...state,
-                analysis: analysis
-            };
-        }
-
 
         default:
             return state;

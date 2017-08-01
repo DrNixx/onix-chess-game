@@ -76,11 +76,11 @@ export interface GameState {
      */
     color: number,
 
+    startply?: number,
+
     pgn?: string,
 
     final_fen?: string,
-
-    analysis?: AnalysisResult,
 
     /**
      * Объект партии

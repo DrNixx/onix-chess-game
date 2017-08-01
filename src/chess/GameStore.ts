@@ -7,11 +7,13 @@ import { GameAction } from './GameActions';
 import * as gameActions from './GameActionConsts';
 import { IntlState, intlReducer } from 'onix-app';
 import { Piece, Square, Move } from 'onix-chess';
+import { AnalyseRelatedState, analyseReducer } from 'onix-chess-analyse';
  
 export interface PlayState {
     intl: IntlState,
     board: BoardState,
     game: GameState,
+    analysis: AnalyseRelatedState,
 }
 
 export const createPlayStore = (preloadedState: PlayState) =>
@@ -20,6 +22,7 @@ export const createPlayStore = (preloadedState: PlayState) =>
             intl: intlReducer,
             game: gameReducer,
             board: boardReducer,
+            analysis: analyseReducer,
         }), preloadedState);
 
 
@@ -109,38 +112,6 @@ export const gameLoadInsite = (store: PlayStore, id: number) => {
                 const { game } = state.game;
                 store.dispatch({type: bac.SET_POSITION, position: game.CurrentPos } as ba.BoardAction);
             }
-        },
-        function (error) {
-            // Log the error
-        }
-    );
-}
-
-export const gameLoadAnalysis = (store: PlayStore, id: number) => {
-    Observable.ajax({ 
-        url:'https://www.chess-online.com/api/analyse/game/' + id.toString(), 
-        method: 'GET', 
-        crossDomain: true
-    }).subscribe(
-        function (data) {
-            if (data && data.response) {
-                store.dispatch({type: gameActions.READ_ANALYSIS, analysis: data.response} as GameAction);
-            }
-        },
-        function (error) {
-            // Log the error
-        }
-    );
-}
-
-export const gameRequestAnalysis = (store: PlayStore, id: number) => {
-    Observable.ajax({ 
-        url:'https://www.chess-online.com/fishnet/create/' + id.toString(), 
-        method: 'GET', 
-        crossDomain: true
-    }).subscribe(
-        function (data) {
-            
         },
         function (error) {
             // Log the error

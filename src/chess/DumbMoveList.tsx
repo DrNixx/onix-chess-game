@@ -100,7 +100,7 @@ export class DumbMoveList extends React.Component<DumbMoveListProps, {}> {
         }
 
         moves.push(
-            <span className="game_result">{game.getResultName('short')}</span>
+            <span key="game-result" className="game_result">{game.getResultName('short')}</span>
         );
 
         return moves;

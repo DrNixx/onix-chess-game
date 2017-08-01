@@ -12,6 +12,7 @@ import { ChessCaptured } from './ChessCaptured';
 import { PlayStore, PlayState, gameNavigateToPly } from './GameStore';
 import { AnalyseGraph } from 'onix-chess-analyse';
 import { Tabs, Tab, Row, Col, Button, FormGroup, ControlLabel, TextWithCopy } from 'onix-ui';
+import { GameState } from "./GameState";
 
 
 export interface DumbGameProps {
@@ -73,7 +74,8 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
 
     private renderControls? = (store: PlayStore) => {
         const state = store.getState();
-        const { pgn, key } = state.game;
+        const { game } = state;
+        const { pgn, key } = game;
 
         return (
             <div className="controls">
@@ -85,7 +87,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
                     <Tab eventKey="info" title="Info">
                         12345
                     </Tab>
-                    {BoardMode.Pgn ? this.renderPgn(store) : null}
+                    {game.mode === BoardMode.Pgn ? this.renderPgn(store) : null}
                     <Tab eventKey="settings" title="Settings">
                         12345
                     </Tab>
@@ -99,59 +101,54 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
         gameNavigateToPly(store, ply);
     }
 
-    private renderAnalysis? = (state: PlayState) => {
-        const { game } = state;
-
-        if (game === null) {
-            return null;
-        }
-
-        const { analysis } = game;
-
-        return (
-            <AnalyseGraph result={analysis} onRequestAnalyse={this.props.onRequestAnalyse} onPlyClick={this.onPlyClick} />
-        );
-    }
-
     private renderCounters? = (store: PlayStore) => {
         const state = store.getState();
-        const { pgn, key, final_fen } = state.game;
+        const { game, analysis } = state;
 
-        return (
-            <Row>
-                <Col md={6} sm={15}>
-                    <div className="counters">
-                        <Tabs className="tabs" id={key + "-tabs2"}>
-                            <Tab eventKey="analysis" title="Computer analysis">
-                                { this.renderAnalysis(state) }
-                            </Tab>
-                            <Tab eventKey="movetime" title="Move times">
-                                ---
-                            </Tab>
-                            <Tab eventKey="fenpgn" title="FEN &amp; PGN">
-                                <Row>
-                                    <Col md={12}>
-                                        <FormGroup controlId="fen">
-                                            <ControlLabel>{Intl.t("chess", "fen")}</ControlLabel>
-                                            <TextWithCopy value={final_fen} scale="small" placeholder={Intl.t("chess", "fen")} />
-                                        </FormGroup>
-                                    </Col>
-                                </Row>
-                                <Row>
-                                    <Col md={12}>
-                                        <div className="pgn-wrapper">
-                                            <div className="pgn-text">
-                                                <textarea className="pgn-body" defaultValue={pgn} rows={12} spellCheck={false}></textarea>
+        if (game !== null) {
+            const { pgn, key, final_fen } = game;
+
+            return (
+                <Row>
+                    <Col md={6} sm={15}>
+                        <div className="counters">
+                            <Tabs className="tabs" id={key + "-tabs2"}>
+                                <Tab eventKey="analysis" title="Computer analysis">
+                                    <AnalyseGraph 
+                                        id={game.id}
+                                        store={store} 
+                                        onPositionDotClick={this.onPlyClick} />
+                                </Tab>
+                                <Tab eventKey="movetime" title="Move times">
+                                    ---
+                                </Tab>
+                                <Tab eventKey="fenpgn" title="FEN &amp; PGN">
+                                    <Row>
+                                        <Col md={12}>
+                                            <FormGroup controlId="fen">
+                                                <ControlLabel>{Intl.t("chess", "fen")}</ControlLabel>
+                                                <TextWithCopy value={final_fen} scale="small" placeholder={Intl.t("chess", "fen")} />
+                                            </FormGroup>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col md={12}>
+                                            <div className="pgn-wrapper">
+                                                <div className="pgn-text">
+                                                    <textarea className="pgn-body" defaultValue={pgn} rows={12} spellCheck={false}></textarea>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </Col>
-                                </Row>
-                            </Tab>
-                        </Tabs>
-                    </div>
-                </Col>
-            </Row>
-        );
+                                        </Col>
+                                    </Row>
+                                </Tab>
+                            </Tabs>
+                        </div>
+                    </Col>
+                </Row>
+            );
+        } else {
+            return null;
+        }
     }
 
     render() {
@@ -169,7 +166,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
                         <div className="game-body">
                             <div className="board-container">
                                 <ChessBoard
-                                    store={this.props.store}
+                                    store={store}
                                     dnd={dnd}
                                     legal={false}
                                     getPiece={position.getPiece} />
@@ -179,7 +176,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
                         </div>
                     </Col>
                 </Row>
-                { (insite && completed) ? this.renderCounters(store) : null }
+                { (insite && completed && mode > BoardMode.Pgn) ? this.renderCounters(store) : null }
             </div>
         );
     }
