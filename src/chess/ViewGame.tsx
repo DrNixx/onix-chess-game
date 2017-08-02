@@ -8,7 +8,7 @@ import { FenStandartStart, Piece, Square, Chess } from 'onix-chess';
 import { BoardSize, BoardSettings, BoardActions as ba, BoardActionConsts as bac } from 'onix-board';
 import { GameSettings } from './GameSettings';
 import { DumbGame } from './DumbGame';
-import { createPlayStore, PlayState, PlayStore, gameTakePgn, gameLoadInsite, gameLoadAnalysis, gameRequestAnalysis } from './GameStore';
+import { createPlayStore, PlayState, PlayStore, gameTakePgn, gameLoadInsite } from './GameStore';
 import { createGameState } from './GameReducer';
 
 export interface ChessGameProps {
@@ -69,7 +69,11 @@ export class ViewGame extends React.Component<ChessGameProps, ChessGameState> {
                 canMove: canMove,
                 doMove: doMove,
             },
-            game: gstate
+            game: gstate,
+            analysis: {
+                state: "empty",
+                evals: []
+            },
         });
     }
 
@@ -82,10 +86,6 @@ export class ViewGame extends React.Component<ChessGameProps, ChessGameState> {
         if (game.id) {
             if (game.load) {
                 this.loadGame(game.id, game.insite);
-            }
-            
-            if (game.insite && game.completed) {
-                this.loadAnalysis(game.id);
             }
         }
     }
@@ -164,12 +164,6 @@ export class ViewGame extends React.Component<ChessGameProps, ChessGameState> {
         console.log(msg);
     }
 
-    loadAnalysis = (id: number) => {
-        console.log("loadAnalysis");
-        const { store } = this;
-        gameLoadAnalysis(store, id);
-    }
-
     loadGame = (id: number, insite: boolean) => {
         console.log("loadGame");
         const { store } = this;
@@ -226,19 +220,12 @@ export class ViewGame extends React.Component<ChessGameProps, ChessGameState> {
         this.store.dispatch({ type: bac.FLIP_BOARD, flag: flag } as ba.BoardAction);
     }
 
-    private onRequestAnalyse = () => {
-        const { store } = this;
-        const state = store.getState();
-        const { game } = state;
-        gameRequestAnalysis(store, game.id);
-    }
-
     render() {
-        const { loadPgn, pgnChange, onRequestAnalyse } = this;
+        const { loadPgn, pgnChange  } = this;
         const state: PlayState = this.store.getState();
         Logger.debug(state.board.position.writeFEN());
         return (
-            <DumbGame store={this.store} onPgnChange={pgnChange} onLoadPgn={loadPgn} onRequestAnalyse={onRequestAnalyse} />
+            <DumbGame store={this.store} onPgnChange={pgnChange} onLoadPgn={loadPgn} />
         );
     }
 }

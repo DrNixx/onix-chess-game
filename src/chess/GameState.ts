@@ -1,7 +1,6 @@
 import { BoardMode } from 'onix-board';
 import { Chess as ChessGame } from 'onix-chess';
 import { IUser } from 'onix-core';
-import { AnalysisResult } from 'onix-chess-analyse';
 
 export interface GameState {
     /**

@@ -7,13 +7,13 @@ import { GameAction } from './GameActions';
 import * as gameActions from './GameActionConsts';
 import { IntlState, intlReducer } from 'onix-app';
 import { Piece, Square, Move } from 'onix-chess';
-import { AnalyseRelatedState, analyseReducer } from 'onix-chess-analyse';
+import { AnalyseState, analyseReducer } from 'onix-chess-analyse';
  
 export interface PlayState {
     intl: IntlState,
     board: BoardState,
     game: GameState,
-    analysis: AnalyseRelatedState,
+    analysis: AnalyseState,
 }
 
 export const createPlayStore = (preloadedState: PlayState) =>

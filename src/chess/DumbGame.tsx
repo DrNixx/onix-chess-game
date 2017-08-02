@@ -19,7 +19,6 @@ export interface DumbGameProps {
     store: PlayStore,
     onPgnChange?: (e: React.FormEvent<HTMLTextAreaElement>) => void,
     onLoadPgn?: () => void,
-    onRequestAnalyse?: () => void,
 }
 
 export interface DumbGameState {
