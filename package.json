@@ -1,6 +1,6 @@
 {
   "name": "onix-chess-game",
-  "version": "1.0.20",
+  "version": "1.1.1",
   "description": "Chess game board",
   "main": "built/index.js",
   "scripts": {
@@ -26,9 +26,9 @@
   "homepage": "https://github.com/DrNixx/onix-chess-game#readme",
   "dependencies": {
     "onix-app": "^1.0.4",
-    "onix-board": "^1.0.12",
+    "onix-board": "^1.0.14",
     "onix-chess": "^1.0.8",
-    "onix-chess-analyse": "^1.0.11",
+    "onix-chess-analyse": "^1.0.14",
     "onix-core": "^1.1.24",
     "onix-ui": "^1.0.23",
     "react": "^15.6.1",

@@ -71,7 +71,7 @@ export class ViewGame extends React.Component<ChessGameProps, ChessGameState> {
             },
             game: gstate,
             analysis: {
-                state: "empty",
+                status: "empty",
                 evals: []
             },
         });
@@ -114,7 +114,6 @@ export class ViewGame extends React.Component<ChessGameProps, ChessGameState> {
             const { game } = store.getState();
 
             if (game.channel && !this.gameSubscrption) {
-                console.log("connect", game);
                 this.gameSubscrption = stream.subscribe(game.channel, gameMsgHandler);
             }
 
@@ -165,7 +164,6 @@ export class ViewGame extends React.Component<ChessGameProps, ChessGameState> {
     }
 
     loadGame = (id: number, insite: boolean) => {
-        console.log("loadGame");
         const { store } = this;
         if (insite) {
             gameLoadInsite(store, id);

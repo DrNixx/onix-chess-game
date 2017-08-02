@@ -1,8 +1,10 @@
 import { Reducer } from 'redux';
 import * as shortid from 'shortid';
+import { Logger } from 'onix-core';
 import { BoardMode } from 'onix-board';
 import { GameSettings } from './GameSettings';
 import { Color, FenStandartStart, Chess } from 'onix-chess';
+import { AnalysisResult } from 'onix-chess-analyse';
 import { GameState } from './GameState';
 import { GameAction } from './GameActions';
 import * as gameActions from './GameActionConsts';
@@ -10,10 +12,11 @@ import * as gameActions from './GameActionConsts';
 const INITIAL_STATE: GameState = {
     color: Color.NoColor,
     mode: BoardMode.Observe,
-    game: null
+    game: null,
+    analysis: null,
 };
 
-export const createGameState = (settings: GameSettings, fen?: string): GameState => {
+export const createGameState = (settings: GameSettings, fen?: string, analysis?: AnalysisResult): GameState => {
     const { id, pgn, result, startply } = settings;
     const { moves, fen: feng, ...gameProps } = settings;
     let { mode, color } = settings;
@@ -40,13 +43,16 @@ export const createGameState = (settings: GameSettings, fen?: string): GameState
         ...gameProps,
         mode: mode,
         color: color,
-        game: game
+        game: game,
+        analysis: analysis,
     }
 }
 
 export const gameReducer: Reducer<GameState> = (state: GameState = INITIAL_STATE, action: GameAction) => {
+    Logger.debug('Try game action', action);
     switch (action.type) {
-        case gameActions.NAVIGATE_TO_PLY: {
+        case gameActions.NAVIGATE_TO_PLY: 
+        case gameActions.ANALYSE_POSITION: {
             const { game } = state;
             game.moveToPly(action.ply);
             return {
@@ -74,9 +80,18 @@ export const gameReducer: Reducer<GameState> = (state: GameState = INITIAL_STATE
         }
 
         case gameActions.GAME_SET_SETTINGS: {
-            const { game } = state;
-            return createGameState(action.settings);
+            const { game, analysis } = state;
+            return createGameState(action.settings, null, analysis);
         }
+
+        case gameActions.LOAD_ANALYSIS:
+            let result = action.analysis;
+            const ar = new AnalysisResult(result);
+            
+            return {
+                ...state,
+                analysis: ar
+            };
 
         default:
             return state;

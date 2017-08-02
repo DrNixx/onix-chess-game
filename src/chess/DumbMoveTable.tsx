@@ -1,13 +1,15 @@
 import * as React from 'react';
-import { Chess as ChessGame } from 'onix-chess';
+import { Chess as ChessGame, Move } from 'onix-chess';
+import { AnalysisResult } from 'onix-chess-analyse';
 import { NavigatorMode } from './Constants';
 import { PlayStore } from './GameStore';
 import { MoveNavigator } from './MoveNavigator';
-import { Move } from 'onix-chess';
+
 
 export interface DumbMoveTableProps {
     nav: NavigatorMode,
     game: ChessGame,
+    analysis: AnalysisResult,
     startPly: number,
     currentMove: Move,
     onChangePos: (move: Move) => void,

@@ -1,14 +1,16 @@
 import * as React from 'react';
-import { Chess as ChessGame } from 'onix-chess';
+import { Logger } from 'onix-core';
+import { Chess as ChessGame, Color, Move } from 'onix-chess';
+import { AnalysisResult } from 'onix-chess-analyse';
 import { NavigatorMode } from './Constants';
 import { PlayStore } from './GameStore';
 import { MoveNavigator } from './MoveNavigator';
 import { GameAction } from './GameActions';
-import { Color, Move } from 'onix-chess';
 
 export interface DumbMoveListProps {
     nav: NavigatorMode,
     game: ChessGame,
+    analysis: AnalysisResult,
     startPly: number,
     currentMove: Move,
     onChangePos: (move: Move) => void,
@@ -74,28 +76,54 @@ export class DumbMoveList extends React.Component<DumbMoveListProps, {}> {
                 onClick={this.onMoveClick}>{s}</span>
         );
 
+        if (m) {
+            const evalKey = `cm_${p}`;
+            result.push(
+                <span key={evalKey} className="ui-comment">{m}</span>
+            );
+        }
+
         return result;
     }
 
     private renderMoves = () => {
-        const { currentMove, game } = this.props;
+        const { currentMove, game, analysis } = this.props;
         let moves = []; 
         let move = currentMove.First.Next;
+
+        Logger.debug("renderMoves", analysis);
 
         if (!move.isEnd()) {
             if (move.moveData.Color === Color.Black) {
                 moves = moves.concat(
-                    this.renderMove(currentMove, -1, "-1", Color.White, "...")
+                    this.renderMove(currentMove, game.StartPlyCount, "mn0_" + game.StartPlyCount.toString(), Color.White, "...")
                 );
             }
 
+            let i = 0;
             do {
                 const data = move.moveData;
+                const ply = game.StartPlyCount + data.PlyCount;
+                let nag = data.Nag || "";
+                let comment = data.Comments || "";
+                if (analysis && analysis.state == "ready") {
+                    const evalItem = analysis.analysis[i];
+                    Logger.debug("evalItem", evalItem);
+                    if (evalItem) {
+                        comment += " " + evalItem.desc + " ";
+                        if (evalItem.variation)  {
+                            comment += "Best line: { " +  evalItem.variation + " } ";
+                        }
+                        
+                    }
+                }
+
                 moves = moves.concat(
-                    this.renderMove(currentMove, data.PlyCount, move.moveKey, data.Color, data.San, data.Nag, data.Comments)
+                    this.renderMove(currentMove, ply, move.moveKey, data.Color, data.San, data.Nag, comment)
                 );
 
                 move = move.Next;
+                i++;
             } while (!move.isEnd());
         }
 

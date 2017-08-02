@@ -22,14 +22,20 @@ export type GameSetSettingsAction = {
     settings: GameSettings,
 }
 
-export type GameReadAnalysisAction = {
-    type: types.READ_ANALYSIS,
-    analysis: any,
-}
+export type GameLoadAnalysisAction = {
+    type: types.LOAD_ANALYSIS,
+    analysis: any
+};
+
+export type GameAnalysePositionAction = {
+    type: types.ANALYSE_POSITION,
+    ply: number
+};
 
 export type GameAction = 
     GameNavigateToPlyAction | 
     GameNavigateToKeyAction |
     GameNavigateToMoveAction |
     GameSetSettingsAction |
-    GameReadAnalysisAction;
+    GameLoadAnalysisAction | 
+    GameAnalysePositionAction;
