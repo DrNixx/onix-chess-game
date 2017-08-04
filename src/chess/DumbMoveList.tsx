@@ -154,7 +154,7 @@ export class DumbMoveList extends React.Component<DumbMoveListProps, {}> {
                 }
 
                 moves = moves.concat(
-                    this.renderMove(currentMove, ply, move.moveKey, data.Color, data.San, data.Nag, comment, classes)
+                    this.renderMove(currentMove, ply, move.moveKey, data.Color, data.San, nag, comment, classes)
                 );
 
                 move = move.Next;
