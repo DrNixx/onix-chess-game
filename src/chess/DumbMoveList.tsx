@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as ReactDOM from 'react-dom'
 import * as classNames from 'classnames';
 import { Logger } from 'onix-core';
 import { Chess as ChessGame, Color, Move } from 'onix-chess';
@@ -24,6 +25,27 @@ export class DumbMoveList extends React.Component<DumbMoveListProps, {}> {
      */
     constructor(props: DumbMoveListProps) {
         super(props);
+    }
+
+    componentDidUpdate(prevProps) {
+        // only scroll into view if the active item changed last render
+        if (this.props.currentMove.moveKey !== prevProps.currentMove.moveKey) {
+            this.ensureActiveItemVisible();
+        }
+    }
+
+    ensureActiveItemVisible() {
+        var itemComponent = this.refs.activeItem;
+        if (itemComponent) {
+            var domNode = ReactDOM.findDOMNode(itemComponent);
+            this.scrollElementIntoViewIfNeeded(domNode);
+        }
+    }
+
+    scrollElementIntoViewIfNeeded(domNode) {
+        var containerDomNode = React.findDOMNode(this);
+        // Determine if `domNode` fully fits inside `containerDomNode`.
+        // If not, set the container's scrollTop appropriately.
     }
 
     private renderNav= (pos: NavigatorMode) => {
@@ -143,7 +165,7 @@ export class DumbMoveList extends React.Component<DumbMoveListProps, {}> {
                         }
 
                         let ev = (evalItem.advantage > 0) ? "+" : "";
-                        ev += evalItem.advantage;
+                        comment += ev + evalItem.advantage;
 
                         comment = comment.trim();
                         if (evalItem.variation)  {
