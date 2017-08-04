@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as classNames from 'classnames';
 import { Logger } from 'onix-core';
 import { Chess as ChessGame, Color, Move } from 'onix-chess';
 import { AnalysisResult } from 'onix-chess-analyse';
@@ -53,28 +54,37 @@ export class DumbMoveList extends React.Component<DumbMoveListProps, {}> {
         return null;
     }
 
-    private renderMove = (x: Move, i: number, p: string, c: number, s: string, n?: string, m?: string) => {
+    private renderMove = (x: Move, i: number, p: string, c: number, s: string, n?: string, m?: string, classes?: any) => {
         let result = [];
         if (c === Color.White) {
             result.push(this.renderMoveNo(c, i));
         }
 
-        var cc = [(c === Color.White) ? "white_move" : "black_move"];
+        const myclass = {
+            ['white_move']: (c === Color.White),
+            ['black_move']: (c === Color.Black),
+            ['ui-state-active']: (x.Prev.moveKey === p),
+            ['ui-state-default']: (x.Prev.moveKey !== p),
+        };
 
-        if (x.Prev.moveKey === p) {
-            cc.push("ui-state-active");
-        } else {
-            cc.push("ui-state-default");
-        }
+        const moveClasses = classNames(myclass, classes);
+
         
         result.push(
             <span 
-                className={cc.join(" ")} 
+                className={moveClasses} 
                 data-ply={i} 
                 data-key={p} 
                 key={p}
                 onClick={this.onMoveClick}>{s}</span>
         );
+
+        if (n) {
+            const evalKey = `ng_${p}`;
+            result.push(
+                <span key={evalKey} className="ui-nag">{n}</span>
+            );
+        }
 
         if (m) {
             const evalKey = `cm_${p}`;
@@ -106,20 +116,45 @@ export class DumbMoveList extends React.Component<DumbMoveListProps, {}> {
                 const ply = game.StartPlyCount + data.PlyCount;
                 let nag = data.Nag || "";
                 let comment = data.Comments || "";
+                const classes = {};
                 if (analysis && analysis.state == "ready") {
                     const evalItem = analysis.analysis[i];
                     Logger.debug("evalItem", evalItem);
                     if (evalItem) {
-                        comment += " " + evalItem.desc + " ";
+                        classes['best'] = !evalItem.best;
+                        if (evalItem.judgment) {
+                            if (evalItem.judgment.glyph) {
+                                nag = evalItem.judgment.glyph.symbol;
+                            }
+
+                            switch (evalItem.judgment.name) {
+                                case "Blunder":
+                                    classes['blunder'] = true;
+                                    break;
+                                case "Mistake":
+                                    classes['mistake'] = true;
+                                    break;
+                                case "Inaccuracy":
+                                    classes['inaccuracy'] = true;
+                                    break;
+                            }
+
+                            comment += " " + evalItem.judgment.comment + " ";
+                        }
+
+                        let ev = (evalItem.advantage > 0) ? "+" : "";
+                        ev += evalItem.advantage;
+
+                        comment = comment.trim();
                         if (evalItem.variation)  {
-                            comment += "Best line: { " +  evalItem.variation + " } ";
+                            comment += " { " +  evalItem.variation + " }";
                         }
                         
                     }
                 }
 
                 moves = moves.concat(
-                    this.renderMove(currentMove, ply, move.moveKey, data.Color, data.San, data.Nag, comment)
+                    this.renderMove(currentMove, ply, move.moveKey, data.Color, data.San, data.Nag, comment, classes)
                 );
 
                 move = move.Next;
