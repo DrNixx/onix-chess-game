@@ -172,10 +172,9 @@ export class DumbMoveList extends React.Component<DumbMoveListProps, {}> {
 
                         comment = comment.trim();
                         if (evalItem.variation)  {
-                            const evalPawn = evalItem.ceil / 100;
-                            const sign = (evalPawn > 0) ? "+" : "";
+                            const sign = (evalItem.ceilPawn > 0) ? "+" : "";
 
-                            comment += " { " +  evalItem.variation + " " + sign + evalPawn + " }";
+                            comment += " { " +  evalItem.variation + " " + sign + evalItem.ceilPawn + " }";
                         }
                         
                     }
