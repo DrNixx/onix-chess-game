@@ -164,12 +164,18 @@ export class DumbMoveList extends React.Component<DumbMoveListProps, {}> {
                             comment += " " + evalItem.judgment.comment + " ";
                         }
 
-                        let ev = (evalItem.advantage > 0) ? "+" : "";
-                        comment += ev + evalItem.advantage;
+                        if (!evalItem.mate) {
+                            let ev = (evalItem.advantage > 0) ? "+" : "";
+                            comment += ev + evalItem.advantage;
+                        }
+                        
 
                         comment = comment.trim();
                         if (evalItem.variation)  {
-                            comment += " { " +  evalItem.variation + " }";
+                            const evalPawn = evalItem.ceil / 100;
+                            const sign = (evalPawn > 0) ? "+" : "";
+
+                            comment += " { " +  evalItem.variation + " " + sign + evalPawn + " }";
                         }
                         
                     }
