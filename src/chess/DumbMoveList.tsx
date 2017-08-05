@@ -43,7 +43,7 @@ export class DumbMoveList extends React.Component<DumbMoveListProps, {}> {
     }
 
     scrollElementIntoViewIfNeeded(domNode) {
-        var containerDomNode = React.findDOMNode(this);
+        // var containerDomNode = ReactDOM.findDOMNode(this);
         // Determine if `domNode` fully fits inside `containerDomNode`.
         // If not, set the container's scrollTop appropriately.
     }

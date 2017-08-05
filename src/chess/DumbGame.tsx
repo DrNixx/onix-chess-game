@@ -105,7 +105,8 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
         const { game, analysis } = state;
 
         if (game !== null) {
-            const { pgn, key, final_fen } = game;
+            const { pgn, key, final_fen, game: engine } = game;
+            const currentPly = engine.CurrentMove.PlyCount - 1;
 
             return (
                 <Row>
@@ -116,6 +117,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
                                     <AnalyseGraph 
                                         id={game.id}
                                         store={store} 
+                                        currentPly={currentPly}
                                         onPositionDotClick={this.onPlyClick} />
                                 </Tab>
                                 <Tab eventKey="movetime" title="Move times">
