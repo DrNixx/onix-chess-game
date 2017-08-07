@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom'
 import * as classNames from 'classnames';
 import { Logger } from 'onix-core';
 import { Chess as ChessGame, Color, Move } from 'onix-chess';
-import { AnalysisResult } from 'onix-chess-analyse';
+import { AnalysisResult, registerStrings } from 'onix-chess-analyse';
 import { NavigatorMode } from './Constants';
 import { PlayStore } from './GameStore';
 import { MoveNavigator } from './MoveNavigator';
@@ -25,6 +25,7 @@ export class DumbMoveList extends React.Component<DumbMoveListProps, {}> {
      */
     constructor(props: DumbMoveListProps) {
         super(props);
+        registerStrings();
     }
 
     componentDidUpdate(prevProps) {
@@ -137,12 +138,18 @@ export class DumbMoveList extends React.Component<DumbMoveListProps, {}> {
                 const data = move.moveData;
                 const ply = game.StartPlyCount + data.PlyCount;
                 let nag = data.Nag || "";
-                let comment = data.Comments || "";
+                const comments = [];
+                if (data.Comments) {
+                    comments.push(data.Comments);
+                }
+
                 const classes = {};
                 if (analysis && analysis.state == "ready") {
                     const evalItem = analysis.analysis[i];
                     Logger.debug("evalItem", evalItem);
                     if (evalItem) {
+                        comments.push(evalItem.desc);
+
                         classes['best'] = !evalItem.best;
                         if (evalItem.judgment) {
                             if (evalItem.judgment.glyph) {
@@ -161,24 +168,18 @@ export class DumbMoveList extends React.Component<DumbMoveListProps, {}> {
                                     break;
                             }
 
-                            comment += " " + evalItem.judgment.comment + " ";
+                            comments.push(evalItem.judgment.comment);
                         }
 
-                        if (!evalItem.mate) {
-                            let ev = (evalItem.advantage > 0) ? "+" : "";
-                            comment += ev + evalItem.advantage;
-                        }
-                        
-
-                        comment = comment.trim();
                         if (evalItem.variation)  {
                             const sign = (evalItem.ceilPawn > 0) ? "+" : "";
-
-                            comment += " { " +  evalItem.variation + " " + sign + evalItem.ceilPawn + " }";
+                            comments.push(" { " +  evalItem.variation + " " + sign + evalItem.ceilPawn + " }");
                         }
                         
                     }
                 }
+
+                const comment = (comments.length > 0) ? comments.join(" ") : null;
 
                 moves = moves.concat(
                     this.renderMove(currentMove, ply, move.moveKey, data.Color, data.San, nag, comment, classes)
