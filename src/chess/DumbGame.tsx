@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as classNames from 'classnames';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
-import { ResponsiveContainer, BarChart, Bar, ReferenceLine, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'rechart';
+import { ResponsiveContainer, BarChart, Bar, ReferenceLine, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import { registerStrings } from '../Intl';
 import { Intl, intVal } from 'onix-core';
 import { MovesMode, NavigatorMode } from './Constants';
@@ -113,7 +113,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
                 data.push({
                     ply: i + 1,
                     white: intVal(white.moveCentis[i] / 100),
-                    black: intVal(black.moveCentis[i] / 100),
+                    black: -intVal(black.moveCentis[i] / 100),
                 });
             }            
 
@@ -125,7 +125,6 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
                             <YAxis/>
                             <CartesianGrid strokeDasharray="3 3"/>
                             <Tooltip/>
-                            <Legend />
                             <ReferenceLine y={0} stroke='#000'/>
                             <Bar dataKey="white" fill="#8884d8" stackId="stack" />
                             <Bar dataKey="black" fill="#82ca9d" stackId="stack" />
