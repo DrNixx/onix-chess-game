@@ -2,93 +2,183 @@ import { BoardMode } from 'onix-board';
 import { Chess as ChessGame } from 'onix-chess';
 import { IUser } from 'onix-core';
 import { AnalysisResult } from 'onix-chess-analyse';
+import { IClock } from './IClock';
+import { IGamePlayers } from './IGamePlayers';
+import { IOpening } from './IOpening';
 
 export interface GameState {
     /**
-     * ИД партии
+     * Game identifier
      */
     id?: number,
 
     /**
-     * Партию нужно загрузить
+     * Need load game
      */
     load?: boolean,
 
     /**
-     * Партия сыграна на сайте
+     * Is site played game
      */
     insite?: boolean,
 
     /**
-     * UID партии
+     * Game UID
      */
     key?: string,
 
     /**
-     * Белый игрок
+     * Chess variation
      */
-    white?: IUser,
+    variant?: string,
+    
+    /**
+     * Game speed
+     */
+    speed?: string,
+    
+    /**
+     * Preferense
+     */
+    perf?: string,
+    
+    /**
+     * Is rated game
+     */
+    rated?: boolean,
+    
+    /**
+     * Start fen
+     */
+    fen?: string,
 
     /**
-     * Черный игрок
+     * Start ply counter
      */
-    black?: IUser,
-
-    event?: string,
-
-    trn_id?: number,
+    startply?: number,
     
+    /**
+     * Game status
+     */
+    status?: string,
+    
+    /**
+     * Game clock settings
+     */
+    clock?: IClock,
+
+    /**
+     * Start timestamp
+     */
+    createdAt?: number,
+
+    /**
+     * End timestamp
+     */
+    lastMoveAt?: number,    
+
+    /**
+     * Turns count
+     */
+    turns?: number,
+
+    /**
+     * Game URL
+     */
+    urn?: string,
+
+    /**
+     * Tournament id
+     */
+    trn_id?: number,
+
+    /**
+     * Tournament name
+     */
     trn_name?: string,
 
-    limit?: string,
-    
-    can_pause?: boolean,
-    
-    rated?: boolean,
+    /**
+     * Board mode
+     */
+    mode?: BoardMode,
 
-    private?: boolean,
-    
-    advance?: boolean,
-    
-    started?: Date,
-    
-    completed?: Date,
+    /**
+     * My color
+     */
+    color?: number,
 
+    /**
+     * Winner code
+     */
+    winner?: string,
+
+    /**
+     * Game result
+     */
     result?: number,
 
+    /**
+     * Result name
+     */
     result_name?: string,
 
-    legal?: false,
-    
-    chat_pub?: string,
-    
-    chat_pvt?: string,
-    
+    /**
+     * Is private game
+     */
+    private?: boolean,
+
+    /**
+     * Can use computer hints
+     */
+    advance?: boolean,
+
+    /**
+     * Game play channer
+     */
     channel?: string,
 
     /**
-     * Режим доски
+     * Game private chat channel
      */
-    mode: BoardMode,
+    chat_pvt?: string,
 
     /**
-     * Цвет для текущего игрока
+     * Game public chat channel
      */
-    color: number,
+    chat_pub?: string,
 
-    startply?: number,
+    /**
+     * Players
+     */
+    players?: IGamePlayers,
 
+    /**
+     * Game pgn
+     */
     pgn?: string,
 
+    /**
+     * Final fen
+     */
     final_fen?: string,
 
     /**
-     * Объект партии
+     * Opening
+     */
+    opening?: IOpening,
+
+    /**
+     * Game engine instance
      */
     game: ChessGame
 
     /**
-     * Анализ партии
+     * Analysis state
+     */
+    analysis_state?: string,
+
+    /**
+     * Game analysis
      */
     analysis: AnalysisResult;
 }

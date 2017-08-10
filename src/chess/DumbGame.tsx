@@ -1,10 +1,10 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
-import { ResponsiveContainer, AreaChart, XAxis, YAxis, Area, Tooltip, CartesianGrid } from 'recharts';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
+import { ResponsiveContainer, BarChart, Bar, ReferenceLine, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'rechart';
 import { registerStrings } from '../Intl';
-import { Intl } from 'onix-core';
+import { Intl, intVal } from 'onix-core';
 import { MovesMode, NavigatorMode } from './Constants';
 import { BoardMode, BoardSize, BoardSizeClass, ChessBoard, ChessDragLayer } from 'onix-board';
 import { ChessMoves } from './ChessMoves';
@@ -100,6 +100,44 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
         gameNavigateToPly(store, ply);
     }
 
+    private renderMovetime? = (game: GameState) => {
+        if (game.players && 
+            game.players.white && game.players.white.moveCentis &&
+            game.players.black && game.players.black.moveCentis) {
+
+            const { white, black } = game.players;
+            let data = [];
+
+            const len = Math.max(white.moveCentis.length, black.moveCentis.length);
+            for (let i = 0; i < len; i++) {
+                data.push({
+                    ply: i + 1,
+                    white: intVal(white.moveCentis[i] / 100),
+                    black: intVal(black.moveCentis[i] / 100),
+                });
+            }            
+
+            return (
+                <Tab eventKey="movetime" title="Move times">
+                    <ResponsiveContainer width="100%" height={400}>
+                        <BarChart data={data} stackOffset="sign" margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+                            <XAxis dataKey="ply" hide={true} />
+                            <YAxis/>
+                            <CartesianGrid strokeDasharray="3 3"/>
+                            <Tooltip/>
+                            <Legend />
+                            <ReferenceLine y={0} stroke='#000'/>
+                            <Bar dataKey="white" fill="#8884d8" stackId="stack" />
+                            <Bar dataKey="black" fill="#82ca9d" stackId="stack" />
+                        </BarChart>
+                    </ResponsiveContainer>
+                </Tab>
+            );
+        } else {
+            return null;
+        }
+    }
+
     private renderCounters? = (store: PlayStore) => {
         const state = store.getState();
         const { game, analysis } = state;
@@ -120,9 +158,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
                                         currentPly={currentPly}
                                         onPositionDotClick={this.onPlyClick} />
                                 </Tab>
-                                <Tab eventKey="movetime" title="Move times">
-                                    ---
-                                </Tab>
+                                { this.renderMovetime(game) }
                                 <Tab eventKey="fenpgn" title="FEN &amp; PGN">
                                     <Row>
                                         <Col md={12}>
@@ -156,7 +192,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
         const { store } = this.props;
         const state = store.getState();
         const { size, position } = state.board;
-        const { key, mode, legal, insite, completed } = state.game;
+        const { key, mode, insite, result } = state.game;
 
         const dnd = (mode === BoardMode.Setup) || (mode >= BoardMode.Analyze);
 
@@ -177,7 +213,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
                         </div>
                     </Col>
                 </Row>
-                { (insite && completed && mode > BoardMode.Pgn) ? this.renderCounters(store) : null }
+                { (insite && (result > 0) && mode > BoardMode.Pgn) ? this.renderCounters(store) : null }
             </div>
         );
     }

@@ -8,11 +8,13 @@ import { NavigatorMode } from './Constants';
 import { PlayStore } from './GameStore';
 import { MoveNavigator } from './MoveNavigator';
 import { GameAction } from './GameActions';
+import { IOpening } from './IOpening';
 
 export interface DumbMoveListProps {
     nav: NavigatorMode,
     game: ChessGame,
     analysis: AnalysisResult,
+    opeinig?: IOpening,
     startPly: number,
     currentMove: Move,
     onChangePos: (move: Move) => void,
@@ -120,9 +122,15 @@ export class DumbMoveList extends React.Component<DumbMoveListProps, {}> {
     }
 
     private renderMoves = () => {
-        const { currentMove, game, analysis } = this.props;
+        const { currentMove, game, analysis, opeinig } = this.props;
         let moves = []; 
         let move = currentMove.First.Next;
+
+        if (opeinig && opeinig.name) {
+            moves.push(
+                <span key="opening" className="ui-comment ui-opening">{opeinig.code} {opeinig.name}</span>
+            );
+        }
 
         Logger.debug("renderMoves", analysis);
 

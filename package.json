@@ -1,6 +1,6 @@
 {
   "name": "onix-chess-game",
-  "version": "1.1.11",
+  "version": "1.1.15",
   "description": "Chess game board",
   "main": "built/index.js",
   "scripts": {
@@ -28,19 +28,20 @@
     "onix-app": "^1.0.4",
     "onix-board": "^1.0.14",
     "onix-chess": "^1.0.8",
-    "onix-chess-analyse": "^1.1.7",
-    "onix-core": "^1.1.24",
+    "onix-chess-analyse": "^1.1.8",
+    "onix-core": "^1.1.25",
     "onix-ui": "^1.0.23",
     "react": "^15.6.1",
     "react-dnd": "^2.4.0",
     "react-dnd-html5-backend": "^2.4.1",
     "react-dom": "^15.6.1",
+    "rechart": "0.0.1",
     "redux": "^3.7.2",
     "rxjs": "^5.4.2",
     "shortid": "^2.2.8"
   },
   "devDependencies": {
-    "@types/node": "^8.0.19",
+    "@types/node": "^8.0.20",
     "@types/react": "^15.6.1",
     "awesome-typescript-loader": "^3.2.2",
     "source-map-loader": "^0.2.1",

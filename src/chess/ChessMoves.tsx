@@ -33,7 +33,7 @@ export class ChessMoves extends React.Component<ChessMovesProps, {}> {
     render() {
         const { store, mode, nav } = this.props;
         const state = store.getState();
-        const { game, analysis } = state.game;
+        const { game, analysis, opening } = state.game;
         const currMove = game.CurrentMove;
 
         if (mode === MovesMode.Table) {
@@ -42,6 +42,7 @@ export class ChessMoves extends React.Component<ChessMovesProps, {}> {
                     startPly={game.StartPlyCount}
                     game={game}
                     analysis={analysis}
+                    opeinig={opening}
                     currentMove={currMove}
                     nav={nav} 
                     onChangePos={this.onChangePos} 
@@ -54,6 +55,7 @@ export class ChessMoves extends React.Component<ChessMovesProps, {}> {
                     startPly={game.StartPlyCount}
                     game={game}
                     analysis={analysis}
+                    opeinig={opening}
                     currentMove={currMove} 
                     nav={nav} 
                     onChangePos={this.onChangePos} 

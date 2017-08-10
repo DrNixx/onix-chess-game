@@ -18,7 +18,7 @@ const INITIAL_STATE: GameState = {
 
 export const createGameState = (settings: GameSettings, fen?: string, analysis?: AnalysisResult): GameState => {
     const { id, pgn, result, startply } = settings;
-    const { moves, fen: feng, ...gameProps } = settings;
+    const { movelist, fens, fen: feng, ...gameProps } = settings;
     let { mode, color } = settings;
 
     const fena = feng || fen || FenStandartStart;
@@ -33,7 +33,7 @@ export const createGameState = (settings: GameSettings, fen?: string, analysis?:
     const game = new Chess({
         id: id,
         fen: fena,
-        moves: moves,
+        moves: movelist,
     });
 
     game.StartPlyCount = startply;

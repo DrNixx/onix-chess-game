@@ -101,7 +101,7 @@ export const gameNavigateToKey = (store: PlayStore, key: string) => {
 
 export const gameLoadInsite = (store: PlayStore, id: number) => {
     Observable.ajax({ 
-        url:'https://www.chess-online.com/api/chess/game/' + id.toString(), 
+        url:"https://www.chess-online.com/api/game/" + id.toString() + "?with_movelist=1&with_fens=1&with_movetimes=1&with_analysis=1&with_pgn=1&with_opening=1", 
         method: 'GET', 
         crossDomain: true
     }).subscribe(
