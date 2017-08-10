@@ -142,6 +142,8 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
         const state = store.getState();
         const { game, analysis } = state;
 
+        // { this.renderMovetime(game) }
+
         if (game !== null) {
             const { pgn, key, final_fen, game: engine } = game;
             const currentPly = engine.CurrentMove.PlyCount - 1;
@@ -158,7 +160,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
                                         currentPly={currentPly}
                                         onPositionDotClick={this.onPlyClick} />
                                 </Tab>
-                                { this.renderMovetime(game) }
+                                
                                 <Tab eventKey="fenpgn" title="FEN &amp; PGN">
                                     <Row>
                                         <Col md={12}>
