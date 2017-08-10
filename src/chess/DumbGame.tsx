@@ -160,7 +160,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
                                         currentPly={currentPly}
                                         onPositionDotClick={this.onPlyClick} />
                                 </Tab>
-                                
+                                { this.renderMovetime(game) }
                                 <Tab eventKey="fenpgn" title="FEN &amp; PGN">
                                     <Row>
                                         <Col md={12}>
