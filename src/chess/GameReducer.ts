@@ -41,24 +41,14 @@ export const createGameState = (settings: GameSettings, fen?: string, analysis?:
     let analysis_state = astate || "empty";
 
     if (!analysis && !settings.analysis_state && settings.analysis) {
-        analysis_state = "ready";
-        analysis = {
-            state: "ready",
-            white: null,
-            black: null,
-            analysis: settings.analysis
-        }
 
-        if (settings.players) {
-            if (settings.players.white && settings.players.white.analysis) {
-                analysis.white = settings.players.white.analysis;
-            }
-
-            if (settings.players.black && settings.players.black.analysis) {
-                analysis.black = settings.players.black.analysis;
-            }
-        }
-
+        const { players } = settings;
+        analysis = new AnalysisResult({
+            "state": "ready",
+            "white": (players.white && players.white.analysis) ? players.white.analysis : null,
+            "black": (players.black && players.black.analysis) ? players.black.analysis : null,
+            "analysis": settings.analysis
+        });
     }
 
     return {
