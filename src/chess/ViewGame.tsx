@@ -46,6 +46,22 @@ export class ViewGame extends React.Component<ChessGameProps, ChessGameState> {
         const fena = feng || fenb || FenStandartStart;
         const gstate = createGameState(game, fena);
 
+        let analysis = {
+                status: "empty",
+                white: null,
+                black: null,
+                evals: []
+            };
+
+        if (gstate.analysis && gstate.analysis.analysis && gstate.analysis.analysis.length) {
+            analysis = {
+                status: gstate.analysis.state,
+                white: gstate.analysis.white,
+                black: gstate.analysis.black,
+                evals: gstate.analysis.analysis
+            };
+        }
+
         this.store = createPlayStore({
             intl: {
                 locale: locale
@@ -70,10 +86,7 @@ export class ViewGame extends React.Component<ChessGameProps, ChessGameState> {
                 doMove: doMove,
             },
             game: gstate,
-            analysis: {
-                status: "empty",
-                evals: []
-            },
+            analysis: analysis,
         });
     }
 

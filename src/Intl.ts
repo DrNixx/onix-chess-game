@@ -1,25 +1,29 @@
 import { Intl as IntlCore } from 'onix-core';
-import { registerStrings as IntlBoard } from 'onix-board';
+import { Intl as IntlBoard } from 'onix-board';
+import { Intl as IntlAnalysis } from 'onix-chess-analyse';
 
-var intlInitialized = false;
+export class Intl {
+    private static intlInitialized = false;
 
-export function registerStrings() {
-    if (!intlInitialized) {
-        
-        IntlBoard();
+    public static register() {
+        if (!Intl.intlInitialized) {
+            
+            IntlBoard.register();
+            IntlAnalysis.register();
 
-        IntlCore.registerStrings('app', {
-            'ru-ru': {
-                load: "Загрузить",
-                send: "Отправить",    
-            },
+            IntlCore.registerStrings('app', {
+                'ru-ru': {
+                    load: "Загрузить",
+                    send: "Отправить",    
+                },
 
-            'en-us': {
-                load: "Load",
-                send: "Send",    
-            }
-        });
+                'en-us': {
+                    load: "Load",
+                    send: "Send",    
+                }
+            });
 
-        intlInitialized = true;
+            Intl.intlInitialized = true;
+        }
     }
 }

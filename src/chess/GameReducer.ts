@@ -18,7 +18,7 @@ const INITIAL_STATE: GameState = {
 
 export const createGameState = (settings: GameSettings, fen?: string, analysis?: AnalysisResult): GameState => {
     const { id, pgn, result, startply } = settings;
-    const { movelist, fens, fen: feng, ...gameProps } = settings;
+    const { movelist, fens, fen: feng, analysis_state: astate, ...gameProps } = settings;
     let { mode, color } = settings;
 
     const fena = feng || fen || FenStandartStart;
@@ -38,12 +38,35 @@ export const createGameState = (settings: GameSettings, fen?: string, analysis?:
 
     game.StartPlyCount = startply;
     game.Result = result;
+    let analysis_state = astate || "empty";
+
+    if (!analysis && !settings.analysis_state && settings.analysis) {
+        analysis_state = "ready";
+        analysis = {
+            state: "ready",
+            white: null,
+            black: null,
+            analysis: settings.analysis
+        }
+
+        if (settings.players) {
+            if (settings.players.white && settings.players.white.analysis) {
+                analysis.white = settings.players.white.analysis;
+            }
+
+            if (settings.players.black && settings.players.black.analysis) {
+                analysis.black = settings.players.black.analysis;
+            }
+        }
+
+    }
 
     return {
         ...gameProps,
         mode: mode,
         color: color,
         game: game,
+        analysis_state: analysis_state,
         analysis: analysis,
     }
 }

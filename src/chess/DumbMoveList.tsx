@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom'
 import * as classNames from 'classnames';
 import { Logger } from 'onix-core';
 import { Chess as ChessGame, Color, Move } from 'onix-chess';
-import { AnalysisResult, registerStrings } from 'onix-chess-analyse';
+import { AnalysisResult, Intl as IntlAnalysis } from 'onix-chess-analyse';
 import { NavigatorMode } from './Constants';
 import { PlayStore } from './GameStore';
 import { MoveNavigator } from './MoveNavigator';
@@ -27,7 +27,7 @@ export class DumbMoveList extends React.Component<DumbMoveListProps, {}> {
      */
     constructor(props: DumbMoveListProps) {
         super(props);
-        registerStrings();
+        IntlAnalysis.register();
     }
 
     componentDidUpdate(prevProps) {

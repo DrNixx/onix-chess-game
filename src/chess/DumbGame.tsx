@@ -2,9 +2,9 @@ import * as React from 'react';
 import * as classNames from 'classnames';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
-import { ResponsiveContainer, BarChart, Bar, ReferenceLine, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-import { registerStrings } from '../Intl';
-import { Intl, intVal } from 'onix-core';
+import { Intl } from '../Intl';
+import { Intl as IntlCore, intVal } from 'onix-core';
+import { MovesGraph } from 'onix-chess-movetimes';
 import { MovesMode, NavigatorMode } from './Constants';
 import { BoardMode, BoardSize, BoardSizeClass, ChessBoard, ChessDragLayer } from 'onix-board';
 import { ChessMoves } from './ChessMoves';
@@ -28,7 +28,7 @@ export interface DumbGameState {
 export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
     constructor(props: DumbGameProps) {
         super(props);
-        registerStrings();
+        Intl.register();
         this.state = {}
     }
 
@@ -55,7 +55,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
 
         const command = BoardMode.Pgn ? (
             <div className="pgn-command">
-                <Button state="default" onClick={onLoadPgn}>{Intl.t("app", "load")}</Button>
+                <Button state="default" onClick={onLoadPgn}>{IntlCore.t("app", "load")}</Button>
             </div>
         ) : null;
 
@@ -104,32 +104,17 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
         if (game.players && 
             game.players.white && game.players.white.moveCentis &&
             game.players.black && game.players.black.moveCentis) {
-
-            const { white, black } = game.players;
-            let data = [];
-
-            const len = Math.max(white.moveCentis.length, black.moveCentis.length);
-            for (let i = 0; i < len; i++) {
-                data.push({
-                    ply: i + 1,
-                    white: intVal(white.moveCentis[i] / 100),
-                    black: -intVal(black.moveCentis[i] / 100),
-                });
-            }            
+            
+            const { game: engine } = game;
 
             return (
-                <Tab eventKey="movetime" title="Move times">
-                    <ResponsiveContainer width="100%" height={400}>
-                        <BarChart data={data} stackOffset="sign" margin={{top: 5, right: 30, left: 20, bottom: 5}}>
-                            <XAxis dataKey="ply" hide={true} />
-                            <YAxis/>
-                            <CartesianGrid strokeDasharray="3 3"/>
-                            <Tooltip/>
-                            <ReferenceLine y={0} stroke='#000'/>
-                            <Bar dataKey="white" fill="#8884d8" stackId="stack" />
-                            <Bar dataKey="black" fill="#82ca9d" stackId="stack" />
-                        </BarChart>
-                    </ResponsiveContainer>
+                <Tab eventKey="movetime" title="Затраченное время">
+                    <MovesGraph 
+                        white={game.players.white.moveCentis} 
+                        black={game.players.black.moveCentis}
+                        startPly={engine.StartPlyCount}
+                        currentPly={engine.CurrentMove.PlyCount - 1}
+                        onTurnClick={this.onPlyClick} />
                 </Tab>
             );
         } else {
@@ -152,7 +137,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
                     <Col md={6} sm={15}>
                         <div className="counters">
                             <Tabs className="tabs" id={key + "-tabs2"}>
-                                <Tab eventKey="analysis" title="Computer analysis">
+                                <Tab eventKey="analysis" title={IntlCore.t("analyse", "title")}>
                                     <AnalyseGraph 
                                         id={game.id}
                                         store={store} 
@@ -164,8 +149,8 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
                                     <Row>
                                         <Col md={12}>
                                             <FormGroup controlId="fen">
-                                                <ControlLabel>{Intl.t("chess", "fen")}</ControlLabel>
-                                                <TextWithCopy value={final_fen} scale="small" placeholder={Intl.t("chess", "fen")} />
+                                                <ControlLabel>{IntlCore.t("chess", "fen")}</ControlLabel>
+                                                <TextWithCopy value={final_fen} scale="small" placeholder={IntlCore.t("chess", "fen")} />
                                             </FormGroup>
                                         </Col>
                                     </Row>
