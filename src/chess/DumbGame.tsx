@@ -110,6 +110,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
             return (
                 <Tab eventKey="movetime" title="Затраченное время">
                     <MovesGraph 
+                        height={400}
                         white={game.players.white.moveCentis} 
                         black={game.players.black.moveCentis}
                         startPly={engine.StartPlyCount}
@@ -141,6 +142,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
                                     <AnalyseGraph 
                                         id={game.id}
                                         store={store} 
+                                        height={400}
                                         currentPly={currentPly}
                                         onPositionDotClick={this.onPlyClick} />
                                 </Tab>
