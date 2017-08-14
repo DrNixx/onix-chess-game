@@ -134,7 +134,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
 
             return (
                 <Row>
-                    <Col md={6} sm={15}>
+                    <Col lg={12}>
                         <div className="counters">
                             <Tabs className="tabs" id={key + "-tabs2"}>
                                 <Tab eventKey="analysis" title={IntlCore.t("analyse", "title")}>
@@ -182,8 +182,12 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
 
         const dnd = (mode === BoardMode.Setup) || (mode >= BoardMode.Analyze);
 
+        const classes = classNames("game-play", BoardSizeClass[size]); 
+        
+        BoardSizeClass['size'];
+
         return (
-            <div key={key} className="game-play">
+            <div key={key} className={classes}>
                 <Row>
                     <Col md={12}>
                         <div className="game-body">

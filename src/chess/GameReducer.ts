@@ -53,6 +53,7 @@ export const createGameState = (settings: GameSettings, fen?: string, analysis?:
 
     return {
         ...gameProps,
+        key: key,
         mode: mode,
         color: color,
         game: game,
