@@ -21,6 +21,7 @@ export interface GameSettings {
     lastMoveAt?: number,    
     turns?: number,
     urn?: string,
+    event?: string,
     trn_id?: number,
     trn_name?: string,
     mode?: BoardMode,

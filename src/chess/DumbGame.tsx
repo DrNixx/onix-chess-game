@@ -13,6 +13,7 @@ import { PlayStore, PlayState, gameNavigateToPly } from './GameStore';
 import { AnalyseGraph } from 'onix-chess-analyse';
 import { Tabs, Tab, Row, Col, Button, FormGroup, ControlLabel, TextWithCopy } from 'onix-ui';
 import { GameState } from "./GameState";
+import { GameInfo } from "./GameInfo";
 
 
 export interface DumbGameProps {
@@ -83,8 +84,8 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
                         {this.renderMoves(store)}
                         {this.renderCaptures(store)}
                     </Tab>
-                    <Tab eventKey="info" title="Info">
-                        12345
+                    <Tab eventKey="info" title={IntlCore.t("game", "infoTab")}>
+                        <GameInfo store={store} />
                     </Tab>
                     {game.mode === BoardMode.Pgn ? this.renderPgn(store) : null}
                     <Tab eventKey="settings" title="Settings">

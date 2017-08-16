@@ -88,6 +88,11 @@ export interface GameState {
     urn?: string,
 
     /**
+     * Event name
+     */
+    event?: string,
+
+    /**
      * Tournament id
      */
     trn_id?: number,
