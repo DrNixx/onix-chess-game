@@ -28,7 +28,7 @@
     "onix-app": "^1.0.5",
     "onix-board": "^1.0.16",
     "onix-chess": "^1.0.13",
-    "onix-chess-analyse": "^1.1.15",
+    "onix-chess-analyse": "^1.1.16",
     "onix-chess-movetimes": "^1.0.7",
     "onix-core": "^1.1.27",
     "onix-ui": "^1.0.31",
@@ -42,7 +42,7 @@
     "warning": "^3.0.0"
   },
   "devDependencies": {
-    "@types/node": "^8.0.20",
+    "@types/node": "^8.0.22",
     "@types/react": "^15.6.1",
     "awesome-typescript-loader": "^3.2.3",
     "source-map-loader": "^0.2.1",
