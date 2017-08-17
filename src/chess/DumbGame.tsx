@@ -3,7 +3,7 @@ import * as classNames from 'classnames';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import { Intl } from '../Intl';
-import { Intl as IntlCore, intVal } from 'onix-core';
+import { Intl as IntlCore } from 'onix-core';
 import { MovesGraph } from 'onix-chess-movetimes';
 import { MovesMode, NavigatorMode } from './Constants';
 import { BoardMode, BoardSize, BoardSizeClass, ChessBoard, ChessDragLayer } from 'onix-board';
