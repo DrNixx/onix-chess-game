@@ -80,7 +80,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
         return (
             <div className="controls">
                 <Tabs className="tabs" id={key + "-tabs"}>
-                    <Tab eventKey="moves" title="Moves">
+                    <Tab eventKey="moves" title={IntlCore.t("game", "movesTab")}>
                         {this.renderMoves(store)}
                         {this.renderCaptures(store)}
                     </Tab>

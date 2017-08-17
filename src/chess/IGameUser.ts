@@ -2,6 +2,7 @@ import { IUser } from 'onix-core';
 import { IUserAnalysis } from 'onix-chess-analyse';
 
 export interface IGameUser extends IUser {
+    display?: string,
     aurl?: string,
     rating?: number,
     zone?: number,
