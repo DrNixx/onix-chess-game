@@ -47,6 +47,7 @@ export class Intl {
                     gameResultBlack: "Черными фигурами победил %s (%s) - %s",
                     gameResultBlack1: "Черными фигурами победил %s - %s", 
                     gameResultDraw: "В партии зафиксирована ничья",
+                    infoLoading: "Информация загружается...",
                     send: "Отправить",    
                 },
 
@@ -73,6 +74,7 @@ export class Intl {
                     gameResultBlack: "%s (%s) wins by black - %s",
                     gameResultBlack1: "%s wins by black - %s",
                     gameResultDraw: "The game ended a draw",
+                    infoLoading: "Loading...",
                     send: "Send",    
                 }
             });

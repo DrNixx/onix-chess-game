@@ -117,7 +117,13 @@ export class GameInfo extends React.Component<GameInfoProps, {}> {
         const state = store.getState();
         const { game } = state;
 
-        
+        if (!game.clock || !game.players) {
+            return (
+                <div className="ui-game-info">
+                    <div className="loading">{IntlCore.t("game", "infoLoading")}</div>
+                </div>
+            );
+        }
         
         return (
             <div className="ui-game-info">
