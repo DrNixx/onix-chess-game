@@ -141,7 +141,7 @@ export class DumbMoveList extends React.Component<DumbMoveListProps, {}> {
                 );
             }
 
-            let i = 0;
+            let i = 1;
             do {
                 const data = move.moveData;
                 const ply = game.StartPlyCount + data.PlyCount;

@@ -1,6 +1,6 @@
 {
   "name": "onix-chess-game",
-  "version": "1.4.16",
+  "version": "1.5.17",
   "description": "Chess game board",
   "main": "built/index.js",
   "scripts": {
@@ -48,7 +48,7 @@
     "@types/react": "^15.6.1",
     "awesome-typescript-loader": "^3.2.3",
     "source-map-loader": "^0.2.1",
-    "typescript": "^2.5.0",
+    "typescript": "^2.5.1",
     "webpack": "^2.7.0"
   }
 }
