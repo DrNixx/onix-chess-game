@@ -1,6 +1,6 @@
 {
   "name": "onix-chess-game",
-  "version": "1.5.18",
+  "version": "1.5.19",
   "description": "Chess game board",
   "main": "built/index.js",
   "scripts": {
@@ -29,7 +29,7 @@
     "onix-app": "^1.0.10",
     "onix-board": "^1.1.17",
     "onix-chess": "^1.1.14",
-    "onix-chess-analyse": "^1.2.18",
+    "onix-chess-analyse": "^1.2.19",
     "onix-chess-movetimes": "^1.1.8",
     "onix-core": "^1.2.28",
     "onix-ui": "^1.1.32",
