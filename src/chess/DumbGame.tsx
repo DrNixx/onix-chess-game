@@ -143,7 +143,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
                                         id={game.id}
                                         store={store} 
                                         height={400}
-                                        currentPly={engine.CurrentMove.PlyCount}
+                                        currentPly={engine.CurrentMove.PlyCount - 1}
                                         onPositionDotClick={this.onPlyClick} />
                                 </Tab>
                                 { this.renderMovetime(game) }
