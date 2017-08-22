@@ -132,6 +132,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
 
         if (game !== null) {
             const { pgn, key, final_fen, game: engine } = game;
+            const gameId = game.load ? 0 : game.id;
 
             return (
                 <Row>
@@ -140,7 +141,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
                             <Tabs className="tabs" id={key + "-tabs2"}>
                                 <Tab eventKey="analysis" title={IntlCore.t("analyse", "title")}>
                                     <AnalyseGraph 
-                                        id={game.id}
+                                        id={gameId}
                                         store={store} 
                                         height={400}
                                         currentPly={engine.CurrentMove.PlyCount - 1}
