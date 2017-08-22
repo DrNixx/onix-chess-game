@@ -1,6 +1,6 @@
 {
   "name": "onix-chess-game",
-  "version": "1.5.22",
+  "version": "1.5.23",
   "description": "Chess game board",
   "main": "built/index.js",
   "scripts": {
