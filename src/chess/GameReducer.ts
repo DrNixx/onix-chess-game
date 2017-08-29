@@ -106,7 +106,8 @@ export const gameReducer: Reducer<GameState> = (state: GameState = INITIAL_STATE
         }
 
         case gameActions.GAME_SET_SETTINGS: {
-            const { game, analysis } = state;
+            const { game, analysis, onPosChange } = state;
+            action.settings.onPosChange = action.settings.onPosChange || onPosChange;
             return createGameState(action.settings, null, analysis);
         }
 
