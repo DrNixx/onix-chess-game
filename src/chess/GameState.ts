@@ -185,5 +185,7 @@ export interface GameState {
     /**
      * Game analysis
      */
-    analysis: AnalysisResult;
+    analysis: AnalysisResult,
+
+    onPosChange?: (ply: number) => void,
 }

@@ -1,6 +1,6 @@
 {
   "name": "onix-chess-game",
-  "version": "1.5.23",
+  "version": "1.5.24",
   "description": "Chess game board",
   "main": "built/index.js",
   "scripts": {
@@ -44,8 +44,8 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.74",
-    "@types/node": "^8.0.24",
-    "@types/react": "^15.6.1",
+    "@types/node": "^8.0.25",
+    "@types/react": "^15.6.2",
     "awesome-typescript-loader": "^3.2.3",
     "source-map-loader": "^0.2.1",
     "typescript": "^2.5.1",

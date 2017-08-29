@@ -42,4 +42,5 @@ export interface GameSettings {
     fens?: string[],
     final_fen?: string,    
     pgn?: string,
+    onPosChange?: (ply: number) => void,
 }

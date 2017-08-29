@@ -67,8 +67,12 @@ export const gameReducer: Reducer<GameState> = (state: GameState = INITIAL_STATE
     switch (action.type) {
         case gameActions.NAVIGATE_TO_PLY: 
         case gameActions.ANALYSE_POSITION: {
-            const { game } = state;
+            const { game, onPosChange } = state;
             game.moveToPly(action.ply);
+            if (onPosChange) {
+                onPosChange(game.CurrentPlyCount);
+            }
+
             return {
                 ...state,
                 game: game
@@ -76,8 +80,12 @@ export const gameReducer: Reducer<GameState> = (state: GameState = INITIAL_STATE
         }
 
         case gameActions.NAVIGATE_TO_MOVE: {
-            const { game } = state;
+            const { game, onPosChange } = state;
             game.moveToPly(action.move.PlyCount);
+            if (onPosChange) {
+                onPosChange(game.CurrentPlyCount);
+            }
+            
             return {
                 ...state,
                 game: game
@@ -85,8 +93,12 @@ export const gameReducer: Reducer<GameState> = (state: GameState = INITIAL_STATE
         }
 
         case gameActions.NAVIGATE_TO_KEY: {
-            const { game } = state;
+            const { game, onPosChange } = state;
             game.moveToKey(action.move);
+            if (onPosChange) {
+                onPosChange(game.CurrentPlyCount);
+            }
+
             return {
                 ...state,
                 game: game
