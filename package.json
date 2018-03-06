@@ -1,6 +1,6 @@
 {
   "name": "onix-chess-game",
-  "version": "1.5.26",
+  "version": "1.5.27",
   "description": "Chess game board",
   "main": "built/index.js",
   "scripts": {
@@ -25,30 +25,30 @@
   },
   "homepage": "https://github.com/DrNixx/onix-chess-game#readme",
   "dependencies": {
-    "lodash": "^4.17.4",
-    "onix-app": "^1.0.11",
-    "onix-board": "^1.1.18",
-    "onix-chess": "^1.1.15",
-    "onix-chess-analyse": "^1.2.23",
-    "onix-chess-movetimes": "^1.1.9",
-    "onix-core": "^1.2.29",
-    "onix-ui": "^1.1.33",
+    "lodash": "^4.17.5",
     "react": "^15.6.2",
-    "react-dnd": "^2.5.3",
-    "react-dnd-html5-backend": "^2.5.3",
+    "react-dnd": "^2.5.4",
+    "react-dnd-html5-backend": "^2.5.4",
     "react-dom": "^15.6.2",
     "redux": "^3.7.2",
-    "rxjs": "^5.4.3",
+    "rxjs": "^5.5.6",
     "shortid": "^2.2.8",
-    "warning": "^3.0.0"
+    "warning": "^3.0.0",
+    "onix-core": "^1.2.32",
+    "onix-ui": "^1.3.35",
+    "onix-app": "^1.0.12",
+    "onix-chess": "^1.1.16",
+    "onix-board": "^1.1.19",    
+    "onix-chess-analyse": "^1.2.24",
+    "onix-chess-movetimes": "^1.1.10"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.76",
-    "@types/node": "^8.0.31",
-    "@types/react": "^15.6.4",
-    "awesome-typescript-loader": "^3.2.3",
-    "source-map-loader": "^0.2.1",
-    "typescript": "^2.5.3",
+    "@types/lodash": "^4.14.104",
+    "@types/node": "^8.9.4",
+    "@types/react": "^15.6.14",
+    "awesome-typescript-loader": "^3.5.0",
+    "source-map-loader": "^0.2.3",
+    "typescript": "^2.7.2",
     "webpack": "^2.7.0"
   }
 }
