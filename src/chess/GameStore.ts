@@ -1,6 +1,6 @@
 import { Store, createStore as reduxCreateStore, combineReducers } from 'redux';
-import { Observable, Subscription } from 'rxjs';
-import { BoardSelection, BoardMovement, BoardState, boardReducer, BoardActions as ba, BoardActionConsts as bac } from 'onix-board';
+import { ajax } from 'rxjs/ajax';
+import { BoardMovement, BoardState, boardReducer, BoardActions as ba, BoardActionConsts as bac } from 'onix-board';
 import { gameReducer } from './GameReducer';
 import { GameState } from './GameState';
 import { GameAction } from './GameActions';
@@ -26,7 +26,7 @@ export const createPlayStore = (preloadedState: PlayState) =>
         }), preloadedState);
 
 
-export type PlayStore = Store<PlayState>;
+export type PlayStore = Store<PlayState, GameAction>;
 
 export const gameSetSelection = (store: PlayStore, move?: Move) => {
     const state = store.getState();
@@ -100,7 +100,7 @@ export const gameNavigateToKey = (store: PlayStore, key: string) => {
 }
 
 export const gameLoadInsite = (store: PlayStore, id: number) => {
-    Observable.ajax({ 
+    ajax({ 
         url:"https://www.chess-online.com/api/game/" + id.toString() + "?with_movelist=1&with_fens=1&with_movetimes=1&with_analysis=1&with_pgn=1&with_opening=1", 
         method: 'GET', 
         crossDomain: true
@@ -124,7 +124,7 @@ export const gameTakePgn = (store: PlayStore, pgn: string) => {
         pgn: pgn
     };
 
-    Observable.ajax({ 
+    ajax({ 
         url:'https://www.chess-online.com/api/pgn/parse', 
         method: 'POST', 
         body: body,

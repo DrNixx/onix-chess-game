@@ -62,7 +62,7 @@ export const createGameState = (settings: GameSettings, fen?: string, analysis?:
     }
 }
 
-export const gameReducer: Reducer<GameState> = (state: GameState = INITIAL_STATE, action: GameAction) => {
+export const gameReducer: Reducer<GameState, GameAction> = (state: GameState = INITIAL_STATE, action: GameAction) => {
     Logger.debug('Try game action', action);
     switch (action.type) {
         case gameActions.NAVIGATE_TO_PLY: 
