@@ -1,6 +1,8 @@
 import * as types from './GameActionTypes';
 import { Move } from 'onix-chess';
 import { GameSettings } from './GameSettings';
+import { BoardAction } from 'onix-board/dist/chess/BoardActions';
+import { IntlAction } from 'onix-app';
 
 export type GameNavigateToPlyAction = {
     type: types.NAVIGATE_TO_PLY,
@@ -32,7 +34,7 @@ export type GameAnalysePositionAction = {
     ply: number
 };
 
-export type GameAction = 
+export type GameAction = IntlAction | BoardAction |
     GameNavigateToPlyAction | 
     GameNavigateToKeyAction |
     GameNavigateToMoveAction |

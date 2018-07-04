@@ -1,4 +1,4 @@
-import { Store, createStore as reduxCreateStore, combineReducers } from 'redux';
+import { Store, createStore as reduxCreateStore, combineReducers, AnyAction } from 'redux';
 import { ajax } from 'rxjs/ajax';
 import { BoardMovement, BoardState, boardReducer, BoardActions as ba, BoardActionConsts as bac } from 'onix-board';
 import { gameReducer } from './GameReducer';
@@ -20,13 +20,13 @@ export const createPlayStore = (preloadedState: PlayState) =>
     reduxCreateStore(
         combineReducers<PlayState>({
             intl: intlReducer,
-            game: gameReducer,
             board: boardReducer,
+            game: gameReducer,
             analysis: analyseReducer,
         }), preloadedState);
 
 
-export type PlayStore = Store<PlayState, GameAction>;
+export type PlayStore = Store<PlayState, AnyAction>;
 
 export const gameSetSelection = (store: PlayStore, move?: Move) => {
     const state = store.getState();
