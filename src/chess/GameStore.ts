@@ -5,9 +5,10 @@ import { gameReducer } from './GameReducer';
 import { GameState } from './GameState';
 import { GameAction } from './GameActions';
 import * as gameActions from './GameActionConsts';
-import { IntlState, intlReducer } from 'onix-app';
+import { IntlState, intlReducer, IntlAction } from 'onix-app';
 import { Piece, Square, Move } from 'onix-chess';
 import { AnalyseState, analyseReducer } from 'onix-chess-analyse';
+import { AnalyseAction } from 'onix-chess-analyse/dist/analyse/AnalyseActions';
  
 export interface PlayState {
     intl: IntlState,
@@ -25,7 +26,7 @@ export const createPlayStore = (preloadedState: PlayState) =>
             analysis: analyseReducer,
         }), preloadedState);
 
-
+// export type combinedAction = GameAction | ba.BoardAction | AnalyseAction | IntlAction;
 export type PlayStore = Store<PlayState, AnyAction>;
 
 export const gameSetSelection = (store: PlayStore, move?: Move) => {
