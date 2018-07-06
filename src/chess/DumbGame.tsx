@@ -2,18 +2,19 @@ import * as React from 'react';
 import * as classNames from 'classnames';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
+import { AnalyseGraphAsync } from 'onix-chess-analyse/dist/analyse/AnalyseGraphAsync';
+import { MovesGraphAsync } from 'onix-chess-movetimes/dist/chess/MovesGraphAsync';
 import { Intl } from '../Intl';
 import { Intl as IntlCore } from 'onix-core';
-import { MovesGraphAsync } from 'onix-chess-movetimes';
 import { MovesMode, NavigatorMode } from './Constants';
 import { BoardMode, BoardSizeClass, ChessBoard, ChessDragLayer } from 'onix-board';
 import { ChessMoves } from './ChessMoves';
 import { ChessCaptured } from './ChessCaptured';
 import { PlayStore, gameNavigateToPly } from './GameStore';
-import { AnalyseGraphAsync } from 'onix-chess-analyse';
 import { Tabs, Tab, Row, Col, Button, FormGroup, ControlLabel, TextWithCopy } from 'onix-ui';
 import { GameState } from "./GameState";
 import { GameInfo } from "./GameInfo";
+
 
 
 export interface DumbGameProps {
