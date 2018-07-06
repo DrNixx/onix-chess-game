@@ -4,13 +4,13 @@ import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import { Intl } from '../Intl';
 import { Intl as IntlCore } from 'onix-core';
-import { MovesGraph } from 'onix-chess-movetimes';
+import { MovesGraphAsync } from 'onix-chess-movetimes';
 import { MovesMode, NavigatorMode } from './Constants';
-import { BoardMode, BoardSize, BoardSizeClass, ChessBoard, ChessDragLayer } from 'onix-board';
+import { BoardMode, BoardSizeClass, ChessBoard, ChessDragLayer } from 'onix-board';
 import { ChessMoves } from './ChessMoves';
 import { ChessCaptured } from './ChessCaptured';
-import { PlayStore, PlayState, gameNavigateToPly } from './GameStore';
-import { AnalyseGraph } from 'onix-chess-analyse';
+import { PlayStore, gameNavigateToPly } from './GameStore';
+import { AnalyseGraphAsync } from 'onix-chess-analyse';
 import { Tabs, Tab, Row, Col, Button, FormGroup, ControlLabel, TextWithCopy } from 'onix-ui';
 import { GameState } from "./GameState";
 import { GameInfo } from "./GameInfo";
@@ -110,7 +110,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
 
             return (
                 <Tab eventKey="movetime" title="Затраченное время">
-                    <MovesGraph 
+                    <MovesGraphAsync 
                         height={400}
                         white={game.players.white.moveCentis} 
                         black={game.players.black.moveCentis}
@@ -140,7 +140,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
                         <div className="counters">
                             <Tabs className="tabs" id={key + "-tabs2"}>
                                 <Tab eventKey="analysis" title={IntlCore.t("analyse", "title")}>
-                                    <AnalyseGraph 
+                                    <AnalyseGraphAsync 
                                         id={gameId}
                                         store={store} 
                                         height={400}
