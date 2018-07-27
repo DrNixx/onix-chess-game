@@ -199,8 +199,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
                                 <ChessBoard
                                     store={store}
                                     dnd={dnd}
-                                    legal={false}
-                                    getPiece={position.getPiece} />
+                                    legal={false} />
                                 <ChessDragLayer size={size} />
                             </div>
                             {this.renderControls(store)}

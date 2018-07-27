@@ -68,7 +68,7 @@
     float: right; }
     .tiles .controller a {
       position: relative;
-      background: url("//cdn.chess-online.com/images/icon/portlet-tray.png") no-repeat;
+      background: url("https://cdn.chess-online.com/images/icon/portlet-tray.png") no-repeat;
       transition: all 0.1s linear 0s;
       display: inline-block; }
       .tiles .controller a.remove {
@@ -336,7 +336,7 @@
       top: 10px; }
     .widget-item .controller a {
       position: relative;
-      background: url("//cdn.chess-online.com/images/icon/portlet-tray.png") no-repeat;
+      background: url("https://cdn.chess-online.com/images/icon/portlet-tray.png") no-repeat;
       transition: all 0.1s linear 0s;
       display: inline-block; }
       .widget-item .controller a.remove {
@@ -436,7 +436,7 @@
     margin-right: 8px; }
     .widget .controller a {
       position: relative;
-      background: url("//cdn.chess-online.com/images/icon/portlet-tray.png") no-repeat;
+      background: url("https://cdn.chess-online.com/images/icon/portlet-tray.png") no-repeat;
       transition: all 0.1s linear 0s;
       display: inline-block; }
       .widget .controller a.remove {
@@ -984,7 +984,7 @@ h4.custom-line-height {
   display: inline-block; }
   .conn-status .status-icon {
     margin: 0 10px 0 0;
-    background: url("//cdn.chess-online.com/images/icon/status.png") no-repeat;
+    background: url("https://cdn.chess-online.com/images/icon/status.png") no-repeat;
     position: relative;
     display: inline-block;
     top: 2px;
@@ -1051,20 +1051,20 @@ h4.custom-line-height {
     overflow: visible; } }
 @font-face {
   font-family: 'xi';
-  src: url("//cdn.chess-online.com/fonts/xi.eot?124470");
-  src: url("//cdn.chess-online.com/fonts/xi.eot?124470#iefix") format("embedded-opentype"), url("//cdn.chess-online.com/fonts/xi.woff2?124470") format("woff2"), url("//cdn.chess-online.com/fonts/xi.woff?124470") format("woff"), url("//cdn.chess-online.com/fonts/xi.ttf?124470") format("truetype"), url("//cdn.chess-online.com/fonts/xi.svg?124470#xi") format("svg");
+  src: url("https://cdn.chess-online.com/fonts/xi.eot?124470");
+  src: url("https://cdn.chess-online.com/fonts/xi.eot?124470#iefix") format("embedded-opentype"), url("https://cdn.chess-online.com/fonts/xi.woff2?124470") format("woff2"), url("https://cdn.chess-online.com/fonts/xi.woff?124470") format("woff"), url("https://cdn.chess-online.com/fonts/xi.ttf?124470") format("truetype"), url("https://cdn.chess-online.com/fonts/xi.svg?124470#xi") format("svg");
   font-weight: normal;
   font-style: normal; }
 @font-face {
   font-family: 'ci';
-  src: url("//cdn.chess-online.com/fonts/ci.eot?124470");
-  src: url("//cdn.chess-online.com/fonts/ci.eot?124470#iefix") format("embedded-opentype"), url("//cdn.chess-online.com/fonts/ci.woff2?124470") format("woff2"), url("//cdn.chess-online.com/fonts/ci.woff?124470") format("woff"), url("//cdn.chess-online.com/fonts/ci.ttf?124470") format("truetype"), url("//cdn.chess-online.com/fonts/ci.svg?124470#ci") format("svg");
+  src: url("https://cdn.chess-online.com/fonts/ci.eot?124470");
+  src: url("https://cdn.chess-online.com/fonts/ci.eot?124470#iefix") format("embedded-opentype"), url("https://cdn.chess-online.com/fonts/ci.woff2?124470") format("woff2"), url("https://cdn.chess-online.com/fonts/ci.woff?124470") format("woff"), url("https://cdn.chess-online.com/fonts/ci.ttf?124470") format("truetype"), url("https://cdn.chess-online.com/fonts/ci.svg?124470#ci") format("svg");
   font-weight: normal;
   font-style: normal; }
 @font-face {
   font-family: 'fullIcons';
-  src: url("//cdn.chess-online.com/fonts/gi.eot");
-  src: url("//cdn.chess-online.com/fonts/gi.eot?#iefix") format("embedded-opentype"), url("//cdn.chess-online.com/fonts/gi.woff2") format("woff2"), url("//cdn.chess-online.com/fonts/gi.woff") format("woff"), url("//cdn.chess-online.com/fonts/gi.ttf") format("truetype"), url("//cdn.chess-online.com/fonts/gi.svg#glyphiconsregular") format("svg");
+  src: url("https://cdn.chess-online.com/fonts/gi.eot");
+  src: url("https://cdn.chess-online.com/fonts/gi.eot?#iefix") format("embedded-opentype"), url("https://cdn.chess-online.com/fonts/gi.woff2") format("woff2"), url("https://cdn.chess-online.com/fonts/gi.woff") format("woff"), url("https://cdn.chess-online.com/fonts/gi.ttf") format("truetype"), url("https://cdn.chess-online.com/fonts/gi.svg#glyphiconsregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 [class*="gi-"] {

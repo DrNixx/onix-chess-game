@@ -37,7 +37,6 @@ export class ChessCaptured extends React.Component<ChessCapturedProps, {}> {
                             key={i}
                             piece={p}
                             selected={false}
-                            canMove={false}
                             onClick={null} />
                     );
                     if (c === Color.White) {

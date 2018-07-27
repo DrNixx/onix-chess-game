@@ -34,7 +34,6 @@ export class ViewGame extends React.Component<ChessGameProps, ChessGameState> {
         super(props);
 
         const { locale } = this.props;
-        const { canMove, doMove } = this;
         const { board, game} = this.props;
         const { size, piece, square, flip, coords, frame, fen: fenb } = board;
         const { pgn, fen: feng } = game;
@@ -81,9 +80,7 @@ export class ViewGame extends React.Component<ChessGameProps, ChessGameState> {
                         piece: Piece.NoPiece,
                         square: Square.NullSquare
                     }
-                },
-                canMove: canMove,
-                doMove: doMove,
+                }
             },
             game: gstate,
             analysis: analysis,
@@ -195,36 +192,6 @@ export class ViewGame extends React.Component<ChessGameProps, ChessGameState> {
         const { state, store } = this;
         const { pgn } = state;
         gameTakePgn(store, pgn);
-    }
-
-    canMove = (from: number, to: number): boolean => {
-        if (typeof to === "undefined") {
-            return typeof from !== "undefined";
-        }
-
-        const state: PlayState = this.store.getState();
-        return (to == Square.NullSquare) || (state.board.position.getPiece(to) == Piece.NoPiece);
-    }
-
-    doMove = (from: number, to: number, piece: number) => {
-        const state: PlayState = this.store.getState();
-        const position = state.board.position;
-
-        Logger.debug('doMove', from, to, piece);
-        if (from !== Square.NullSquare) {
-            piece = piece || position.getPiece(from);
-            if (!position.removePiece(piece, from)) {
-                return false;
-            }
-        }
-
-        if (piece && to !== Square.NullSquare) {
-            if (!position.addPiece(piece, to)) {
-                return false;
-            }
-        }
-
-        return true;
     }
 
     private flipBoard = (flag: boolean) => {

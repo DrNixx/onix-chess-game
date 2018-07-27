@@ -8,7 +8,6 @@ import * as gameActions from './GameActionConsts';
 import { IntlState, intlReducer, IntlAction } from 'onix-app';
 import { Piece, Square, Move } from 'onix-chess';
 import { AnalyseState, analyseReducer } from 'onix-chess-analyse';
-import { AnalyseAction } from 'onix-chess-analyse/dist/analyse/AnalyseActions';
  
 export interface PlayState {
     intl: IntlState,
@@ -69,7 +68,7 @@ export const gameSetSelection = (store: PlayStore, move?: Move) => {
         }
     }
 
-    store.dispatch({type: bac.SET_SELECTION, selection: selection } as ba.BoardAction);
+    store.dispatch({type: bac.SET_SELECTION, selection: selection } as ba.SetSelectionAction);
 }
 
 const msgHandler = (msg) => {
