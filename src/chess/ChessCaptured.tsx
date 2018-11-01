@@ -52,8 +52,8 @@ export class ChessCaptured extends React.Component<ChessCapturedProps, {}> {
 
         return (
             <div className="size2 ui-captures">
-                <div className="ui-captures-white">{white}</div>
-                <div className="ui-captures-black">{black}</div>
+                <div className="ui-captures-white d-flex flex-row flex-wrap">{white}</div>
+                <div className="ui-captures-black d-flex flex-row flex-wrap">{black}</div>
             </div>
         );
     }

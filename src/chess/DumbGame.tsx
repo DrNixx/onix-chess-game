@@ -79,7 +79,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
         const { pgn, key } = game;
 
         return (
-            <div className="controls">
+            <div className="controls flex-grow-1">
                 <Tabs className="tabs" id={key + "-tabs"}>
                     <Tab eventKey="moves" title={IntlCore.t("game", "movesTab")}>
                         {this.renderMoves(store)}
@@ -194,7 +194,7 @@ export class DumbGame extends React.Component<DumbGameProps, DumbGameState> {
             <div key={key} className={classes}>
                 <Row>
                     <Col md={12}>
-                        <div className="game-body">
+                        <div className="game-body d-block d-lg-flex">
                             <div className="board-container">
                                 <ChessBoard
                                     store={store}
