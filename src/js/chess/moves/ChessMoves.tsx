@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { PlayStore } from './GameStore';
+import { PlayStore } from '../GameStore';
 import { MovesMode, NavigatorMode } from './Constants';
 import { Move } from 'onix-chess';
 import { DumbMoveList } from './DumbMoveList';
 import { DumbMoveTable } from './DumbMoveTable';
-import { gameNavigateToMove, gameNavigateToKey } from './GameStore';
+import { gameNavigateToMove, gameNavigateToKey } from '../GameStore';
 
 export interface ChessMovesProps {
     mode: MovesMode,

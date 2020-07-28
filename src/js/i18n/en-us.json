@@ -1,0 +1,32 @@
+{
+    "game": {       
+        "movesTab": "Moves",
+        "infoTab": "Information",
+        "startDate": "Started",
+        "completeDate": "Completed",
+        "completeState": "Game complete",
+        "datesFmt": "Game was playing sinse %s to %s",
+        "tournament": "Tournament", 
+        "noTrn": "none",
+        "canPostpone": "отпуск разрешен",
+        "noPostpone": "без отпуска",
+        "timeControl": "Time control",
+        "privateGame": "Private",
+        "ratedGame": "Rated",
+        "unratedGame": "Unrated",
+        "useCompHints": "Using computer hints",
+        "allow": "allow",
+        "denied": "denied", 
+        "gameResultWhite": "%s (%s) wins by white - %s",
+        "gameResultWhite1": "%s wins by white - %s",
+        "gameResultBlack": "%s (%s) wins by black - %s",
+        "gameResultBlack1": "%s wins by black - %s",
+        "gameResultDraw": "The game ended a draw",
+        "infoLoading": "Loading...",
+        "send": "Send"
+    },
+    "app": {
+        "load": "Load",
+        "send": "Send"
+    }
+}

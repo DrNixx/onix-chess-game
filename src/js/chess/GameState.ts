@@ -1,6 +1,4 @@
-import { BoardMode } from 'onix-board';
 import { Chess as ChessGame } from 'onix-chess';
-import { IUser } from 'onix-core';
 import { AnalysisResult } from 'onix-chess-analyse';
 import { IClock } from './IClock';
 import { IGamePlayers } from './IGamePlayers';
@@ -105,7 +103,7 @@ export interface GameState {
     /**
      * Board mode
      */
-    mode?: BoardMode,
+    //mode?: BoardMode,
 
     /**
      * My color

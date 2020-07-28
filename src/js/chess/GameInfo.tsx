@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Intl as IntlCore, sprintf } from 'onix-core';
-import { Row, Col } from 'onix-ui';
 import { PlayStore } from './GameStore';
 import { GameState } from './GameState';
 

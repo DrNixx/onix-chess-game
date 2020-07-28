@@ -1,0 +1,3082 @@
+{
+    "data": {
+        "game": {
+            "id": "LvXvtvCT",
+            "variant": {
+                "key": "standard",
+                "name": "Standard",
+                "short": "Std"
+            },
+            "speed": "bullet",
+            "perf": "bullet",
+            "rated": true,
+            "initialFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+            "fen": "6k1/5pp1/1n5p/p1n5/3N4/7P/4KPP1/8 w - - 0 37",
+            "player": "white",
+            "turns": 72,
+            "startedAtTurn": 0,
+            "source": "friend",
+            "status": {
+                "id": 31,
+                "name": "resign"
+            },
+            "createdAt": 1586368838363,
+            "winner": "black",
+            "lastMove": "a4b6",
+            "moveCentis": [
+                0,
+                0,
+                72,
+                40,
+                32,
+                48,
+                32,
+                64,
+                24,
+                56,
+                80,
+                80,
+                96,
+                136,
+                40,
+                56,
+                32,
+                80,
+                48,
+                72,
+                144,
+                40,
+                0,
+                88,
+                40,
+                88,
+                48,
+                120,
+                64,
+                88,
+                216,
+                0,
+                280,
+                96,
+                136,
+                64,
+                0,
+                16,
+                128,
+                152,
+                200,
+                136,
+                400,
+                208,
+                136,
+                56,
+                128,
+                0,
+                88,
+                456,
+                48,
+                376,
+                0,
+                96,
+                312,
+                128,
+                280,
+                48,
+                0,
+                88,
+                600,
+                80,
+                0,
+                8,
+                240,
+                64,
+                64,
+                120,
+                128,
+                280,
+                112,
+                105,
+                37
+            ],
+            "division": {
+                "middle": 23,
+                "end": 59
+            },
+            "opening": {
+                "eco": "C78",
+                "name": "Ruy Lopez: Morphy Defense",
+                "ply": 9
+            }
+        },
+        "clock": {
+            "running": false,
+            "initial": 60,
+            "increment": 0,
+            "white": 17.18,
+            "black": 23.70,
+            "emerg": 10,
+            "moretime": 15
+        },
+        "correspondence": null,
+        "player": {
+            "color": "white",
+            "name": null,
+            "user": {
+                "id": "zhigalko_sergei",
+                "username": "Zhigalko_Sergei",
+                "online": false,
+                "perfs": {
+                    "bullet": {
+                        "games": 16868,
+                        "rating": 3081,
+                        "rd": 45,
+                        "prog": 9
+                    }
+                },
+                "title": "GM",
+                "language": "ru-RU",
+                "profile": {
+                    "country": "BY"
+                },
+                "patron": true
+            },
+            "rating": 3058,
+            "ratingDiff": -3,
+            "version": 0,
+            "spectator": true
+        },
+        "opponent": {
+            "color": "black",
+            "name": null,
+            "user": {
+                "id": "alireza2003",
+                "username": "alireza2003",
+                "online": true,
+                "perfs": {
+                    "bullet": {
+                        "games": 2650,
+                        "rating": 3286,
+                        "rd": 45,
+                        "prog": 5
+                    }
+                },
+                "title": "GM",
+                "language": "en-US",
+                "profile": {
+                    "country": "IR"
+                }
+            },
+            "rating": 3293,
+            "ratingDiff": 2
+        },
+        "orientation": "white",
+        "url": {
+            "socket": "/watch/LvXvtvCT/white/v5",
+            "round": "/LvXvtvCT/white"
+        },
+        "pref": {
+            "animationDuration": 250,
+            "coords": 1,
+            "resizeHandle": 1,
+            "replay": 2,
+            "clockTenths": 1,
+            "clockBar": true,
+            "highlight": true,
+            "destination": true,
+            "rookCastle": true,
+            "showCaptured": true
+        },
+        "evalPut": false,
+        "analysis": {
+            "id": "LvXvtvCT",
+            "white": {
+                "inaccuracy": 5,
+                "mistake": 2,
+                "blunder": 2,
+                "acpl": 42
+            },
+            "black": {
+                "inaccuracy": 4,
+                "mistake": 1,
+                "blunder": 1,
+                "acpl": 23
+            }
+        },
+        "treeParts": [
+            {
+                "ply": 0,
+                "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+                "eval": {
+                    "cp": 24
+                },
+                "clock": 6003
+            },
+            {
+                "ply": 1,
+                "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+                "id": "/?",
+                "uci": "e2e4",
+                "san": "e4",
+                "eval": {
+                    "cp": 24
+                },
+                "opening": {
+                    "eco": "B00",
+                    "name": "King\u0027s Pawn"
+                },
+                "clock": 6003
+            },
+            {
+                "ply": 2,
+                "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+                "id": "WG",
+                "uci": "e7e5",
+                "san": "e5",
+                "eval": {
+                    "cp": 37
+                },
+                "opening": {
+                    "eco": "C20",
+                    "name": "King\u0027s Pawn Game"
+                },
+                "clock": 6003
+            },
+            {
+                "ply": 3,
+                "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
+                "id": ")8",
+                "uci": "g1f3",
+                "san": "Nf3",
+                "eval": {
+                    "cp": 24
+                },
+                "opening": {
+                    "eco": "C40",
+                    "name": "King\u0027s Knight Opening"
+                },
+                "clock": 5931
+            },
+            {
+                "ply": 4,
+                "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+                "id": "\u005cM",
+                "uci": "b8c6",
+                "san": "Nc6",
+                "eval": {
+                    "cp": 32
+                },
+                "opening": {
+                    "eco": "C44",
+                    "name": "King\u0027s Knight Opening: Normal Variation"
+                },
+                "clock": 5963
+            },
+            {
+                "ply": 5,
+                "fen": "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+                "id": "(D",
+                "uci": "f1b5",
+                "san": "Bb5",
+                "eval": {
+                    "cp": 43
+                },
+                "opening": {
+                    "eco": "C60",
+                    "name": "Ruy Lopez"
+                },
+                "clock": 5899
+            },
+            {
+                "ply": 6,
+                "fen": "r1bqkbnr/1ppp1ppp/p1n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4",
+                "id": "SK",
+                "uci": "a7a6",
+                "san": "a6",
+                "eval": {
+                    "cp": 37
+                },
+                "opening": {
+                    "eco": "C70",
+                    "name": "Ruy Lopez"
+                },
+                "clock": 5915
+            },
+            {
+                "ply": 7,
+                "fen": "r1bqkbnr/1ppp1ppp/p1n5/4p3/B3P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 4",
+                "id": "D;",
+                "uci": "b5a4",
+                "san": "Ba4",
+                "eval": {
+                    "cp": 45
+                },
+                "opening": {
+                    "eco": "C68",
+                    "name": "Ruy Lopez: Columbus Variation"
+                },
+                "clock": 5867
+            },
+            {
+                "ply": 8,
+                "fen": "r1bqkb1r/1ppp1ppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 2 5",
+                "id": "aP",
+                "uci": "g8f6",
+                "san": "Nf6",
+                "eval": {
+                    "cp": 34
+                },
+                "clock": 5851
+            },
+            {
+                "ply": 9,
+                "fen": "r1bqkb1r/1ppp1ppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 3 5",
+                "id": "\u0027*",
+                "uci": "e1h1",
+                "san": "O-O",
+                "eval": {
+                    "cp": 25
+                },
+                "opening": {
+                    "eco": "C78",
+                    "name": "Ruy Lopez: Morphy Defense"
+                },
+                "clock": 5843
+            },
+            {
+                "ply": 10,
+                "fen": "r1bqkb1r/2pp1ppp/p1n2n2/1p2p3/B3P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 0 6",
+                "id": "TD",
+                "uci": "b7b5",
+                "san": "b5",
+                "eval": {
+                    "cp": 45
+                },
+                "clock": 5795
+            },
+            {
+                "ply": 11,
+                "fen": "r1bqkb1r/2pp1ppp/p1n2n2/1p2p3/4P3/1B3N2/PPPP1PPP/RNBQ1RK1 b kq - 1 6",
+                "id": ";4",
+                "uci": "a4b3",
+                "san": "Bb3",
+                "eval": {
+                    "cp": 39
+                },
+                "clock": 5763
+            },
+            {
+                "ply": 12,
+                "fen": "r1bqk2r/2pp1ppp/p1n2n2/1pb1p3/4P3/1B3N2/PPPP1PPP/RNBQ1RK1 w kq - 2 7",
+                "id": "\u0060E",
+                "uci": "f8c5",
+                "san": "Bc5",
+                "eval": {
+                    "cp": 30
+                },
+                "clock": 5715
+            },
+            {
+                "ply": 13,
+                "fen": "r1bqk2r/2pp1ppp/p1n2n2/1pb1p3/P3P3/1B3N2/1PPP1PPP/RNBQ1RK1 b kq - 0 7",
+                "id": "+;",
+                "uci": "a2a4",
+                "san": "a4",
+                "eval": {
+                    "cp": 39
+                },
+                "clock": 5667
+            },
+            {
+                "ply": 14,
+                "fen": "r1bqk2r/2pp1ppp/p1n2n2/2b1p3/Pp2P3/1B3N2/1PPP1PPP/RNBQ1RK1 w kq - 0 8",
+                "id": "D\u003c",
+                "uci": "b5b4",
+                "san": "b4",
+                "eval": {
+                    "cp": 68
+                },
+                "clock": 5579,
+                "children": [
+                    {
+                        "ply": 15,
+                        "fen": "r1bqk2r/2pp1ppp/p1n2n2/2b1N3/Pp2P3/1B6/1PPP1PPP/RNBQ1RK1 b kq - 0 8",
+                        "id": "8G",
+                        "uci": "f3e5",
+                        "san": "Nxe5",
+                        "comp": true,
+                        "children": [
+                            {
+                                "ply": 16,
+                                "fen": "r1bqk2r/2pp1ppp/p4n2/2b1n3/Pp2P3/1B6/1PPP1PPP/RNBQ1RK1 w kq - 0 9",
+                                "id": "MG",
+                                "uci": "c6e5",
+                                "san": "Nxe5",
+                                "children": [
+                                    {
+                                        "ply": 17,
+                                        "fen": "r1bqk2r/2pp1ppp/p4n2/2b1n3/Pp1PP3/1B6/1PP2PPP/RNBQ1RK1 b kq - 0 9",
+                                        "id": ".\u003e",
+                                        "uci": "d2d4",
+                                        "san": "d4",
+                                        "children": [
+                                            {
+                                                "ply": 18,
+                                                "fen": "r1bqk2r/2pp1ppp/p4n2/4n3/Pp1bP3/1B6/1PP2PPP/RNBQ1RK1 w kq - 0 10",
+                                                "id": "E\u003e",
+                                                "uci": "c5d4",
+                                                "san": "Bxd4",
+                                                "children": [
+                                                    {
+                                                        "ply": 19,
+                                                        "fen": "r1bqk2r/2pp1ppp/p4n2/4n3/Pp1QP3/1B6/1PP2PPP/RNB2RK1 b kq - 0 10",
+                                                        "id": "\u0026\u003e",
+                                                        "uci": "d1d4",
+                                                        "san": "Qxd4",
+                                                        "children": [
+                                                            {
+                                                                "ply": 20,
+                                                                "fen": "r1bqk2r/2pp1ppp/p1n2n2/8/Pp1QP3/1B6/1PP2PPP/RNB2RK1 w kq - 1 11",
+                                                                "id": "GM",
+                                                                "uci": "e5c6",
+                                                                "san": "Nc6",
+                                                                "children": [
+                                                                    {
+                                                                        "ply": 21,
+                                                                        "fen": "r1bqk2r/2pp1ppp/p1n2n2/2Q5/Pp2P3/1B6/1PP2PPP/RNB2RK1 b kq - 2 11",
+                                                                        "id": "\u003eE",
+                                                                        "uci": "d4c5",
+                                                                        "san": "Qc5",
+                                                                        "children": [
+                                                                            {
+                                                                                "ply": 22,
+                                                                                "fen": "r2qk2r/1bpp1ppp/p1n2n2/2Q5/Pp2P3/1B6/1PP2PPP/RNB2RK1 w kq - 3 12",
+                                                                                "id": "]T",
+                                                                                "uci": "c8b7",
+                                                                                "san": "Bb7",
+                                                                                "children": [
+                                                                                    {
+                                                                                        "ply": 23,
+                                                                                        "fen": "r2qk2r/1bpp1ppp/p1n2n2/2Q3B1/Pp2P3/1B6/1PP2PPP/RN3RK1 b kq - 4 12",
+                                                                                        "id": "%I",
+                                                                                        "uci": "c1g5",
+                                                                                        "san": "Bg5",
+                                                                                        "children": [
+                                                                                            {
+                                                                                                "ply": 24,
+                                                                                                "fen": "r2qk2r/1bp2ppp/p1np1n2/2Q3B1/Pp2P3/1B6/1PP2PPP/RN3RK1 w kq - 0 13",
+                                                                                                "id": "VN",
+                                                                                                "uci": "d7d6",
+                                                                                                "san": "d6",
+                                                                                                "children": []
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "ply": 15,
+                "fen": "r1bqk2r/2pp1ppp/p1n2n2/2b1p3/Pp2P3/1B1P1N2/1PP2PPP/RNBQ1RK1 b kq - 0 8",
+                "id": ".6",
+                "uci": "d2d3",
+                "san": "d3",
+                "eval": {
+                    "cp": 0,
+                    "best": "f3e5"
+                },
+                "comments": [
+                    {
+                        "id": "qwOX",
+                        "text": "Inaccuracy. Nxe5 was best.",
+                        "by": "lichess"
+                    }
+                ],
+                "glyphs": [
+                    {
+                        "id": 6,
+                        "symbol": "?!",
+                        "name": "Dubious move"
+                    }
+                ],
+                "clock": 5627
+            },
+            {
+                "ply": 16,
+                "fen": "r1bqk2r/2p2ppp/p1np1n2/2b1p3/Pp2P3/1B1P1N2/1PP2PPP/RNBQ1RK1 w kq - 0 9",
+                "id": "VN",
+                "uci": "d7d6",
+                "san": "d6",
+                "eval": {
+                    "cp": 0
+                },
+                "clock": 5523
+            },
+            {
+                "ply": 17,
+                "fen": "r1bqk2r/2p2ppp/p1np1n2/2b1p3/Pp2P3/1B1P1N2/1PPN1PPP/R1BQ1RK1 b kq - 1 9",
+                "id": "$.",
+                "uci": "b1d2",
+                "san": "Nbd2",
+                "eval": {
+                    "cp": 0
+                },
+                "clock": 5595
+            },
+            {
+                "ply": 18,
+                "fen": "r1bq1rk1/2p2ppp/p1np1n2/2b1p3/Pp2P3/1B1P1N2/1PPN1PPP/R1BQ1RK1 w - - 2 10",
+                "id": "_b",
+                "uci": "e8h8",
+                "san": "O-O",
+                "eval": {
+                    "cp": 0
+                },
+                "clock": 5443
+            },
+            {
+                "ply": 19,
+                "fen": "r1bq1rk1/2p2ppp/p1np1n2/2b1p3/Pp2P3/1B1P1N1P/1PPN1PP1/R1BQ1RK1 b - - 0 10",
+                "id": "2:",
+                "uci": "h2h3",
+                "san": "h3",
+                "eval": {
+                    "cp": 1
+                },
+                "clock": 5547,
+                "children": [
+                    {
+                        "ply": 20,
+                        "fen": "r1bq1rk1/2p2pp1/p1np1n1p/2b1p3/Pp2P3/1B1P1N1P/1PPN1PP1/R1BQ1RK1 w - - 0 11",
+                        "id": "ZR",
+                        "uci": "h7h6",
+                        "san": "h6",
+                        "comp": true,
+                        "children": [
+                            {
+                                "ply": 21,
+                                "fen": "r1bq1rk1/2p2pp1/p1np1n1p/P1b1p3/1p2P3/1B1P1N1P/1PPN1PP1/R1BQ1RK1 b - - 0 11",
+                                "id": ";C",
+                                "uci": "a4a5",
+                                "san": "a5",
+                                "children": [
+                                    {
+                                        "ply": 22,
+                                        "fen": "r2q1rk1/2p2pp1/p1npbn1p/P1b1p3/1p2P3/1B1P1N1P/1PPN1PP1/R1BQ1RK1 w - - 1 12",
+                                        "id": "]O",
+                                        "uci": "c8e6",
+                                        "san": "Be6",
+                                        "children": [
+                                            {
+                                                "ply": 23,
+                                                "fen": "r2q1rk1/2p2pp1/p1npbn1p/P1b1p3/1p2P3/1B1P1N1P/1PPN1PP1/R1BQR1K1 b - - 2 12",
+                                                "id": "(\u0027",
+                                                "uci": "f1e1",
+                                                "san": "Re1",
+                                                "children": [
+                                                    {
+                                                        "ply": 24,
+                                                        "fen": "1r1q1rk1/2p2pp1/p1npbn1p/P1b1p3/1p2P3/1B1P1N1P/1PPN1PP1/R1BQR1K1 w - - 3 13",
+                                                        "id": "[\u005c",
+                                                        "uci": "a8b8",
+                                                        "san": "Rb8",
+                                                        "children": [
+                                                            {
+                                                                "ply": 25,
+                                                                "fen": "1r1q1rk1/2p2pp1/p1npbn1p/P1b1p3/1pB1P3/3P1N1P/1PPN1PP1/R1BQR1K1 b - - 4 13",
+                                                                "id": "4=",
+                                                                "uci": "b3c4",
+                                                                "san": "Bc4",
+                                                                "children": [
+                                                                    {
+                                                                        "ply": 26,
+                                                                        "fen": "1rq2rk1/2p2pp1/p1npbn1p/P1b1p3/1pB1P3/3P1N1P/1PPN1PP1/R1BQR1K1 w - - 5 14",
+                                                                        "id": "^]",
+                                                                        "uci": "d8c8",
+                                                                        "san": "Qc8",
+                                                                        "children": [
+                                                                            {
+                                                                                "ply": 27,
+                                                                                "fen": "1rq2rk1/2p2pp1/p1npBn1p/P1b1p3/1p2P3/3P1N1P/1PPN1PP1/R1BQR1K1 b - - 0 14",
+                                                                                "id": "=O",
+                                                                                "uci": "c4e6",
+                                                                                "san": "Bxe6",
+                                                                                "children": [
+                                                                                    {
+                                                                                        "ply": 28,
+                                                                                        "fen": "1rq2rk1/2p3p1/p1nppn1p/P1b1p3/1p2P3/3P1N1P/1PPN1PP1/R1BQR1K1 w - - 0 15",
+                                                                                        "id": "XO",
+                                                                                        "uci": "f7e6",
+                                                                                        "san": "fxe6",
+                                                                                        "children": [
+                                                                                            {
+                                                                                                "ply": 29,
+                                                                                                "fen": "1rq2rk1/2p3p1/p1nppn1p/P1b1p3/1p2P3/1N1P1N1P/1PP2PP1/R1BQR1K1 b - - 1 15",
+                                                                                                "id": ".4",
+                                                                                                "uci": "d2b3",
+                                                                                                "san": "Nb3",
+                                                                                                "children": [
+                                                                                                    {
+                                                                                                        "ply": 30,
+                                                                                                        "fen": "1rq2rk1/b1p3p1/p1nppn1p/P3p3/1p2P3/1N1P1N1P/1PP2PP1/R1BQR1K1 w - - 2 16",
+                                                                                                        "id": "ES",
+                                                                                                        "uci": "c5a7",
+                                                                                                        "san": "Ba7",
+                                                                                                        "children": [
+                                                                                                            {
+                                                                                                                "ply": 31,
+                                                                                                                "fen": "1rq2rk1/b1p3p1/p1nppn1p/P3p3/1p2P3/1N1PBN1P/1PP2PP1/R2QR1K1 b - - 3 16",
+                                                                                                                "id": "%7",
+                                                                                                                "uci": "c1e3",
+                                                                                                                "san": "Be3",
+                                                                                                                "children": [
+                                                                                                                    {
+                                                                                                                        "ply": 32,
+                                                                                                                        "fen": "1rq2rk1/2p3p1/p1nppn1p/P3p3/1p2P3/1N1PbN1P/1PP2PP1/R2QR1K1 w - - 0 17",
+                                                                                                                        "id": "S7",
+                                                                                                                        "uci": "a7e3",
+                                                                                                                        "san": "Bxe3",
+                                                                                                                        "children": [
+                                                                                                                            {
+                                                                                                                                "ply": 33,
+                                                                                                                                "fen": "1rq2rk1/2p3p1/p1nppn1p/P3p3/1p2P3/1N1PRN1P/1PP2PP1/R2Q2K1 b - - 0 17",
+                                                                                                                                "id": "\u00277",
+                                                                                                                                "uci": "e1e3",
+                                                                                                                                "san": "Rxe3",
+                                                                                                                                "children": []
+                                                                                                                            }
+                                                                                                                        ]
+                                                                                                                    }
+                                                                                                                ]
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                ]
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "ply": 20,
+                "fen": "r1bq1rk1/2p1nppp/p2p1n2/2b1p3/Pp2P3/1B1P1N1P/1PPN1PP1/R1BQ1RK1 w - - 1 11",
+                "id": "MW",
+                "uci": "c6e7",
+                "san": "Ne7",
+                "eval": {
+                    "cp": 52,
+                    "best": "h7h6"
+                },
+                "comments": [
+                    {
+                        "id": "IY4l",
+                        "text": "Inaccuracy. h6 was best.",
+                        "by": "lichess"
+                    }
+                ],
+                "glyphs": [
+                    {
+                        "id": 6,
+                        "symbol": "?!",
+                        "name": "Dubious move"
+                    }
+                ],
+                "clock": 5371
+            },
+            {
+                "ply": 21,
+                "fen": "r1bq1rk1/2p1nppp/p2p1n2/2b1p3/Pp2P3/1B1P1N1P/1PPN1PP1/R1BQR1K1 b - - 2 11",
+                "id": "(\u0027",
+                "uci": "f1e1",
+                "san": "Re1",
+                "eval": {
+                    "cp": 58
+                },
+                "clock": 5403
+            },
+            {
+                "ply": 22,
+                "fen": "r1bq1rk1/2p2ppp/p2p1nn1/2b1p3/Pp2P3/1B1P1N1P/1PPN1PP1/R1BQR1K1 w - - 3 12",
+                "id": "WQ",
+                "uci": "e7g6",
+                "san": "Ng6",
+                "eval": {
+                    "cp": 60
+                },
+                "clock": 5331
+            },
+            {
+                "ply": 23,
+                "fen": "r1bq1rk1/2p2ppp/p2p1nn1/2b1p3/Pp2P3/1B1P1N1P/1PP2PP1/R1BQRNK1 b - - 4 12",
+                "id": ".(",
+                "uci": "d2f1",
+                "san": "Nf1",
+                "eval": {
+                    "cp": 58
+                },
+                "clock": 5403
+            },
+            {
+                "ply": 24,
+                "fen": "r1bq1rk1/2p2pp1/p2p1nnp/2b1p3/Pp2P3/1B1P1N1P/1PP2PP1/R1BQRNK1 w - - 0 13",
+                "id": "ZR",
+                "uci": "h7h6",
+                "san": "h6",
+                "eval": {
+                    "cp": 56
+                },
+                "clock": 5243
+            },
+            {
+                "ply": 25,
+                "fen": "r1bq1rk1/2p2pp1/p2p1nnp/2b1p3/Pp2P3/1B1P1NNP/1PP2PP1/R1BQR1K1 b - - 1 13",
+                "id": "(9",
+                "uci": "f1g3",
+                "san": "Ng3",
+                "eval": {
+                    "cp": 47
+                },
+                "clock": 5363
+            },
+            {
+                "ply": 26,
+                "fen": "r1bqr1k1/2p2pp1/p2p1nnp/2b1p3/Pp2P3/1B1P1NNP/1PP2PP1/R1BQR1K1 w - - 2 14",
+                "id": "\u0060_",
+                "uci": "f8e8",
+                "san": "Re8",
+                "eval": {
+                    "cp": 41
+                },
+                "clock": 5155
+            },
+            {
+                "ply": 27,
+                "fen": "r1bqr1k1/2p2pp1/p2p1nnp/2b1p3/Pp2P3/1BPP1NNP/1P3PP1/R1BQR1K1 b - - 0 14",
+                "id": "-5",
+                "uci": "c2c3",
+                "san": "c3",
+                "eval": {
+                    "cp": 48
+                },
+                "clock": 5315
+            },
+            {
+                "ply": 28,
+                "fen": "r1bqr1k1/2p2pp1/3p1nnp/p1b1p3/Pp2P3/1BPP1NNP/1P3PP1/R1BQR1K1 w - - 0 15",
+                "id": "KC",
+                "uci": "a6a5",
+                "san": "a5",
+                "eval": {
+                    "cp": 83
+                },
+                "clock": 5035
+            },
+            {
+                "ply": 29,
+                "fen": "r1bqr1k1/2p2pp1/3p1nnp/p1b1p3/Pp1PP3/1BP2NNP/1P3PP1/R1BQR1K1 b - - 0 15",
+                "id": "6\u003e",
+                "uci": "d3d4",
+                "san": "d4",
+                "eval": {
+                    "cp": 91
+                },
+                "clock": 5251
+            },
+            {
+                "ply": 30,
+                "fen": "r1bqr1k1/2p2pp1/1b1p1nnp/p3p3/Pp1PP3/1BP2NNP/1P3PP1/R1BQR1K1 w - - 1 16",
+                "id": "EL",
+                "uci": "c5b6",
+                "san": "Bb6",
+                "eval": {
+                    "cp": 83
+                },
+                "clock": 4947
+            },
+            {
+                "ply": 31,
+                "fen": "r1bqr1k1/2p2pp1/1b1p1nnp/p3P3/Pp2P3/1BP2NNP/1P3PP1/R1BQR1K1 b - - 0 16",
+                "id": "\u003eG",
+                "uci": "d4e5",
+                "san": "dxe5",
+                "eval": {
+                    "cp": 46
+                },
+                "clock": 5035
+            },
+            {
+                "ply": 32,
+                "fen": "r1bqr1k1/2p2pp1/1b3nnp/p3p3/Pp2P3/1BP2NNP/1P3PP1/R1BQR1K1 w - - 0 17",
+                "id": "NG",
+                "uci": "d6e5",
+                "san": "dxe5",
+                "eval": {
+                    "cp": 49
+                },
+                "clock": 4947,
+                "children": [
+                    {
+                        "ply": 33,
+                        "fen": "r1bqr1k1/2p2pp1/1b3nnp/p3p3/Pp2P3/1BP2NNP/1PQ2PP1/R1B1R1K1 b - - 1 17",
+                        "id": "\u0026-",
+                        "uci": "d1c2",
+                        "san": "Qc2",
+                        "comp": true,
+                        "children": [
+                            {
+                                "ply": 34,
+                                "fen": "r1b1r1k1/2p1qpp1/1b3nnp/p3p3/Pp2P3/1BP2NNP/1PQ2PP1/R1B1R1K1 w - - 2 18",
+                                "id": "^W",
+                                "uci": "d8e7",
+                                "san": "Qe7",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "ply": 33,
+                "fen": "r1bqr1k1/2p2pp1/1b3nnp/p3p3/Pp2P3/1BP2NNP/1P2QPP1/R1B1R1K1 b - - 1 17",
+                "id": "\u0026/",
+                "uci": "d1e2",
+                "san": "Qe2",
+                "eval": {
+                    "cp": -72,
+                    "best": "d1c2"
+                },
+                "comments": [
+                    {
+                        "id": "73O3",
+                        "text": "Mistake. Qc2 was best.",
+                        "by": "lichess"
+                    }
+                ],
+                "glyphs": [
+                    {
+                        "id": 2,
+                        "symbol": "?",
+                        "name": "Mistake"
+                    }
+                ],
+                "clock": 4755,
+                "children": [
+                    {
+                        "ply": 34,
+                        "fen": "r1bqr1k1/2p2pp1/1b3n1p/p3p3/Pp2Pn2/1BP2NNP/1P2QPP1/R1B1R1K1 w - - 2 18",
+                        "id": "Q@",
+                        "uci": "g6f4",
+                        "san": "Nf4",
+                        "comp": true,
+                        "children": [
+                            {
+                                "ply": 35,
+                                "fen": "r1bqr1k1/2p2pp1/1b3n1p/p3p3/Pp2Pn2/1BP2NNP/1PQ2PP1/R1B1R1K1 b - - 3 18",
+                                "id": "/-",
+                                "uci": "e2c2",
+                                "san": "Qc2",
+                                "children": [
+                                    {
+                                        "ply": 36,
+                                        "fen": "r1b1r1k1/2p2pp1/1b3n1p/p3p3/Pp2Pn2/1BPq1NNP/1PQ2PP1/R1B1R1K1 w - - 4 19",
+                                        "id": "^6",
+                                        "uci": "d8d3",
+                                        "san": "Qd3",
+                                        "children": [
+                                            {
+                                                "ply": 37,
+                                                "fen": "r1b1r1k1/2p2pp1/1b3n1p/p3p3/Pp2PB2/1BPq1NNP/1PQ2PP1/R3R1K1 b - - 0 19",
+                                                "id": "%@",
+                                                "uci": "c1f4",
+                                                "san": "Bxf4",
+                                                "children": [
+                                                    {
+                                                        "ply": 38,
+                                                        "fen": "r1b1r1k1/2p2pp1/1b3n1p/p3p3/Pp2PB2/1BP2NNP/1Pq2PP1/R3R1K1 w - - 0 20",
+                                                        "id": "6-",
+                                                        "uci": "d3c2",
+                                                        "san": "Qxc2",
+                                                        "children": [
+                                                            {
+                                                                "ply": 39,
+                                                                "fen": "r1b1r1k1/2p2pp1/1b3n1p/p3p3/Pp2PB2/2P2NNP/1PB2PP1/R3R1K1 b - - 0 20",
+                                                                "id": "4-",
+                                                                "uci": "b3c2",
+                                                                "san": "Bxc2",
+                                                                "children": [
+                                                                    {
+                                                                        "ply": 40,
+                                                                        "fen": "r1b1r1k1/2p2pp1/1b3n1p/p7/Pp2Pp2/2P2NNP/1PB2PP1/R3R1K1 w - - 0 21",
+                                                                        "id": "G@",
+                                                                        "uci": "e5f4",
+                                                                        "san": "exf4",
+                                                                        "children": [
+                                                                            {
+                                                                                "ply": 41,
+                                                                                "fen": "r1b1r1k1/2p2pp1/1b3n1p/p4N2/Pp2Pp2/2P2N1P/1PB2PP1/R3R1K1 b - - 1 21",
+                                                                                "id": "9H",
+                                                                                "uci": "g3f5",
+                                                                                "san": "Nf5",
+                                                                                "children": [
+                                                                                    {
+                                                                                        "ply": 42,
+                                                                                        "fen": "r1b1r1k1/2pn1pp1/1b5p/p4N2/Pp2Pp2/2P2N1P/1PB2PP1/R3R1K1 w - - 2 22",
+                                                                                        "id": "PV",
+                                                                                        "uci": "f6d7",
+                                                                                        "san": "Nd7",
+                                                                                        "children": [
+                                                                                            {
+                                                                                                "ply": 43,
+                                                                                                "fen": "r1b1r1k1/2pn1pp1/1b5p/p7/Pp1NPp2/2P2N1P/1PB2PP1/R3R1K1 b - - 3 22",
+                                                                                                "id": "H\u003e",
+                                                                                                "uci": "f5d4",
+                                                                                                "san": "N5d4",
+                                                                                                "children": [
+                                                                                                    {
+                                                                                                        "ply": 44,
+                                                                                                        "fen": "r1b1r1k1/2pn1pp1/1b5p/p7/P2NPp2/2p2N1P/1PB2PP1/R3R1K1 w - - 0 23",
+                                                                                                        "id": "\u003c5",
+                                                                                                        "uci": "b4c3",
+                                                                                                        "san": "bxc3",
+                                                                                                        "children": [
+                                                                                                            {
+                                                                                                                "ply": 45,
+                                                                                                                "fen": "r1b1r1k1/2pn1pp1/1b5p/p7/P2NPp2/2P2N1P/2B2PP1/R3R1K1 b - - 0 23",
+                                                                                                                "id": ",5",
+                                                                                                                "uci": "b2c3",
+                                                                                                                "san": "bxc3",
+                                                                                                                "children": [
+                                                                                                                    {
+                                                                                                                        "ply": 46,
+                                                                                                                        "fen": "r3r1k1/1bpn1pp1/1b5p/p7/P2NPp2/2P2N1P/2B2PP1/R3R1K1 w - - 1 24",
+                                                                                                                        "id": "]T",
+                                                                                                                        "uci": "c8b7",
+                                                                                                                        "san": "Bb7",
+                                                                                                                        "children": [
+                                                                                                                            {
+                                                                                                                                "ply": 47,
+                                                                                                                                "fen": "r3r1k1/1bpn1pp1/1b5p/p7/P2NPp2/2P2N1P/2B2PP1/3RR1K1 b - - 2 24",
+                                                                                                                                "id": "#\u0026",
+                                                                                                                                "uci": "a1d1",
+                                                                                                                                "san": "Rad1",
+                                                                                                                                "children": []
+                                                                                                                            }
+                                                                                                                        ]
+                                                                                                                    }
+                                                                                                                ]
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                ]
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "ply": 34,
+                "fen": "r2qr1k1/2p2pp1/bb3nnp/p3p3/Pp2P3/1BP2NNP/1P2QPP1/R1B1R1K1 w - - 2 18",
+                "id": "]K",
+                "uci": "c8a6",
+                "san": "Ba6",
+                "eval": {
+                    "cp": -19,
+                    "best": "g6f4"
+                },
+                "comments": [
+                    {
+                        "id": "XBYD",
+                        "text": "Inaccuracy. Nf4 was best.",
+                        "by": "lichess"
+                    }
+                ],
+                "glyphs": [
+                    {
+                        "id": 6,
+                        "symbol": "?!",
+                        "name": "Dubious move"
+                    }
+                ],
+                "clock": 4851,
+                "children": [
+                    {
+                        "ply": 35,
+                        "fen": "r2qr1k1/2p2pp1/bb3nnp/p3p3/Pp2P3/1BP2NNP/1P1Q1PP1/R1B1R1K1 b - - 3 18",
+                        "id": "/.",
+                        "uci": "e2d2",
+                        "san": "Qd2",
+                        "comp": true,
+                        "children": [
+                            {
+                                "ply": 36,
+                                "fen": "r3r1k1/2p2pp1/bb3nnp/p3p3/Pp2P3/1BP2NNP/1P1q1PP1/R1B1R1K1 w - - 0 19",
+                                "id": "^.",
+                                "uci": "d8d2",
+                                "san": "Qxd2",
+                                "children": [
+                                    {
+                                        "ply": 37,
+                                        "fen": "r3r1k1/2p2pp1/bb3nnp/p3p3/Pp2P3/1BP2NNP/1P1B1PP1/R3R1K1 b - - 0 19",
+                                        "id": "%.",
+                                        "uci": "c1d2",
+                                        "san": "Bxd2",
+                                        "children": [
+                                            {
+                                                "ply": 38,
+                                                "fen": "r3r1k1/5pp1/bb3nnp/p1p1p3/Pp2P3/1BP2NNP/1P1B1PP1/R3R1K1 w - - 0 20",
+                                                "id": "UE",
+                                                "uci": "c7c5",
+                                                "san": "c5",
+                                                "children": [
+                                                    {
+                                                        "ply": 39,
+                                                        "fen": "r3r1k1/5pp1/bb3nnp/p1p1p3/PP2P3/1B3NNP/1P1B1PP1/R3R1K1 b - - 0 20",
+                                                        "id": "5\u003c",
+                                                        "uci": "c3b4",
+                                                        "san": "cxb4",
+                                                        "children": [
+                                                            {
+                                                                "ply": 40,
+                                                                "fen": "r3r1k1/5pp1/bb3nnp/p3p3/Pp2P3/1B3NNP/1P1B1PP1/R3R1K1 w - - 0 21",
+                                                                "id": "E\u003c",
+                                                                "uci": "c5b4",
+                                                                "san": "cxb4",
+                                                                "children": [
+                                                                    {
+                                                                        "ply": 41,
+                                                                        "fen": "r3r1k1/5pp1/bb3nnp/p3pN2/Pp2P3/1B3N1P/1P1B1PP1/R3R1K1 b - - 1 21",
+                                                                        "id": "9H",
+                                                                        "uci": "g3f5",
+                                                                        "san": "Nf5",
+                                                                        "children": [
+                                                                            {
+                                                                                "ply": 42,
+                                                                                "fen": "r2r2k1/5pp1/bb3nnp/p3pN2/Pp2P3/1B3N1P/1P1B1PP1/R3R1K1 w - - 2 22",
+                                                                                "id": "_^",
+                                                                                "uci": "e8d8",
+                                                                                "san": "Red8",
+                                                                                "children": [
+                                                                                    {
+                                                                                        "ply": 43,
+                                                                                        "fen": "r2r2k1/5pp1/bb3nnp/p3pN2/Pp2P3/1B3N1P/1P1B1PP1/2R1R1K1 b - - 3 22",
+                                                                                        "id": "#%",
+                                                                                        "uci": "a1c1",
+                                                                                        "san": "Rac1",
+                                                                                        "children": [
+                                                                                            {
+                                                                                                "ply": 44,
+                                                                                                "fen": "2rr2k1/5pp1/bb3nnp/p3pN2/Pp2P3/1B3N1P/1P1B1PP1/2R1R1K1 w - - 4 23",
+                                                                                                "id": "[]",
+                                                                                                "uci": "a8c8",
+                                                                                                "san": "Rac8",
+                                                                                                "children": [
+                                                                                                    {
+                                                                                                        "ply": 45,
+                                                                                                        "fen": "2Rr2k1/5pp1/bb3nnp/p3pN2/Pp2P3/1B3N1P/1P1B1PP1/4R1K1 b - - 0 23",
+                                                                                                        "id": "%]",
+                                                                                                        "uci": "c1c8",
+                                                                                                        "san": "Rxc8",
+                                                                                                        "children": [
+                                                                                                            {
+                                                                                                                "ply": 46,
+                                                                                                                "fen": "2br2k1/5pp1/1b3nnp/p3pN2/Pp2P3/1B3N1P/1P1B1PP1/4R1K1 w - - 0 24",
+                                                                                                                "id": "K]",
+                                                                                                                "uci": "a6c8",
+                                                                                                                "san": "Bxc8",
+                                                                                                                "children": [
+                                                                                                                    {
+                                                                                                                        "ply": 47,
+                                                                                                                        "fen": "2br2k1/5pp1/1b3nnp/p3pN2/Pp2P3/1B2BN1P/1P3PP1/4R1K1 b - - 1 24",
+                                                                                                                        "id": ".7",
+                                                                                                                        "uci": "d2e3",
+                                                                                                                        "san": "Be3",
+                                                                                                                        "children": [
+                                                                                                                            {
+                                                                                                                                "ply": 48,
+                                                                                                                                "fen": "2br2k1/5pp1/5nnp/p3pN2/Pp2P3/1B2bN1P/1P3PP1/4R1K1 w - - 0 25",
+                                                                                                                                "id": "L7",
+                                                                                                                                "uci": "b6e3",
+                                                                                                                                "san": "Bxe3",
+                                                                                                                                "children": []
+                                                                                                                            }
+                                                                                                                        ]
+                                                                                                                    }
+                                                                                                                ]
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                ]
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "ply": 35,
+                "fen": "r2qr1k1/2p2pp1/bb3nnp/p3p3/PpB1P3/2P2NNP/1P2QPP1/R1B1R1K1 b - - 3 18",
+                "id": "4=",
+                "uci": "b3c4",
+                "san": "Bc4",
+                "eval": {
+                    "cp": -96,
+                    "best": "e2d2"
+                },
+                "comments": [
+                    {
+                        "id": "EJTh",
+                        "text": "Inaccuracy. Qd2 was best.",
+                        "by": "lichess"
+                    }
+                ],
+                "glyphs": [
+                    {
+                        "id": 6,
+                        "symbol": "?!",
+                        "name": "Dubious move"
+                    }
+                ],
+                "clock": 4619,
+                "children": [
+                    {
+                        "ply": 36,
+                        "fen": "r2qr1k1/2p2pp1/bb3n1p/p3p3/PpB1Pn2/2P2NNP/1P2QPP1/R1B1R1K1 w - - 4 19",
+                        "id": "Q@",
+                        "uci": "g6f4",
+                        "san": "Nf4",
+                        "comp": true,
+                        "children": [
+                            {
+                                "ply": 37,
+                                "fen": "r2qr1k1/2p2pp1/bb3n1p/p3p3/PpB1Pn2/2P2NNP/1P3PP1/R1B1RQK1 b - - 5 19",
+                                "id": "/(",
+                                "uci": "e2f1",
+                                "san": "Qf1",
+                                "children": [
+                                    {
+                                        "ply": 38,
+                                        "fen": "r2qr1k1/2p2pp1/1b3n1p/p3p3/Ppb1Pn2/2P2NNP/1P3PP1/R1B1RQK1 w - - 0 20",
+                                        "id": "K=",
+                                        "uci": "a6c4",
+                                        "san": "Bxc4",
+                                        "children": [
+                                            {
+                                                "ply": 39,
+                                                "fen": "r2qr1k1/2p2pp1/1b3n1p/p3p3/PpQ1Pn2/2P2NNP/1P3PP1/R1B1R1K1 b - - 0 20",
+                                                "id": "(=",
+                                                "uci": "f1c4",
+                                                "san": "Qxc4",
+                                                "children": [
+                                                    {
+                                                        "ply": 40,
+                                                        "fen": "r3r1k1/2p2pp1/1b3n1p/p3p3/PpQ1Pn2/2Pq1NNP/1P3PP1/R1B1R1K1 w - - 1 21",
+                                                        "id": "^6",
+                                                        "uci": "d8d3",
+                                                        "san": "Qd3",
+                                                        "children": [
+                                                            {
+                                                                "ply": 41,
+                                                                "fen": "r3r1k1/2p2pp1/1b3n1p/p3p3/Pp2Pn2/2PQ1NNP/1P3PP1/R1B1R1K1 b - - 0 21",
+                                                                "id": "=6",
+                                                                "uci": "c4d3",
+                                                                "san": "Qxd3",
+                                                                "children": [
+                                                                    {
+                                                                        "ply": 42,
+                                                                        "fen": "r3r1k1/2p2pp1/1b3n1p/p3p3/Pp2P3/2Pn1NNP/1P3PP1/R1B1R1K1 w - - 0 22",
+                                                                        "id": "@6",
+                                                                        "uci": "f4d3",
+                                                                        "san": "Nxd3",
+                                                                        "children": [
+                                                                            {
+                                                                                "ply": 43,
+                                                                                "fen": "r3r1k1/2p2pp1/1b3n1p/p3p3/Pp2P3/2Pn1NNP/1P2RPP1/R1B3K1 b - - 1 22",
+                                                                                "id": "\u0027/",
+                                                                                "uci": "e1e2",
+                                                                                "san": "Re2",
+                                                                                "children": [
+                                                                                    {
+                                                                                        "ply": 44,
+                                                                                        "fen": "r3r1k1/2pn1pp1/1b5p/p3p3/Pp2P3/2Pn1NNP/1P2RPP1/R1B3K1 w - - 2 23",
+                                                                                        "id": "PV",
+                                                                                        "uci": "f6d7",
+                                                                                        "san": "Nd7",
+                                                                                        "children": [
+                                                                                            {
+                                                                                                "ply": 45,
+                                                                                                "fen": "r3r1k1/2pn1pp1/1b5p/p3pN2/Pp2P3/2Pn1N1P/1P2RPP1/R1B3K1 b - - 3 23",
+                                                                                                "id": "9H",
+                                                                                                "uci": "g3f5",
+                                                                                                "san": "Nf5",
+                                                                                                "children": [
+                                                                                                    {
+                                                                                                        "ply": 46,
+                                                                                                        "fen": "r3r1k1/2pn1pp1/1b5p/p3pN2/P3P3/2pn1N1P/1P2RPP1/R1B3K1 w - - 0 24",
+                                                                                                        "id": "\u003c5",
+                                                                                                        "uci": "b4c3",
+                                                                                                        "san": "bxc3",
+                                                                                                        "children": [
+                                                                                                            {
+                                                                                                                "ply": 47,
+                                                                                                                "fen": "r3r1k1/2pn1pp1/1b5p/p3pN2/P3P3/2Pn1N1P/4RPP1/R1B3K1 b - - 0 24",
+                                                                                                                "id": ",5",
+                                                                                                                "uci": "b2c3",
+                                                                                                                "san": "bxc3",
+                                                                                                                "children": [
+                                                                                                                    {
+                                                                                                                        "ply": 48,
+                                                                                                                        "fen": "r3r1k1/2pn1pp1/1b5p/p3pN2/P3P3/2P2N1P/4RPP1/R1n3K1 w - - 0 25",
+                                                                                                                        "id": "6%",
+                                                                                                                        "uci": "d3c1",
+                                                                                                                        "san": "Nxc1",
+                                                                                                                        "children": [
+                                                                                                                            {
+                                                                                                                                "ply": 49,
+                                                                                                                                "fen": "r3r1k1/2pn1pp1/1b5p/p3pN2/P3P3/2P2N1P/4RPP1/2R3K1 b - - 0 25",
+                                                                                                                                "id": "#%",
+                                                                                                                                "uci": "a1c1",
+                                                                                                                                "san": "Rxc1",
+                                                                                                                                "children": []
+                                                                                                                            }
+                                                                                                                        ]
+                                                                                                                    }
+                                                                                                                ]
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                ]
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "ply": 36,
+                "fen": "r2qr1k1/2p2pp1/1b3nnp/p3p3/Ppb1P3/2P2NNP/1P2QPP1/R1B1R1K1 w - - 0 19",
+                "id": "K=",
+                "uci": "a6c4",
+                "san": "Bxc4",
+                "eval": {
+                    "cp": 36,
+                    "best": "g6f4"
+                },
+                "comments": [
+                    {
+                        "id": "9bLi",
+                        "text": "Mistake. Nf4 was best.",
+                        "by": "lichess"
+                    }
+                ],
+                "glyphs": [
+                    {
+                        "id": 2,
+                        "symbol": "?",
+                        "name": "Mistake"
+                    }
+                ],
+                "clock": 4787
+            },
+            {
+                "ply": 37,
+                "fen": "r2qr1k1/2p2pp1/1b3nnp/p3p3/PpQ1P3/2P2NNP/1P3PP1/R1B1R1K1 b - - 0 19",
+                "id": "/=",
+                "uci": "e2c4",
+                "san": "Qxc4",
+                "eval": {
+                    "cp": 12
+                },
+                "clock": 4619
+            },
+            {
+                "ply": 38,
+                "fen": "r2qr1k1/2p2pp1/1b3nnp/p3p3/P1Q1P3/2p2NNP/1P3PP1/R1B1R1K1 w - - 0 20",
+                "id": "\u003c5",
+                "uci": "b4c3",
+                "san": "bxc3",
+                "eval": {
+                    "cp": 23
+                },
+                "clock": 4771,
+                "children": [
+                    {
+                        "ply": 39,
+                        "fen": "r2qr1k1/2p2pp1/1b3nnp/p3p3/P3P3/2Q2NNP/1P3PP1/R1B1R1K1 b - - 0 20",
+                        "id": "=5",
+                        "uci": "c4c3",
+                        "san": "Qxc3",
+                        "comp": true,
+                        "children": [
+                            {
+                                "ply": 40,
+                                "fen": "r2q2k1/2p2pp1/1b2rnnp/p3p3/P3P3/2Q2NNP/1P3PP1/R1B1R1K1 w - - 1 21",
+                                "id": "_O",
+                                "uci": "e8e6",
+                                "san": "Re6",
+                                "children": [
+                                    {
+                                        "ply": 41,
+                                        "fen": "r2q2k1/2p2pp1/1b2rnnp/p3p3/P3P3/2Q1BNNP/1P3PP1/R3R1K1 b - - 2 21",
+                                        "id": "%7",
+                                        "uci": "c1e3",
+                                        "san": "Be3",
+                                        "children": [
+                                            {
+                                                "ply": 42,
+                                                "fen": "r3q1k1/2p2pp1/1b2rnnp/p3p3/P3P3/2Q1BNNP/1P3PP1/R3R1K1 w - - 3 22",
+                                                "id": "^_",
+                                                "uci": "d8e8",
+                                                "san": "Qe8",
+                                                "children": [
+                                                    {
+                                                        "ply": 43,
+                                                        "fen": "r3q1k1/2p2pp1/1b2rnnp/p3p3/P3P3/2Q1B1NP/1P1N1PP1/R3R1K1 b - - 4 22",
+                                                        "id": "8.",
+                                                        "uci": "f3d2",
+                                                        "san": "Nd2",
+                                                        "children": [
+                                                            {
+                                                                "ply": 44,
+                                                                "fen": "r3q1k1/2p2pp1/1br2nnp/p3p3/P3P3/2Q1B1NP/1P1N1PP1/R3R1K1 w - - 5 23",
+                                                                "id": "OM",
+                                                                "uci": "e6c6",
+                                                                "san": "Rc6",
+                                                                "children": [
+                                                                    {
+                                                                        "ply": 45,
+                                                                        "fen": "r3q1k1/2p2pp1/1br2nnp/p3p3/P1N1P3/2Q1B1NP/1P3PP1/R3R1K1 b - - 6 23",
+                                                                        "id": ".=",
+                                                                        "uci": "d2c4",
+                                                                        "san": "Nc4",
+                                                                        "children": [
+                                                                            {
+                                                                                "ply": 46,
+                                                                                "fen": "r3q1k1/2pn1pp1/1br3np/p3p3/P1N1P3/2Q1B1NP/1P3PP1/R3R1K1 w - - 7 24",
+                                                                                "id": "PV",
+                                                                                "uci": "f6d7",
+                                                                                "san": "Nd7",
+                                                                                "children": [
+                                                                                    {
+                                                                                        "ply": 47,
+                                                                                        "fen": "r3q1k1/2pn1pp1/1br3np/p3p3/P1N1P3/4B1NP/1PQ2PP1/R3R1K1 b - - 8 24",
+                                                                                        "id": "5-",
+                                                                                        "uci": "c3c2",
+                                                                                        "san": "Qc2",
+                                                                                        "children": [
+                                                                                            {
+                                                                                                "ply": 48,
+                                                                                                "fen": "r5k1/2pn1pp1/1br1q1np/p3p3/P1N1P3/4B1NP/1PQ2PP1/R3R1K1 w - - 9 25",
+                                                                                                "id": "_O",
+                                                                                                "uci": "e8e6",
+                                                                                                "san": "Qe6",
+                                                                                                "children": [
+                                                                                                    {
+                                                                                                        "ply": 49,
+                                                                                                        "fen": "r5k1/2pn1pp1/1br1q1np/p3p3/P1N1P3/4B1NP/1PQ2PP1/2R1R1K1 b - - 10 25",
+                                                                                                        "id": "#%",
+                                                                                                        "uci": "a1c1",
+                                                                                                        "san": "Rac1",
+                                                                                                        "children": [
+                                                                                                            {
+                                                                                                                "ply": 50,
+                                                                                                                "fen": "r5k1/2pn1pp1/2r1q1np/p3p3/P1N1P3/4b1NP/1PQ2PP1/2R1R1K1 w - - 0 26",
+                                                                                                                "id": "L7",
+                                                                                                                "uci": "b6e3",
+                                                                                                                "san": "Bxe3",
+                                                                                                                "children": [
+                                                                                                                    {
+                                                                                                                        "ply": 51,
+                                                                                                                        "fen": "r5k1/2pn1pp1/2r1q1np/p3p3/P1N1P3/4R1NP/1PQ2PP1/2R3K1 b - - 0 26",
+                                                                                                                        "id": "\u00277",
+                                                                                                                        "uci": "e1e3",
+                                                                                                                        "san": "Rxe3",
+                                                                                                                        "children": [
+                                                                                                                            {
+                                                                                                                                "ply": 52,
+                                                                                                                                "fen": "r5k1/2p2pp1/1nr1q1np/p3p3/P1N1P3/4R1NP/1PQ2PP1/2R3K1 w - - 1 27",
+                                                                                                                                "id": "VL",
+                                                                                                                                "uci": "d7b6",
+                                                                                                                                "san": "Nb6",
+                                                                                                                                "children": []
+                                                                                                                            }
+                                                                                                                        ]
+                                                                                                                    }
+                                                                                                                ]
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                ]
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "ply": 39,
+                "fen": "r2qr1k1/2p2pp1/1b3nnp/p3p3/P1Q1P3/2P2NNP/5PP1/R1B1R1K1 b - - 0 20",
+                "id": ",5",
+                "uci": "b2c3",
+                "san": "bxc3",
+                "eval": {
+                    "cp": -39,
+                    "best": "c4c3"
+                },
+                "comments": [
+                    {
+                        "id": "3mA4",
+                        "text": "Inaccuracy. Qxc3 was best.",
+                        "by": "lichess"
+                    }
+                ],
+                "glyphs": [
+                    {
+                        "id": 6,
+                        "symbol": "?!",
+                        "name": "Dubious move"
+                    }
+                ],
+                "clock": 4491
+            },
+            {
+                "ply": 40,
+                "fen": "r3r1k1/2pq1pp1/1b3nnp/p3p3/P1Q1P3/2P2NNP/5PP1/R1B1R1K1 w - - 1 21",
+                "id": "^V",
+                "uci": "d8d7",
+                "san": "Qd7",
+                "eval": {
+                    "cp": -31
+                },
+                "clock": 4619
+            },
+            {
+                "ply": 41,
+                "fen": "r3r1k1/2pq1pp1/1b3nnp/p3p3/P1Q1P3/2P1BNNP/5PP1/R3R1K1 b - - 2 21",
+                "id": "%7",
+                "uci": "c1e3",
+                "san": "Be3",
+                "eval": {
+                    "cp": -45
+                },
+                "clock": 4291
+            },
+            {
+                "ply": 42,
+                "fen": "r3r1k1/2p2pp1/1b2qnnp/p3p3/P1Q1P3/2P1BNNP/5PP1/R3R1K1 w - - 3 22",
+                "id": "VO",
+                "uci": "d7e6",
+                "san": "Qe6",
+                "eval": {
+                    "cp": -27
+                },
+                "clock": 4483
+            },
+            {
+                "ply": 43,
+                "fen": "r3r1k1/2p2pp1/1b2qnnp/p3p3/P3P3/2P1BNNP/4QPP1/R3R1K1 b - - 4 22",
+                "id": "=/",
+                "uci": "c4e2",
+                "san": "Qe2",
+                "eval": {
+                    "cp": -68
+                },
+                "clock": 3891
+            },
+            {
+                "ply": 44,
+                "fen": "3rr1k1/2p2pp1/1b2qnnp/p3p3/P3P3/2P1BNNP/4QPP1/R3R1K1 w - - 5 23",
+                "id": "[^",
+                "uci": "a8d8",
+                "san": "Rad8",
+                "eval": {
+                    "cp": -78
+                },
+                "clock": 4275
+            },
+            {
+                "ply": 45,
+                "fen": "3rr1k1/2p2pp1/1b2qnnp/p3p3/P3P3/2P1BNNP/4QPP1/1R2R1K1 b - - 6 23",
+                "id": "#$",
+                "uci": "a1b1",
+                "san": "Rab1",
+                "eval": {
+                    "cp": -84
+                },
+                "clock": 3755,
+                "children": [
+                    {
+                        "ply": 46,
+                        "fen": "3rr1k1/2p2pp1/4qnnp/p3p3/P3P3/2P1bNNP/4QPP1/1R2R1K1 w - - 0 24",
+                        "id": "L7",
+                        "uci": "b6e3",
+                        "san": "Bxe3",
+                        "comp": true,
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "ply": 46,
+                "fen": "3rr1k1/2p2pp1/1bq2nnp/p3p3/P3P3/2P1BNNP/4QPP1/1R2R1K1 w - - 7 24",
+                "id": "OM",
+                "uci": "e6c6",
+                "san": "Qc6",
+                "eval": {
+                    "cp": 0,
+                    "best": "b6e3"
+                },
+                "comments": [
+                    {
+                        "id": "uCGs",
+                        "text": "Inaccuracy. Bxe3 was best.",
+                        "by": "lichess"
+                    }
+                ],
+                "glyphs": [
+                    {
+                        "id": 6,
+                        "symbol": "?!",
+                        "name": "Dubious move"
+                    }
+                ],
+                "clock": 4219,
+                "children": [
+                    {
+                        "ply": 47,
+                        "fen": "3rr1k1/2p2pp1/1bq2nnp/pQ2p3/P3P3/2P1BNNP/5PP1/1R2R1K1 b - - 8 24",
+                        "id": "/D",
+                        "uci": "e2b5",
+                        "san": "Qb5",
+                        "comp": true,
+                        "children": [
+                            {
+                                "ply": 48,
+                                "fen": "3r2k1/2p2pp1/1bq1rnnp/pQ2p3/P3P3/2P1BNNP/5PP1/1R2R1K1 w - - 9 25",
+                                "id": "_O",
+                                "uci": "e8e6",
+                                "san": "Re6",
+                                "children": [
+                                    {
+                                        "ply": 49,
+                                        "fen": "3r2k1/2p2pp1/1bq1rnnp/pQ2p3/P1P1P3/4BNNP/5PP1/1R2R1K1 b - - 0 25",
+                                        "id": "5=",
+                                        "uci": "c3c4",
+                                        "san": "c4",
+                                        "children": [
+                                            {
+                                                "ply": 50,
+                                                "fen": "3r2k1/2p2pp1/2q1rnnp/pQ2p3/P1P1P3/4bNNP/5PP1/1R2R1K1 w - - 0 26",
+                                                "id": "L7",
+                                                "uci": "b6e3",
+                                                "san": "Bxe3",
+                                                "children": [
+                                                    {
+                                                        "ply": 51,
+                                                        "fen": "3r2k1/2p2pp1/2q1rnnp/pQ2p3/P1P1P3/4RNNP/5PP1/1R4K1 b - - 0 26",
+                                                        "id": "\u00277",
+                                                        "uci": "e1e3",
+                                                        "san": "Rxe3",
+                                                        "children": [
+                                                            {
+                                                                "ply": 52,
+                                                                "fen": "4r1k1/2p2pp1/2q1rnnp/pQ2p3/P1P1P3/4RNNP/5PP1/1R4K1 w - - 1 27",
+                                                                "id": "^_",
+                                                                "uci": "d8e8",
+                                                                "san": "Rde8",
+                                                                "children": [
+                                                                    {
+                                                                        "ply": 53,
+                                                                        "fen": "4r1k1/2p2pp1/2q1rnnp/pQP1p3/P3P3/4RNNP/5PP1/1R4K1 b - - 0 27",
+                                                                        "id": "=E",
+                                                                        "uci": "c4c5",
+                                                                        "san": "c5",
+                                                                        "children": [
+                                                                            {
+                                                                                "ply": 54,
+                                                                                "fen": "4r1k1/2pn1pp1/2q1r1np/pQP1p3/P3P3/4RNNP/5PP1/1R4K1 w - - 1 28",
+                                                                                "id": "PV",
+                                                                                "uci": "f6d7",
+                                                                                "san": "Nd7",
+                                                                                "children": [
+                                                                                    {
+                                                                                        "ply": 55,
+                                                                                        "fen": "4r1k1/2pn1pp1/2q1r1np/p1P1p3/P1Q1P3/4RNNP/5PP1/1R4K1 b - - 2 28",
+                                                                                        "id": "D=",
+                                                                                        "uci": "b5c4",
+                                                                                        "san": "Qc4",
+                                                                                        "children": [
+                                                                                            {
+                                                                                                "ply": 56,
+                                                                                                "fen": "4r1k1/2pn1pp1/4r1np/p1q1p3/P1Q1P3/4RNNP/5PP1/1R4K1 w - - 0 29",
+                                                                                                "id": "ME",
+                                                                                                "uci": "c6c5",
+                                                                                                "san": "Qxc5",
+                                                                                                "children": [
+                                                                                                    {
+                                                                                                        "ply": 57,
+                                                                                                        "fen": "4r1k1/2pn1pp1/4r1np/p1Q1p3/P3P3/4RNNP/5PP1/1R4K1 b - - 0 29",
+                                                                                                        "id": "=E",
+                                                                                                        "uci": "c4c5",
+                                                                                                        "san": "Qxc5",
+                                                                                                        "children": [
+                                                                                                            {
+                                                                                                                "ply": 58,
+                                                                                                                "fen": "4r1k1/2p2pp1/4r1np/p1n1p3/P3P3/4RNNP/5PP1/1R4K1 w - - 0 30",
+                                                                                                                "id": "VE",
+                                                                                                                "uci": "d7c5",
+                                                                                                                "san": "Nxc5",
+                                                                                                                "children": [
+                                                                                                                    {
+                                                                                                                        "ply": 59,
+                                                                                                                        "fen": "4r1k1/2p2pp1/4r1np/p1n1p3/P3P3/4RNNP/5PP1/2R3K1 b - - 1 30",
+                                                                                                                        "id": "$%",
+                                                                                                                        "uci": "b1c1",
+                                                                                                                        "san": "Rc1",
+                                                                                                                        "children": [
+                                                                                                                            {
+                                                                                                                                "ply": 60,
+                                                                                                                                "fen": "4r1k1/2p2pp1/4r1np/p3p3/n3P3/4RNNP/5PP1/2R3K1 w - - 0 31",
+                                                                                                                                "id": "E;",
+                                                                                                                                "uci": "c5a4",
+                                                                                                                                "san": "Nxa4",
+                                                                                                                                "children": []
+                                                                                                                            }
+                                                                                                                        ]
+                                                                                                                    }
+                                                                                                                ]
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                ]
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "ply": 47,
+                "fen": "3rr1k1/2p2pp1/1Bq2nnp/p3p3/P3P3/2P2NNP/4QPP1/1R2R1K1 b - - 0 24",
+                "id": "7L",
+                "uci": "e3b6",
+                "san": "Bxb6",
+                "eval": {
+                    "cp": -94,
+                    "best": "e2b5"
+                },
+                "comments": [
+                    {
+                        "id": "U0bf",
+                        "text": "Inaccuracy. Qb5 was best.",
+                        "by": "lichess"
+                    }
+                ],
+                "glyphs": [
+                    {
+                        "id": 6,
+                        "symbol": "?!",
+                        "name": "Dubious move"
+                    }
+                ],
+                "clock": 3627
+            },
+            {
+                "ply": 48,
+                "fen": "3rr1k1/5pp1/1pq2nnp/p3p3/P3P3/2P2NNP/4QPP1/1R2R1K1 w - - 0 25",
+                "id": "UL",
+                "uci": "c7b6",
+                "san": "cxb6",
+                "eval": {
+                    "cp": -71
+                },
+                "clock": 4219
+            },
+            {
+                "ply": 49,
+                "fen": "3rr1k1/5pp1/1pq2nnp/pQ2p3/P3P3/2P2NNP/5PP1/1R2R1K1 b - - 1 25",
+                "id": "/D",
+                "uci": "e2b5",
+                "san": "Qb5",
+                "eval": {
+                    "cp": -97
+                },
+                "clock": 3539
+            },
+            {
+                "ply": 50,
+                "fen": "3r2k1/5pp1/1pq1rnnp/pQ2p3/P3P3/2P2NNP/5PP1/1R2R1K1 w - - 2 26",
+                "id": "_O",
+                "uci": "e8e6",
+                "san": "Re6",
+                "eval": {
+                    "cp": -91
+                },
+                "clock": 3763
+            },
+            {
+                "ply": 51,
+                "fen": "3r2k1/5pp1/1pq1rnnp/pQ2pN2/P3P3/2P2N1P/5PP1/1R2R1K1 b - - 3 26",
+                "id": "9H",
+                "uci": "g3f5",
+                "san": "Nf5",
+                "eval": {
+                    "cp": -115
+                },
+                "clock": 3491
+            },
+            {
+                "ply": 52,
+                "fen": "3r2k1/5pp1/1p2rnnp/pq2pN2/P3P3/2P2N1P/5PP1/1R2R1K1 w - - 0 27",
+                "id": "MD",
+                "uci": "c6b5",
+                "san": "Qxb5",
+                "eval": {
+                    "cp": -101
+                },
+                "clock": 3387
+            },
+            {
+                "ply": 53,
+                "fen": "3r2k1/5pp1/1p2rnnp/pR2pN2/P3P3/2P2N1P/5PP1/4R1K1 b - - 0 27",
+                "id": "$D",
+                "uci": "b1b5",
+                "san": "Rxb5",
+                "eval": {
+                    "cp": -128
+                },
+                "clock": 3491
+            },
+            {
+                "ply": 54,
+                "fen": "2r3k1/5pp1/1p2rnnp/pR2pN2/P3P3/2P2N1P/5PP1/4R1K1 w - - 1 28",
+                "id": "^]",
+                "uci": "d8c8",
+                "san": "Rc8",
+                "eval": {
+                    "cp": -114
+                },
+                "clock": 3291,
+                "children": [
+                    {
+                        "ply": 55,
+                        "fen": "2r3k1/5pp1/1p2rnnp/pR2pN2/P3P3/2P2N1P/5PP1/1R4K1 b - - 2 28",
+                        "id": "\u0027$",
+                        "uci": "e1b1",
+                        "san": "Reb1",
+                        "comp": true,
+                        "children": [
+                            {
+                                "ply": 56,
+                                "fen": "2r3k1/5pp1/1p2r1np/pR2pN2/P3n3/2P2N1P/5PP1/1R4K1 w - - 0 29",
+                                "id": "P?",
+                                "uci": "f6e4",
+                                "san": "Nxe4",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "ply": 55,
+                "fen": "2r3k1/5pp1/1p2rnnp/pR2pN2/P3P3/2P1RN1P/5PP1/6K1 b - - 2 28",
+                "id": "\u00277",
+                "uci": "e1e3",
+                "san": "Re3",
+                "eval": {
+                    "cp": -192,
+                    "best": "e1b1"
+                },
+                "comments": [
+                    {
+                        "id": "FNH1",
+                        "text": "Inaccuracy. Reb1 was best.",
+                        "by": "lichess"
+                    }
+                ],
+                "glyphs": [
+                    {
+                        "id": 6,
+                        "symbol": "?!",
+                        "name": "Dubious move"
+                    }
+                ],
+                "clock": 3179,
+                "children": [
+                    {
+                        "ply": 56,
+                        "fen": "6k1/5pp1/1p2rnnp/pR2pN2/P1r1P3/2P1RN1P/5PP1/6K1 w - - 3 29",
+                        "id": "]=",
+                        "uci": "c8c4",
+                        "san": "Rc4",
+                        "comp": true,
+                        "children": [
+                            {
+                                "ply": 57,
+                                "fen": "6k1/5pp1/1p2rnnp/pR2pN2/P1r1P3/2P1R2P/3N1PP1/6K1 b - - 4 29",
+                                "id": "8.",
+                                "uci": "f3d2",
+                                "san": "Nd2",
+                                "children": [
+                                    {
+                                        "ply": 58,
+                                        "fen": "6k1/5pp1/1p2rnnp/pR2pN2/r3P3/2P1R2P/3N1PP1/6K1 w - - 0 30",
+                                        "id": "=;",
+                                        "uci": "c4a4",
+                                        "san": "Rxa4",
+                                        "children": [
+                                            {
+                                                "ply": 59,
+                                                "fen": "6k1/5pp1/1p2rnnp/pR2pN2/r3P3/2P1R2P/3N1PPK/8 b - - 1 30",
+                                                "id": ")2",
+                                                "uci": "g1h2",
+                                                "san": "Kh2",
+                                                "children": [
+                                                    {
+                                                        "ply": 60,
+                                                        "fen": "8/5ppk/1p2rnnp/pR2pN2/r3P3/2P1R2P/3N1PPK/8 w - - 2 31",
+                                                        "id": "aZ",
+                                                        "uci": "g8h7",
+                                                        "san": "Kh7",
+                                                        "children": [
+                                                            {
+                                                                "ply": 61,
+                                                                "fen": "8/5ppk/1p2rnnp/p3pN2/r3P3/2P1R2P/1R1N1PPK/8 b - - 3 31",
+                                                                "id": "D,",
+                                                                "uci": "b5b2",
+                                                                "san": "Rb2",
+                                                                "children": [
+                                                                    {
+                                                                        "ply": 62,
+                                                                        "fen": "5n2/5ppk/1p2rn1p/p3pN2/r3P3/2P1R2P/1R1N1PPK/8 w - - 4 32",
+                                                                        "id": "Q\u0060",
+                                                                        "uci": "g6f8",
+                                                                        "san": "Nf8",
+                                                                        "children": [
+                                                                            {
+                                                                                "ply": 63,
+                                                                                "fen": "5n2/5ppk/1p2rn1p/p3pN2/r3P3/2PR3P/1R1N1PPK/8 b - - 5 32",
+                                                                                "id": "76",
+                                                                                "uci": "e3d3",
+                                                                                "san": "Rd3",
+                                                                                "children": [
+                                                                                    {
+                                                                                        "ply": 64,
+                                                                                        "fen": "8/3n1ppk/1p2rn1p/p3pN2/r3P3/2PR3P/1R1N1PPK/8 w - - 6 33",
+                                                                                        "id": "\u0060V",
+                                                                                        "uci": "f8d7",
+                                                                                        "san": "N8d7",
+                                                                                        "children": [
+                                                                                            {
+                                                                                                "ply": 65,
+                                                                                                "fen": "8/3n1ppk/1p2rn1p/p3pN2/r3P3/2PR1P1P/1R1N2PK/8 b - - 0 33",
+                                                                                                "id": "08",
+                                                                                                "uci": "f2f3",
+                                                                                                "san": "f3",
+                                                                                                "children": [
+                                                                                                    {
+                                                                                                        "ply": 66,
+                                                                                                        "fen": "8/3n1ppk/1p2rn1p/p3pN2/4P3/2PR1P1P/1R1N2PK/r7 w - - 1 34",
+                                                                                                        "id": ";#",
+                                                                                                        "uci": "a4a1",
+                                                                                                        "san": "Ra1",
+                                                                                                        "children": [
+                                                                                                            {
+                                                                                                                "ply": 67,
+                                                                                                                "fen": "8/3n1ppk/1p2rn1p/p3pN2/2N1P3/2PR1P1P/1R4PK/r7 b - - 2 34",
+                                                                                                                "id": ".=",
+                                                                                                                "uci": "d2c4",
+                                                                                                                "san": "Nc4",
+                                                                                                                "children": [
+                                                                                                                    {
+                                                                                                                        "ply": 68,
+                                                                                                                        "fen": "8/3n1ppk/1p2rn1p/4pN2/p1N1P3/2PR1P1P/1R4PK/r7 w - - 0 35",
+                                                                                                                        "id": "C;",
+                                                                                                                        "uci": "a5a4",
+                                                                                                                        "san": "a4",
+                                                                                                                        "children": [
+                                                                                                                            {
+                                                                                                                                "ply": 69,
+                                                                                                                                "fen": "8/3n1ppk/1p2rn1p/4pN2/p1N1P3/2PR1P1P/3R2PK/r7 b - - 1 35",
+                                                                                                                                "id": ",.",
+                                                                                                                                "uci": "b2d2",
+                                                                                                                                "san": "Rbd2",
+                                                                                                                                "children": []
+                                                                                                                            }
+                                                                                                                        ]
+                                                                                                                    }
+                                                                                                                ]
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                ]
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "ply": 56,
+                "fen": "2r3k1/5pp1/1p2rn1p/pR2pN2/P3Pn2/2P1RN1P/5PP1/6K1 w - - 3 29",
+                "id": "Q@",
+                "uci": "g6f4",
+                "san": "Nf4",
+                "eval": {
+                    "cp": -11,
+                    "best": "c8c4"
+                },
+                "comments": [
+                    {
+                        "id": "EI07",
+                        "text": "Blunder. Rc4 was best.",
+                        "by": "lichess"
+                    }
+                ],
+                "glyphs": [
+                    {
+                        "id": 4,
+                        "symbol": "??",
+                        "name": "Blunder"
+                    }
+                ],
+                "clock": 3163,
+                "children": [
+                    {
+                        "ply": 57,
+                        "fen": "2r3k1/5pp1/1p2rn1p/pR2NN2/P3Pn2/2P1R2P/5PP1/6K1 b - - 0 29",
+                        "id": "8G",
+                        "uci": "f3e5",
+                        "san": "Nxe5",
+                        "comp": true,
+                        "children": [
+                            {
+                                "ply": 58,
+                                "fen": "6k1/5pp1/1p2rn1p/pR2NN2/P3Pn2/2r1R2P/5PP1/6K1 w - - 0 30",
+                                "id": "]5",
+                                "uci": "c8c3",
+                                "san": "Rxc3",
+                                "children": [
+                                    {
+                                        "ply": 59,
+                                        "fen": "6k1/5pp1/1p2rn1p/pR2N3/P2NPn2/2r1R2P/5PP1/6K1 b - - 1 30",
+                                        "id": "H\u003e",
+                                        "uci": "f5d4",
+                                        "san": "Nd4",
+                                        "children": [
+                                            {
+                                                "ply": 60,
+                                                "fen": "6k1/5pp1/1p2rn1p/pR2N3/P2NPn2/4R2P/5PP1/2r3K1 w - - 2 31",
+                                                "id": "5%",
+                                                "uci": "c3c1",
+                                                "san": "Rc1+",
+                                                "check": true,
+                                                "children": [
+                                                    {
+                                                        "ply": 61,
+                                                        "fen": "6k1/5pp1/1p2rn1p/pR2N3/P2NPn2/4R2P/5PPK/2r5 b - - 3 31",
+                                                        "id": ")2",
+                                                        "uci": "g1h2",
+                                                        "san": "Kh2",
+                                                        "children": [
+                                                            {
+                                                                "ply": 62,
+                                                                "fen": "4r1k1/5pp1/1p3n1p/pR2N3/P2NPn2/4R2P/5PPK/2r5 w - - 4 32",
+                                                                "id": "O_",
+                                                                "uci": "e6e8",
+                                                                "san": "Re8",
+                                                                "children": [
+                                                                    {
+                                                                        "ply": 63,
+                                                                        "fen": "4r1k1/5pp1/1p3n1p/pR2N3/P2NPn2/5R1P/5PPK/2r5 b - - 5 32",
+                                                                        "id": "78",
+                                                                        "uci": "e3f3",
+                                                                        "san": "Rf3",
+                                                                        "children": [
+                                                                            {
+                                                                                "ply": 64,
+                                                                                "fen": "4r1k1/5pp1/1p2nn1p/pR2N3/P2NP3/5R1P/5PPK/2r5 w - - 6 33",
+                                                                                "id": "@O",
+                                                                                "uci": "f4e6",
+                                                                                "san": "Ne6",
+                                                                                "children": [
+                                                                                    {
+                                                                                        "ply": 65,
+                                                                                        "fen": "4r1k1/5pp1/1p2Nn1p/pR2N3/P3P3/5R1P/5PPK/2r5 b - - 0 33",
+                                                                                        "id": "\u003eO",
+                                                                                        "uci": "d4e6",
+                                                                                        "san": "Nxe6",
+                                                                                        "children": [
+                                                                                            {
+                                                                                                "ply": 66,
+                                                                                                "fen": "6k1/5pp1/1p2rn1p/pR2N3/P3P3/5R1P/5PPK/2r5 w - - 0 34",
+                                                                                                "id": "_O",
+                                                                                                "uci": "e8e6",
+                                                                                                "san": "Rxe6",
+                                                                                                "children": [
+                                                                                                    {
+                                                                                                        "ply": 67,
+                                                                                                        "fen": "6k1/5pp1/1p2rn1p/pR2N3/P3P3/3R3P/5PPK/2r5 b - - 1 34",
+                                                                                                        "id": "86",
+                                                                                                        "uci": "f3d3",
+                                                                                                        "san": "Rd3",
+                                                                                                        "children": [
+                                                                                                            {
+                                                                                                                "ply": 68,
+                                                                                                                "fen": "6k1/5pp1/1p2rn1p/pRr1N3/P3P3/3R3P/5PPK/8 w - - 2 35",
+                                                                                                                "id": "%E",
+                                                                                                                "uci": "c1c5",
+                                                                                                                "san": "Rc5",
+                                                                                                                "children": [
+                                                                                                                    {
+                                                                                                                        "ply": 69,
+                                                                                                                        "fen": "3R2k1/5pp1/1p2rn1p/pRr1N3/P3P3/7P/5PPK/8 b - - 3 35",
+                                                                                                                        "id": "6^",
+                                                                                                                        "uci": "d3d8",
+                                                                                                                        "san": "Rd8+",
+                                                                                                                        "check": true,
+                                                                                                                        "children": [
+                                                                                                                            {
+                                                                                                                                "ply": 70,
+                                                                                                                                "fen": "3R4/5ppk/1p2rn1p/pRr1N3/P3P3/7P/5PPK/8 w - - 4 36",
+                                                                                                                                "id": "aZ",
+                                                                                                                                "uci": "g8h7",
+                                                                                                                                "san": "Kh7",
+                                                                                                                                "children": []
+                                                                                                                            }
+                                                                                                                        ]
+                                                                                                                    }
+                                                                                                                ]
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                ]
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "ply": 57,
+                "fen": "2r3k1/5pp1/1p2rn1p/p3RN2/P3Pn2/2P1RN1P/5PP1/6K1 b - - 0 29",
+                "id": "DG",
+                "uci": "b5e5",
+                "san": "Rxe5",
+                "eval": {
+                    "cp": -148,
+                    "best": "f3e5"
+                },
+                "comments": [
+                    {
+                        "id": "8OFb",
+                        "text": "Mistake. Nxe5 was best.",
+                        "by": "lichess"
+                    }
+                ],
+                "glyphs": [
+                    {
+                        "id": 2,
+                        "symbol": "?",
+                        "name": "Mistake"
+                    }
+                ],
+                "clock": 2899,
+                "children": [
+                    {
+                        "ply": 58,
+                        "fen": "6k1/5pp1/1p2rn1p/p3RN2/P3Pn2/2r1RN1P/5PP1/6K1 w - - 0 30",
+                        "id": "]5",
+                        "uci": "c8c3",
+                        "san": "Rxc3",
+                        "comp": true,
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "ply": 58,
+                "fen": "2r3k1/5pp1/1p3n1p/p3rN2/P3Pn2/2P1RN1P/5PP1/6K1 w - - 0 30",
+                "id": "OG",
+                "uci": "e6e5",
+                "san": "Rxe5",
+                "eval": {
+                    "cp": -57,
+                    "best": "c8c3"
+                },
+                "comments": [
+                    {
+                        "id": "sXtd",
+                        "text": "Inaccuracy. Rxc3 was best.",
+                        "by": "lichess"
+                    }
+                ],
+                "glyphs": [
+                    {
+                        "id": 6,
+                        "symbol": "?!",
+                        "name": "Dubious move"
+                    }
+                ],
+                "clock": 3115
+            },
+            {
+                "ply": 59,
+                "fen": "2r3k1/5pp1/1p3n1p/p3NN2/P3Pn2/2P1R2P/5PP1/6K1 b - - 0 30",
+                "id": "8G",
+                "uci": "f3e5",
+                "san": "Nxe5",
+                "eval": {
+                    "cp": -50
+                },
+                "clock": 2899
+            },
+            {
+                "ply": 60,
+                "fen": "6k1/5pp1/1p3n1p/p3NN2/P3Pn2/2r1R2P/5PP1/6K1 w - - 0 31",
+                "id": "]5",
+                "uci": "c8c3",
+                "san": "Rxc3",
+                "eval": {
+                    "cp": -49
+                },
+                "clock": 3027
+            },
+            {
+                "ply": 61,
+                "fen": "6k1/5pp1/1p3n1p/p3NN2/P3Pn2/2R4P/5PP1/6K1 b - - 0 31",
+                "id": "75",
+                "uci": "e3c3",
+                "san": "Rxc3",
+                "eval": {
+                    "cp": -55
+                },
+                "clock": 2299
+            },
+            {
+                "ply": 62,
+                "fen": "6k1/5pp1/1p3n1p/p3NN2/P3P3/2R4P/4nPP1/6K1 w - - 1 32",
+                "id": "@/",
+                "uci": "f4e2",
+                "san": "Ne2+",
+                "check": true,
+                "eval": {
+                    "cp": -72
+                },
+                "clock": 2947
+            },
+            {
+                "ply": 63,
+                "fen": "6k1/5pp1/1p3n1p/p3NN2/P3P3/2R4P/4nPP1/5K2 b - - 2 32",
+                "id": ")(",
+                "uci": "g1f1",
+                "san": "Kf1",
+                "eval": {
+                    "cp": -50
+                },
+                "clock": 2299
+            },
+            {
+                "ply": 64,
+                "fen": "6k1/5pp1/1p3n1p/p3NN2/P3P3/2n4P/5PP1/5K2 w - - 0 33",
+                "id": "/5",
+                "uci": "e2c3",
+                "san": "Nxc3",
+                "eval": {
+                    "cp": -70
+                },
+                "clock": 2939
+            },
+            {
+                "ply": 65,
+                "fen": "6k1/5pp1/1p3n1p/p4N2/P1N1P3/2n4P/5PP1/5K2 b - - 1 33",
+                "id": "G=",
+                "uci": "e5c4",
+                "san": "Nc4",
+                "eval": {
+                    "cp": -75
+                },
+                "clock": 2059
+            },
+            {
+                "ply": 66,
+                "fen": "6k1/5pp1/1p3n1p/p4N2/n1N1P3/7P/5PP1/5K2 w - - 0 34",
+                "id": "5;",
+                "uci": "c3a4",
+                "san": "Nxa4",
+                "eval": {
+                    "cp": -52
+                },
+                "clock": 2875,
+                "children": [
+                    {
+                        "ply": 67,
+                        "fen": "6k1/5pp1/1p3n1p/p4N2/n1N1P3/5P1P/6P1/5K2 b - - 0 34",
+                        "id": "08",
+                        "uci": "f2f3",
+                        "san": "f3",
+                        "comp": true,
+                        "children": [
+                            {
+                                "ply": 68,
+                                "fen": "6k1/5pp1/1p3n2/p4N1p/n1N1P3/5P1P/6P1/5K2 w - - 0 35",
+                                "id": "RJ",
+                                "uci": "h6h5",
+                                "san": "h5",
+                                "children": [
+                                    {
+                                        "ply": 69,
+                                        "fen": "6k1/5pp1/1p3n2/p4N1p/n1N1P3/5P1P/4K1P1/8 b - - 1 35",
+                                        "id": "(/",
+                                        "uci": "f1e2",
+                                        "san": "Ke2",
+                                        "children": [
+                                            {
+                                                "ply": 70,
+                                                "fen": "5k2/5pp1/1p3n2/p4N1p/n1N1P3/5P1P/4K1P1/8 w - - 2 36",
+                                                "id": "a\u0060",
+                                                "uci": "g8f8",
+                                                "san": "Kf8",
+                                                "children": [
+                                                    {
+                                                        "ply": 71,
+                                                        "fen": "5k2/5pp1/1p3n2/p4N1p/n1N1P3/4KP1P/6P1/8 b - - 3 36",
+                                                        "id": "/7",
+                                                        "uci": "e2e3",
+                                                        "san": "Ke3",
+                                                        "children": [
+                                                            {
+                                                                "ply": 72,
+                                                                "fen": "4nk2/5pp1/1p6/p4N1p/n1N1P3/4KP1P/6P1/8 w - - 4 37",
+                                                                "id": "P_",
+                                                                "uci": "f6e8",
+                                                                "san": "Ne8",
+                                                                "children": [
+                                                                    {
+                                                                        "ply": 73,
+                                                                        "fen": "4nk2/5pp1/1p6/p4N1p/n1NKP3/5P1P/6P1/8 b - - 5 37",
+                                                                        "id": "7\u003e",
+                                                                        "uci": "e3d4",
+                                                                        "san": "Kd4",
+                                                                        "children": [
+                                                                            {
+                                                                                "ply": 74,
+                                                                                "fen": "5k2/2n2pp1/1p6/p4N1p/n1NKP3/5P1P/6P1/8 w - - 6 38",
+                                                                                "id": "_U",
+                                                                                "uci": "e8c7",
+                                                                                "san": "Nc7",
+                                                                                "children": [
+                                                                                    {
+                                                                                        "ply": 75,
+                                                                                        "fen": "5k2/2n2pp1/1p6/p6p/n1NKP3/4NP1P/6P1/8 b - - 7 38",
+                                                                                        "id": "H7",
+                                                                                        "uci": "f5e3",
+                                                                                        "san": "Nfe3",
+                                                                                        "children": [
+                                                                                            {
+                                                                                                "ply": 76,
+                                                                                                "fen": "4k3/2n2pp1/1p6/p6p/n1NKP3/4NP1P/6P1/8 w - - 8 39",
+                                                                                                "id": "\u0060_",
+                                                                                                "uci": "f8e8",
+                                                                                                "san": "Ke8",
+                                                                                                "children": [
+                                                                                                    {
+                                                                                                        "ply": 77,
+                                                                                                        "fen": "4k3/2n2pp1/1p6/p2N3p/n1NKP3/5P1P/6P1/8 b - - 9 39",
+                                                                                                        "id": "7F",
+                                                                                                        "uci": "e3d5",
+                                                                                                        "san": "Nd5",
+                                                                                                        "children": [
+                                                                                                            {
+                                                                                                                "ply": 78,
+                                                                                                                "fen": "4k3/5pp1/1p6/pn1N3p/n1NKP3/5P1P/6P1/8 w - - 10 40",
+                                                                                                                "id": "UD",
+                                                                                                                "uci": "c7b5",
+                                                                                                                "san": "Nb5+",
+                                                                                                                "check": true,
+                                                                                                                "children": [
+                                                                                                                    {
+                                                                                                                        "ply": 79,
+                                                                                                                        "fen": "4k3/5pp1/1p6/pn1N3p/n1N1P3/4KP1P/6P1/8 b - - 11 40",
+                                                                                                                        "id": "\u003e7",
+                                                                                                                        "uci": "d4e3",
+                                                                                                                        "san": "Ke3",
+                                                                                                                        "children": [
+                                                                                                                            {
+                                                                                                                                "ply": 80,
+                                                                                                                                "fen": "8/3k1pp1/1p6/pn1N3p/n1N1P3/4KP1P/6P1/8 w - - 12 41",
+                                                                                                                                "id": "_V",
+                                                                                                                                "uci": "e8d7",
+                                                                                                                                "san": "Kd7",
+                                                                                                                                "children": []
+                                                                                                                            }
+                                                                                                                        ]
+                                                                                                                    }
+                                                                                                                ]
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                ]
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "ply": 67,
+                "fen": "6k1/5pp1/1p3n1p/p7/n1NNP3/7P/5PP1/5K2 b - - 1 34",
+                "id": "H\u003e",
+                "uci": "f5d4",
+                "san": "Nd4",
+                "eval": {
+                    "cp": -246,
+                    "best": "f2f3"
+                },
+                "comments": [
+                    {
+                        "id": "jHq1",
+                        "text": "Blunder. f3 was best.",
+                        "by": "lichess"
+                    }
+                ],
+                "glyphs": [
+                    {
+                        "id": 4,
+                        "symbol": "??",
+                        "name": "Blunder"
+                    }
+                ],
+                "clock": 1995
+            },
+            {
+                "ply": 68,
+                "fen": "6k1/5pp1/1p5p/p7/n1NNn3/7P/5PP1/5K2 w - - 0 35",
+                "id": "P?",
+                "uci": "f6e4",
+                "san": "Nxe4",
+                "eval": {
+                    "cp": -254
+                },
+                "clock": 2755
+            },
+            {
+                "ply": 69,
+                "fen": "6k1/5pp1/1p5p/p7/n1NNn3/7P/4KPP1/8 b - - 1 35",
+                "id": "(/",
+                "uci": "f1e2",
+                "san": "Ke2",
+                "eval": {
+                    "cp": -231
+                },
+                "clock": 1867
+            },
+            {
+                "ply": 70,
+                "fen": "6k1/5pp1/1p5p/p1n5/n1NN4/7P/4KPP1/8 w - - 2 36",
+                "id": "?E",
+                "uci": "e4c5",
+                "san": "Nec5",
+                "eval": {
+                    "cp": -233
+                },
+                "clock": 2475,
+                "children": [
+                    {
+                        "ply": 71,
+                        "fen": "6k1/5pp1/1p5p/p1n5/n1NN4/4K2P/5PP1/8 b - - 3 36",
+                        "id": "/7",
+                        "uci": "e2e3",
+                        "san": "Ke3",
+                        "comp": true,
+                        "children": [
+                            {
+                                "ply": 72,
+                                "fen": "5k2/5pp1/1p5p/p1n5/n1NN4/4K2P/5PP1/8 w - - 4 37",
+                                "id": "a\u0060",
+                                "uci": "g8f8",
+                                "san": "Kf8",
+                                "children": [
+                                    {
+                                        "ply": 73,
+                                        "fen": "5k2/5pp1/1p5p/p1n2N2/n1N5/4K2P/5PP1/8 b - - 5 37",
+                                        "id": "\u003eH",
+                                        "uci": "d4f5",
+                                        "san": "Nf5",
+                                        "children": [
+                                            {
+                                                "ply": 74,
+                                                "fen": "5k2/1n3pp1/1p5p/p4N2/n1N5/4K2P/5PP1/8 w - - 6 38",
+                                                "id": "ET",
+                                                "uci": "c5b7",
+                                                "san": "Nb7",
+                                                "children": [
+                                                    {
+                                                        "ply": 75,
+                                                        "fen": "5k2/1n3pp1/1p5p/p4N2/n1N4P/4K3/5PP1/8 b - - 0 38",
+                                                        "id": ":B",
+                                                        "uci": "h3h4",
+                                                        "san": "h4",
+                                                        "children": [
+                                                            {
+                                                                "ply": 76,
+                                                                "fen": "5k2/1n3p2/1p4pp/p4N2/n1N4P/4K3/5PP1/8 w - - 0 39",
+                                                                "id": "YQ",
+                                                                "uci": "g7g6",
+                                                                "san": "g6",
+                                                                "children": [
+                                                                    {
+                                                                        "ply": 77,
+                                                                        "fen": "5k2/1n3p2/1p4pp/p7/n1NN3P/4K3/5PP1/8 b - - 1 39",
+                                                                        "id": "H\u003e",
+                                                                        "uci": "f5d4",
+                                                                        "san": "Nd4",
+                                                                        "children": [
+                                                                            {
+                                                                                "ply": 78,
+                                                                                "fen": "8/1n2kp2/1p4pp/p7/n1NN3P/4K3/5PP1/8 w - - 2 40",
+                                                                                "id": "\u0060W",
+                                                                                "uci": "f8e7",
+                                                                                "san": "Ke7",
+                                                                                "children": [
+                                                                                    {
+                                                                                        "ply": 79,
+                                                                                        "fen": "8/1n2kp2/1p4pp/p7/n1NN2PP/4K3/5P2/8 b - - 0 40",
+                                                                                        "id": "1A",
+                                                                                        "uci": "g2g4",
+                                                                                        "san": "g4",
+                                                                                        "children": [
+                                                                                            {
+                                                                                                "ply": 80,
+                                                                                                "fen": "8/1n3p2/1p3kpp/p7/n1NN2PP/4K3/5P2/8 w - - 1 41",
+                                                                                                "id": "WP",
+                                                                                                "uci": "e7f6",
+                                                                                                "san": "Kf6",
+                                                                                                "children": [
+                                                                                                    {
+                                                                                                        "ply": 81,
+                                                                                                        "fen": "8/1n3p2/1p3kpp/p7/n1NN1PPP/4K3/8/8 b - - 0 41",
+                                                                                                        "id": "0@",
+                                                                                                        "uci": "f2f4",
+                                                                                                        "san": "f4",
+                                                                                                        "children": [
+                                                                                                            {
+                                                                                                                "ply": 82,
+                                                                                                                "fen": "8/5p2/1p3kpp/p1n5/n1NN1PPP/4K3/8/8 w - - 1 42",
+                                                                                                                "id": "TE",
+                                                                                                                "uci": "b7c5",
+                                                                                                                "san": "Nbc5",
+                                                                                                                "children": [
+                                                                                                                    {
+                                                                                                                        "ply": 83,
+                                                                                                                        "fen": "8/5p2/1p3kpp/p1n3P1/n1NN1P1P/4K3/8/8 b - - 0 42",
+                                                                                                                        "id": "AI",
+                                                                                                                        "uci": "g4g5",
+                                                                                                                        "san": "g5+",
+                                                                                                                        "check": true,
+                                                                                                                        "children": [
+                                                                                                                            {
+                                                                                                                                "ply": 84,
+                                                                                                                                "fen": "8/5p2/1p3kp1/p1n3p1/n1NN1P1P/4K3/8/8 w - - 0 43",
+                                                                                                                                "id": "RI",
+                                                                                                                                "uci": "h6g5",
+                                                                                                                                "san": "hxg5",
+                                                                                                                                "children": []
+                                                                                                                            }
+                                                                                                                        ]
+                                                                                                                    }
+                                                                                                                ]
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                ]
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "ply": 71,
+                "fen": "6k1/5pp1/1N5p/p1n5/n2N4/7P/4KPP1/8 b - - 0 36",
+                "id": "=L",
+                "uci": "c4b6",
+                "san": "Nxb6",
+                "eval": {
+                    "cp": -684,
+                    "best": "e2e3"
+                },
+                "comments": [
+                    {
+                        "id": "711o",
+                        "text": "Blunder. Ke3 was best.",
+                        "by": "lichess"
+                    }
+                ],
+                "glyphs": [
+                    {
+                        "id": 4,
+                        "symbol": "??",
+                        "name": "Blunder"
+                    }
+                ],
+                "clock": 1755
+            },
+            {
+                "ply": 72,
+                "fen": "6k1/5pp1/1n5p/p1n5/3N4/7P/4KPP1/8 w - - 0 37",
+                "id": ";L",
+                "uci": "a4b6",
+                "san": "Nxb6",
+                "eval": {
+                    "cp": -674
+                },
+                "clock": 2370
+            }
+        ]
+    },
+    "i18n": {
+        "flipBoard": "\u041f\u0435\u0440\u0435\u0432\u0435\u0440\u043d\u0443\u0442\u044c \u0434\u043e\u0441\u043a\u0443",
+        "gameAborted": "\u0418\u0433\u0440\u0430 \u043e\u0442\u043c\u0435\u043d\u0435\u043d\u0430",
+        "checkmate": "\u041c\u0430\u0442",
+        "whiteResigned": "\u0411\u0435\u043b\u044b\u0435 \u0441\u0434\u0430\u043b\u0438\u0441\u044c",
+        "blackResigned": "\u0427\u0451\u0440\u043d\u044b\u0435 \u0441\u0434\u0430\u043b\u0438\u0441\u044c",
+        "stalemate": "\u041f\u0430\u0442",
+        "whiteLeftTheGame": "\u0411\u0435\u043b\u044b\u0435 \u0432\u044b\u0448\u043b\u0438 \u0438\u0437 \u0438\u0433\u0440\u044b",
+        "blackLeftTheGame": "\u0427\u0451\u0440\u043d\u044b\u0435 \u0432\u044b\u0448\u043b\u0438 \u0438\u0437 \u0438\u0433\u0440\u044b",
+        "draw": "\u041d\u0438\u0447\u044c\u044f",
+        "timeOut": "\u0412\u0440\u0435\u043c\u044f \u0438\u0441\u0442\u0435\u043a\u043b\u043e",
+        "playingRightNow": "\u0418\u0434\u0451\u0442 \u0438\u0433\u0440\u0430",
+        "whiteIsVictorious": "\u041f\u043e\u0431\u0435\u0434\u0430 \u0431\u0435\u043b\u044b\u0445",
+        "blackIsVictorious": "\u041f\u043e\u0431\u0435\u0434\u0430 \u0447\u0451\u0440\u043d\u044b\u0445",
+        "kingInTheCenter": "\u041a\u043e\u0440\u043e\u043b\u044c \u0432 \u0446\u0435\u043d\u0442\u0440\u0435",
+        "threeChecks": "\u0422\u0440\u0438 \u0448\u0430\u0445\u0430",
+        "variantEnding": "\u041f\u0430\u0440\u0442\u0438\u044f \u043e\u043a\u043e\u043d\u0447\u0435\u043d\u0430",
+        "analysis": "\u0410\u043d\u0430\u043b\u0438\u0437\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u043f\u0430\u0440\u0442\u0438\u044e",
+        "boardEditor": "\u0420\u0435\u0434\u0430\u043a\u0442\u043e\u0440 \u0434\u043e\u0441\u043a\u0438",
+        "continueFromHere": "\u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u044c \u0441 \u044d\u0442\u043e\u0439 \u043f\u043e\u0437\u0438\u0446\u0438\u0438",
+        "playWithTheMachine": "\u0421\u044b\u0433\u0440\u0430\u0442\u044c \u0441 \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043e\u043c",
+        "playWithAFriend": "\u0421\u044b\u0433\u0440\u0430\u0442\u044c \u0441 \u0434\u0440\u0443\u0433\u043e\u043c",
+        "openingExplorer": "\u0411\u0430\u0437\u0430 \u0434\u0435\u0431\u044e\u0442\u043e\u0432",
+        "inaccuracies": "\u041d\u0435\u0442\u043e\u0447\u043d\u043e\u0441\u0442\u0438",
+        "mistakes": "\u041e\u0448\u0438\u0431\u043a\u0438",
+        "blunders": "\u0417\u0435\u0432\u043a\u0438",
+        "averageCentipawnLoss": "\u041f\u043e\u0442\u0435\u0440\u0438 \u0441\u0430\u043d\u0442\u0438\u043f\u0435\u0448\u0435\u043a \u0432 \u0441\u0440\u0435\u0434\u043d\u0435\u043c",
+        "goodMove": "\u0425\u043e\u0440\u043e\u0448\u0438\u0439 \u0445\u043e\u0434",
+        "viewTheSolution": "\u041f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0440\u0435\u0448\u0435\u043d\u0438\u0435",
+        "youNeedAnAccountToDoThat": "\u0412\u0430\u043c \u043d\u0443\u0436\u043d\u043e \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u0442\u044c\u0441\u044f, \u0447\u0442\u043e\u0431\u044b \u0441\u0434\u0435\u043b\u0430\u0442\u044c \u044d\u0442\u043e",
+        "depthX": "\u0413\u043b\u0443\u0431\u0438\u043d\u0430 %s",
+        "usingServerAnalysis": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u0442\u0441\u044f \u0441\u0435\u0440\u0432\u0435\u0440\u043d\u044b\u0439 \u0430\u043d\u0430\u043b\u0438\u0437",
+        "loadingEngine": "\u0417\u0430\u0433\u0440\u0443\u0437\u043a\u0430 \u0434\u0432\u0438\u0436\u043a\u0430...",
+        "cloudAnalysis": "\u041e\u0431\u043b\u0430\u0447\u043d\u044b\u0439 \u0430\u043d\u0430\u043b\u0438\u0437",
+        "goDeeper": "\u0410\u043d\u0430\u043b\u0438\u0437\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0433\u043b\u0443\u0431\u0436\u0435",
+        "showThreat": "\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u043e\u0442\u0432\u0435\u0442\u043d\u0443\u044e \u0443\u0433\u0440\u043e\u0437\u0443",
+        "gameOver": "\u041f\u0430\u0440\u0442\u0438\u044f \u043e\u043a\u043e\u043d\u0447\u0435\u043d\u0430",
+        "inLocalBrowser": "\u0432 \u0431\u0440\u0430\u0443\u0437\u0435\u0440\u0435",
+        "toggleLocalEvaluation": "\u0412\u043a\u043b\u044e\u0447\u0438\u0442\u044c \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0439 \u0430\u043d\u0430\u043b\u0438\u0437",
+        "menu": "\u041c\u0435\u043d\u044e",
+        "toStudy": "\u0421\u0442\u0443\u0434\u0438\u044f",
+        "inlineNotation": "\u0421\u0442\u0440\u043e\u0447\u043d\u0430\u044f \u043d\u043e\u0442\u0430\u0446\u0438\u044f",
+        "computerAnalysis": "\u041a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u044b\u0439 \u0430\u043d\u0430\u043b\u0438\u0437",
+        "enable": "\u0412\u043a\u043b\u044e\u0447\u0438\u0442\u044c",
+        "bestMoveArrow": "\u041f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0442\u044c \u043b\u0443\u0447\u0448\u0438\u0435 \u0445\u043e\u0434\u044b \u0441\u0442\u0440\u0435\u043b\u043a\u0430\u043c\u0438",
+        "evaluationGauge": "\u0428\u043a\u0430\u043b\u0430 \u043e\u0446\u0435\u043d\u043a\u0438",
+        "infiniteAnalysis": "\u0411\u0435\u0441\u043a\u043e\u043d\u0435\u0447\u043d\u044b\u0439 \u0430\u043d\u0430\u043b\u0438\u0437",
+        "removesTheDepthLimit": "\u0421\u043d\u0438\u043c\u0430\u0435\u0442 \u043e\u0433\u0440\u0430\u043d\u0438\u0447\u0435\u043d\u0438\u0435 \u043d\u0430 \u0433\u043b\u0443\u0431\u0438\u043d\u0443 \u0430\u043d\u0430\u043b\u0438\u0437\u0430, \u043d\u043e \u0437\u0430\u0441\u0442\u0430\u0432\u043b\u044f\u0435\u0442 \u043f\u043e\u0440\u0430\u0431\u043e\u0442\u0430\u0442\u044c \u0432\u0430\u0448 \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440",
+        "multipleLines": "\u041c\u043d\u043e\u0436\u0435\u0441\u0442\u0432\u043e \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u043e\u0432",
+        "cpus": "\u041f\u043e\u0442\u043e\u043a\u0438",
+        "memory": "\u041f\u0430\u043c\u044f\u0442\u044c",
+        "delete": "\u0423\u0434\u0430\u043b\u0438\u0442\u044c",
+        "deleteThisImportedGame": "\u0423\u0434\u0430\u043b\u0438\u0442\u044c \u044d\u0442\u0443 \u0438\u043c\u043f\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u0443\u044e \u0438\u0433\u0440\u0443?",
+        "replayMode": "\u0421\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0432 \u043f\u043e\u0432\u0442\u043e\u0440\u0435",
+        "slow": "\u041c\u0435\u0434\u043b\u0435\u043d\u043d\u043e",
+        "fast": "\u0411\u044b\u0441\u0442\u0440\u043e",
+        "realtimeReplay": "\u041a\u0430\u043a \u0432 \u043f\u0430\u0440\u0442\u0438\u0438",
+        "byCPL": "\u041f\u043e \u043e\u0448\u0438\u0431\u043a\u0430\u043c",
+        "promoteVariation": "\u041f\u043e\u0432\u044b\u0441\u0438\u0442\u044c \u043f\u0440\u0438\u043e\u0440\u0438\u0442\u0435\u0442 \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u0430",
+        "makeMainLine": "\u0421\u0434\u0435\u043b\u0430\u0442\u044c \u044d\u0442\u043e\u0442 \u0432\u0430\u0440\u0438\u0430\u043d\u0442 \u0433\u043b\u0430\u0432\u043d\u044b\u043c",
+        "deleteFromHere": "\u0423\u0434\u0430\u043b\u0438\u0442\u044c \u0441 \u044d\u0442\u043e\u0433\u043e \u043c\u0435\u0441\u0442\u0430",
+        "forceVariation": "\u0421\u0434\u0435\u043b\u0430\u0442\u044c \u0432\u0430\u0440\u0438\u0430\u043d\u0442 \u0433\u043b\u0430\u0432\u043d\u044b\u043c",
+        "practiceWithComputer": "\u0422\u0440\u0435\u043d\u0438\u0440\u043e\u0432\u043a\u0430 \u0441 \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043e\u043c",
+        "inaccuracy": "\u041d\u0435\u0442\u043e\u0447\u043d\u043e\u0441\u0442\u044c",
+        "mistake": "\u041e\u0448\u0438\u0431\u043a\u0430",
+        "blunder": "\u0417\u0435\u0432\u043e\u043a",
+        "threefoldRepetition": "\u0422\u0440\u043e\u0435\u043a\u0440\u0430\u0442\u043d\u043e\u0435 \u043f\u043e\u0432\u0442\u043e\u0440\u0435\u043d\u0438\u0435 \u043f\u043e\u0437\u0438\u0446\u0438\u0438",
+        "anotherWasX": "\u041c\u043e\u0436\u043d\u043e \u0431\u044b\u043b\u043e %s",
+        "bestWasX": "\u041b\u0443\u0447\u0448\u0435 \u0431\u044b\u043b\u043e %s",
+        "youBrowsedAway": "\u0412\u044b \u0432\u044b\u0448\u043b\u0438 \u0438\u0437 \u0440\u0435\u0436\u0438\u043c\u0430 \u0442\u0440\u0435\u043d\u0438\u0440\u043e\u0432\u043a\u0438",
+        "resumePractice": "\u0412\u043e\u0437\u043e\u0431\u043d\u043e\u0432\u0438\u0442\u044c \u0442\u0440\u0435\u043d\u0438\u0440\u043e\u0432\u043a\u0443",
+        "whiteWinsGame": "\u0411\u0435\u043b\u044b\u0435 \u0432\u044b\u0438\u0433\u0440\u0430\u043b\u0438",
+        "blackWinsGame": "\u0427\u0451\u0440\u043d\u044b\u0435 \u0432\u044b\u0438\u0433\u0440\u0430\u043b\u0438",
+        "theGameIsADraw": "\u0418\u0433\u0440\u0430 \u043e\u043a\u043e\u043d\u0447\u0438\u043b\u0430\u0441\u044c \u0432\u043d\u0438\u0447\u044c\u044e.",
+        "yourTurn": "\u0412\u0430\u0448 \u0445\u043e\u0434",
+        "computerThinking": "\u041a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440 \u0434\u0443\u043c\u0430\u0435\u0442...",
+        "seeBestMove": "\u041f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u043b\u0443\u0447\u0448\u0438\u0439 \u0445\u043e\u0434",
+        "hideBestMove": "\u0421\u043a\u0440\u044b\u0442\u044c \u043b\u0443\u0447\u0448\u0438\u0439 \u0445\u043e\u0434",
+        "getAHint": "\u0412\u0437\u044f\u0442\u044c \u043f\u043e\u0434\u0441\u043a\u0430\u0437\u043a\u0443",
+        "evaluatingYourMove": "\u041e\u0446\u0435\u043d\u043a\u0430 \u0432\u0430\u0448\u0435\u0433\u043e \u0445\u043e\u0434\u0430...",
+        "learnFromYourMistakes": "\u0420\u0430\u0437\u043e\u0431\u0440\u0430\u0442\u044c \u0441\u0432\u043e\u0438 \u043e\u0448\u0438\u0431\u043a\u0438",
+        "learnFromThisMistake": "\u0420\u0430\u0437\u043e\u0431\u0440\u0430\u0442\u044c \u044d\u0442\u0443 \u043e\u0448\u0438\u0431\u043a\u0443",
+        "skipThisMove": "\u041f\u0440\u043e\u043f\u0443\u0441\u0442\u0438\u0442\u044c \u044d\u0442\u043e\u0442 \u0445\u043e\u0434",
+        "next": "\u0414\u0430\u043b\u0435\u0435",
+        "xWasPlayed": "\u0411\u044b\u043b\u043e \u0441\u044b\u0433\u0440\u0430\u043d\u043e %s",
+        "findBetterMoveForWhite": "\u041d\u0430\u0439\u0434\u0438\u0442\u0435 \u0431\u043e\u043b\u0435\u0435 \u0441\u0438\u043b\u044c\u043d\u044b\u0439 \u0445\u043e\u0434 \u0437\u0430 \u0431\u0435\u043b\u044b\u0445",
+        "findBetterMoveForBlack": "\u041d\u0430\u0439\u0434\u0438\u0442\u0435 \u0431\u043e\u043b\u0435\u0435 \u0441\u0438\u043b\u044c\u043d\u044b\u0439 \u0445\u043e\u0434 \u0437\u0430 \u0447\u0451\u0440\u043d\u044b\u0445",
+        "resumeLearning": "\u0412\u0435\u0440\u043d\u0443\u0442\u044c\u0441\u044f \u043a \u043e\u0431\u0443\u0447\u0435\u043d\u0438\u044e",
+        "youCanDoBetter": "\u0415\u0441\u0442\u044c \u0431\u043e\u043b\u0435\u0435 \u0441\u0438\u043b\u044c\u043d\u044b\u0439 \u0445\u043e\u0434",
+        "tryAnotherMoveForWhite": "\u041f\u043e\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0439 \u0445\u043e\u0434 \u0437\u0430 \u0431\u0435\u043b\u044b\u0445",
+        "tryAnotherMoveForBlack": "\u041f\u043e\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0439 \u0445\u043e\u0434 \u0437\u0430 \u0447\u0451\u0440\u043d\u044b\u0445",
+        "solution": "\u041e\u0442\u0432\u0435\u0442",
+        "waitingForAnalysis": "\u041e\u0436\u0438\u0434\u0430\u043d\u0438\u0435 \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0430\u043d\u0430\u043b\u0438\u0437\u0430",
+        "noMistakesFoundForWhite": "\u041e\u0448\u0438\u0431\u043e\u043a \u0431\u0435\u043b\u044b\u0445 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e",
+        "noMistakesFoundForBlack": "\u041e\u0448\u0438\u0431\u043e\u043a \u0447\u0451\u0440\u043d\u044b\u0445 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e",
+        "doneReviewingWhiteMistakes": "\u041e\u0448\u0438\u0431\u043a\u0438 \u0431\u0435\u043b\u044b\u0445 \u0440\u0430\u0437\u043e\u0431\u0440\u0430\u043d\u044b",
+        "doneReviewingBlackMistakes": "\u041e\u0448\u0438\u0431\u043a\u0438 \u0447\u0451\u0440\u043d\u044b\u0445 \u0440\u0430\u0437\u043e\u0431\u0440\u0430\u043d\u044b",
+        "doItAgain": "\u0412\u044b\u043f\u043e\u043b\u043d\u0438\u0442\u044c \u0435\u0449\u0451 \u0440\u0430\u0437",
+        "reviewWhiteMistakes": "\u0420\u0430\u0437\u043e\u0431\u0440\u0430\u0442\u044c \u043e\u0448\u0438\u0431\u043a\u0438 \u0431\u0435\u043b\u044b\u0445",
+        "reviewBlackMistakes": "\u0420\u0430\u0437\u043e\u0431\u0440\u0430\u0442\u044c \u043e\u0448\u0438\u0431\u043a\u0438 \u0447\u0451\u0440\u043d\u044b\u0445",
+        "openingExplorerAndTablebase": "\u0411\u0430\u0437\u0430 \u0434\u0435\u0431\u044e\u0442\u043e\u0432 \u0438 \u044d\u043d\u0434\u0448\u043f\u0438\u043b\u0435\u0439",
+        "xOpeningExplorer": "\u0411\u0430\u0437\u0430 \u0434\u0435\u0431\u044e\u0442\u043e\u0432 \u0434\u043b\u044f %s",
+        "move": "\u0425\u043e\u0434",
+        "games": "\u0418\u0433\u0440\u044b",
+        "variantLoss": "\u041f\u0440\u043e\u0438\u0433\u0440\u044b\u0448\u043d\u044b\u0439 \u0445\u043e\u0434",
+        "variantWin": "\u041f\u043e\u0431\u0435\u0434\u043d\u044b\u0439 \u0445\u043e\u0434",
+        "insufficientMaterial": "\u041d\u0435\u0434\u043e\u0441\u0442\u0430\u0442\u043e\u0447\u043d\u043e \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u0430 \u0434\u043b\u044f \u043c\u0430\u0442\u0430",
+        "capture": "\u0412\u0437\u044f\u0442\u0438\u0435",
+        "pawnMove": "\u0425\u043e\u0434 \u043f\u0435\u0448\u043a\u0438",
+        "close": "\u0417\u0430\u043a\u0440\u044b\u0442\u044c",
+        "winning": "\u0412\u044b\u0438\u0433\u0440\u044b\u0432\u0430\u044e\u0442",
+        "unknown": "\u041d\u0435\u0438\u0437\u0432\u0435\u0441\u0442\u043d\u043e",
+        "losing": "\u041f\u0440\u043e\u0438\u0433\u0440\u044b\u0432\u0430\u044e\u0442",
+        "drawn": "\u0412\u043d\u0438\u0447\u044c\u044e",
+        "timeControl": "\u041a\u043e\u043d\u0442\u0440\u043e\u043b\u044c \u0432\u0440\u0435\u043c\u0435\u043d\u0438",
+        "averageElo": "\u0421\u0440\u0435\u0434\u043d\u0438\u0439 \u0440\u0435\u0439\u0442\u0438\u043d\u0433 \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u043e\u0432",
+        "database": "\u0410\u0440\u0445\u0438\u0432 \u043f\u0430\u0440\u0442\u0438\u0439",
+        "recentGames": "\u041d\u0435\u0434\u0430\u0432\u043d\u0438\u0435 \u0438\u0433\u0440\u044b",
+        "topGames": "\u041b\u0443\u0447\u0448\u0438\u0435 \u0438\u0433\u0440\u044b",
+        "whiteDrawBlack": "\u0411\u0435\u043b\u044b\u0435 / \u041d\u0438\u0447\u044c\u044f / \u0427\u0451\u0440\u043d\u044b\u0435",
+        "averageRatingX": "\u0421\u0440\u0435\u0434\u043d\u0438\u0439 \u0440\u0435\u0439\u0442\u0438\u043d\u0433: %s",
+        "masterDbExplanation": "\u0414\u0432\u0430 \u043c\u0438\u043b\u043b\u0438\u043e\u043d\u0430 \u0438\u0433\u0440, \u043f\u0440\u043e\u0432\u0435\u0434\u0451\u043d\u043d\u044b\u0445 \u0437\u0430 \u0434\u043e\u0441\u043a\u043e\u0439 \u0438\u0433\u0440\u043e\u043a\u0430\u043c\u0438 FIDE \u0441 \u0440\u0435\u0439\u0442\u0438\u043d\u0433\u043e\u043c %1$s+ \u0441 %2$s \u043f\u043e %3$s",
+        "mateInXHalfMoves:one": "\u041c\u0430\u0442 \u0432 %s \u043f\u043e\u043b\u0443\u0445\u043e\u0434",
+        "mateInXHalfMoves:few": "\u041c\u0430\u0442 \u0432 %s \u043f\u043e\u043b\u0443\u0445\u043e\u0434\u0430",
+        "mateInXHalfMoves:many": "\u041c\u0430\u0442 \u0432 %s \u043f\u043e\u043b\u0443\u0445\u043e\u0434\u043e\u0432",
+        "mateInXHalfMoves": "\u041c\u0430\u0442 \u0432 %s \u043f\u043e\u043b\u0443\u0445\u043e\u0434\u043e\u0432",
+        "nextCaptureOrPawnMoveInXHalfMoves:one": "\u0421\u043b\u0435\u0434\u0443\u044e\u0449\u0435\u0435 \u0432\u0437\u044f\u0442\u0438\u0435 \u0438\u043b\u0438 \u0445\u043e\u0434 \u043f\u0435\u0448\u043a\u043e\u0439 \u0432 %s \u043f\u043e\u043b\u0443\u0445\u043e\u0434 (\u0420\u0430\u0441\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0434\u043e \u043e\u0431\u043d\u0443\u043b\u0435\u043d\u0438\u044f \u0441\u0447\u0451\u0442\u0447\u0438\u043a\u0430 50 \u0445\u043e\u0434\u043e\u0432)",
+        "nextCaptureOrPawnMoveInXHalfMoves:few": "\u0421\u043b\u0435\u0434\u0443\u044e\u0449\u0435\u0435 \u0432\u0437\u044f\u0442\u0438\u0435 \u0438\u043b\u0438 \u0445\u043e\u0434 \u043f\u0435\u0448\u043a\u043e\u0439 \u0432 %s \u043f\u043e\u043b\u0443\u0445\u043e\u0434\u0430 (\u0420\u0430\u0441\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0434\u043e \u043e\u0431\u043d\u0443\u043b\u0435\u043d\u0438\u044f \u0441\u0447\u0451\u0442\u0447\u0438\u043a\u0430 50 \u0445\u043e\u0434\u043e\u0432)",
+        "nextCaptureOrPawnMoveInXHalfMoves:many": "\u0421\u043b\u0435\u0434\u0443\u044e\u0449\u0435\u0435 \u0432\u0437\u044f\u0442\u0438\u0435 \u0438\u043b\u0438 \u0445\u043e\u0434 \u043f\u0435\u0448\u043a\u043e\u0439 \u0432 %s \u043f\u043e\u043b\u0443\u0445\u043e\u0434\u043e\u0432 (\u0420\u0430\u0441\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0434\u043e \u043e\u0431\u043d\u0443\u043b\u0435\u043d\u0438\u044f \u0441\u0447\u0451\u0442\u0447\u0438\u043a\u0430 50 \u0445\u043e\u0434\u043e\u0432)",
+        "nextCaptureOrPawnMoveInXHalfMoves": "\u0421\u043b\u0435\u0434\u0443\u044e\u0449\u0435\u0435 \u0432\u0437\u044f\u0442\u0438\u0435 \u0438\u043b\u0438 \u0445\u043e\u0434 \u043f\u0435\u0448\u043a\u043e\u0439 \u0432 %s \u043f\u043e\u043b\u0443\u0445\u043e\u0434\u043e\u0432 (\u0420\u0430\u0441\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0434\u043e \u043e\u0431\u043d\u0443\u043b\u0435\u043d\u0438\u044f \u0441\u0447\u0451\u0442\u0447\u0438\u043a\u0430 50 \u0445\u043e\u0434\u043e\u0432)",
+        "noGameFound": "\u041f\u0430\u0440\u0442\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e",
+        "maybeIncludeMoreGamesFromThePreferencesMenu": "\u0412\u043e\u0437\u043c\u043e\u0436\u043d\u043e, \u0441\u0442\u043e\u0438\u0442 \u0432\u043a\u043b\u044e\u0447\u0438\u0442\u044c \u0431\u043e\u043b\u044c\u0448\u0435 \u0438\u0433\u0440 \u0432 \u043d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0430\u0445?",
+        "winPreventedBy50MoveRule": "\u041d\u0435 \u0443\u0434\u0430\u0451\u0442\u0441\u044f \u043f\u043e\u0431\u0435\u0434\u0438\u0442\u044c \u0438\u0437-\u0437\u0430 \u043f\u0440\u0430\u0432\u0438\u043b\u0430 50 \u0445\u043e\u0434\u043e\u0432",
+        "lossSavedBy50MoveRule": "\u0423\u0434\u0430\u0451\u0442\u0441\u044f \u0438\u0437\u0431\u0435\u0436\u0430\u0442\u044c \u043f\u043e\u0440\u0430\u0436\u0435\u043d\u0438\u044f \u0438\u0437-\u0437\u0430 \u043f\u0440\u0430\u0432\u0438\u043b\u0430 50 \u0445\u043e\u0434\u043e\u0432",
+        "allSet": "\u0413\u043e\u0442\u043e\u0432\u043e!",
+        "advantage": "\u041f\u0440\u0435\u0438\u043c\u0443\u0449\u0435\u0441\u0442\u0432\u043e",
+        "nbSeconds:one": "%s \u0441\u0435\u043a\u0443\u043d\u0434\u0430",
+        "nbSeconds:few": "%s \u0441\u0435\u043a\u0443\u043d\u0434\u044b",
+        "nbSeconds:many": "%s \u0441\u0435\u043a\u0443\u043d\u0434",
+        "nbSeconds": "%s \u0441\u0435\u043a\u0443\u043d\u0434",
+        "opening": "\u0414\u0435\u0431\u044e\u0442",
+        "middlegame": "\u041c\u0438\u0442\u0442\u0435\u043b\u044c\u0448\u043f\u0438\u043b\u044c",
+        "endgame": "\u042d\u043d\u0434\u0448\u043f\u0438\u043b\u044c"
+    },
+    "userId": null,
+    "chat": {
+        "data": {
+            "id": "LvXvtvCT/w",
+            "name": "\u0427\u0430\u0442 \u0434\u043b\u044f \u0437\u0440\u0438\u0442\u0435\u043b\u0435\u0439",
+            "lines": [
+                {
+                    "u": "Mawe2",
+                    "t": "Wtf"
+                },
+                {
+                    "u": "Rabbinvane",
+                    "t": "2.49"
+                },
+                {
+                    "u": "Omarkhraisat93",
+                    "t": "Ec1 lol",
+                    "r": true
+                },
+                {
+                    "u": "cedratboise",
+                    "t": "7 points just 3 game",
+                    "r": true
+                },
+                {
+                    "u": "cedratboise",
+                    "t": "ali reza...ali reza...ali reza...ali reza...ali reza...ali reza...ali reza...ali reza...ali reza...ali reza...ali reza...ali reza...",
+                    "r": true
+                },
+                {
+                    "u": "Ngoma1",
+                    "t": "20-4"
+                },
+                {
+                    "u": "bushehr-eshghe",
+                    "t": "\u0622\u0644\u062e\u06cc\u0646 \u0633\u0647 \u0686\u0647\u0627\u0631\u0645 \u0647\u0633\u062a"
+                },
+                {
+                    "u": "Big_Tank",
+                    "t": "nakamura legend"
+                },
+                {
+                    "u": "Omarkhraisat93",
+                    "t": "Rc1 nooop",
+                    "r": true
+                },
+                {
+                    "u": "Neverness",
+                    "t": "Kasparov, in his prime, would annihilate these Patzers"
+                },
+                {
+                    "u": "Neverness",
+                    "t": ":P"
+                },
+                {
+                    "u": "Naexaerra",
+                    "t": "is that a sign of tilt?"
+                },
+                {
+                    "u": "pinoynewbie",
+                    "t": "3300 hype train all aboard"
+                },
+                {
+                    "u": "arjunleo",
+                    "t": "Grischuk is 4000"
+                },
+                {
+                    "u": "chess_hater",
+                    "t": "keep on loosing zhigalko"
+                },
+                {
+                    "u": "Ilimahshidi",
+                    "t": "\u0648\u0648\u0686\u0627"
+                },
+                {
+                    "u": "Z47",
+                    "t": "Wtf zhigalko"
+                },
+                {
+                    "u": "Z47",
+                    "t": "?"
+                },
+                {
+                    "u": "Broatse",
+                    "t": "Alireza is physically faster than Hikaru but Hikaru is stronger"
+                },
+                {
+                    "u": "Ilimahshidi",
+                    "t": "\ud83e\udd4b\ud83e\udd4b\ud83e\udd4b\ud83e\udd4b\ud83e\udd4b\ud83e\udd4b"
+                },
+                {
+                    "u": "Rabbinvane",
+                    "t": "he can get 3300 with three wins"
+                },
+                {
+                    "u": "VALERI-11",
+                    "t": "kyolukl["
+                },
+                {
+                    "u": "fernan2008",
+                    "t": "Hola"
+                },
+                {
+                    "u": "Rabbinvane",
+                    "t": "five more after that for record"
+                },
+                {
+                    "u": "Akothee",
+                    "t": "@mawe2 can you take Alireza? You\u0027re 2500+",
+                    "r": true
+                },
+                {
+                    "u": "amrrezabakh",
+                    "t": "\u0627\u0645\u06cc\u062f"
+                },
+                {
+                    "u": "Jamtchess",
+                    "t": "141-99"
+                },
+                {
+                    "u": "kumarkunal",
+                    "t": "Alireza vs Nihal will be nice"
+                },
+                {
+                    "u": "fernan2008",
+                    "t": "Hello"
+                },
+                {
+                    "u": "Naexaerra",
+                    "t": "hi"
+                },
+                {
+                    "u": "Ilimahshidi",
+                    "t": "\u06a9\u0633\u06cc"
+                },
+                {
+                    "u": "Big_Tank",
+                    "t": "nihal weakling"
+                },
+                {
+                    "u": "glgbgg123",
+                    "t": "hikaru best bullet player world"
+                },
+                {
+                    "u": "kumarkunal",
+                    "t": "both r online"
+                },
+                {
+                    "u": "CocoMoose",
+                    "t": "nah we need Andrew and Alireza"
+                },
+                {
+                    "u": "sahista93",
+                    "t": "Hikaru was stronger few monts ago then Alireza, does not mean he is stronger now..."
+                },
+                {
+                    "u": "kingysf",
+                    "t": "\ud83c\uddf9\ud83c\uddf7\ud83c\uddf9\ud83c\uddf7\ud83c\uddf9\ud83c\uddf7\ud83c\uddf9\ud83c\uddf7"
+                },
+                {
+                    "u": "pressfake",
+                    "t": "Alireza has bright future in chess , sure",
+                    "r": true
+                },
+                {
+                    "u": "atul385",
+                    "t": "Yes kunan"
+                },
+                {
+                    "u": "atul385",
+                    "t": "Kunal"
+                },
+                {
+                    "u": "Omarkhraisat93",
+                    "t": "until yesterdat the noop had a plus 20 score against the star",
+                    "r": true
+                },
+                {
+                    "u": "szilu84",
+                    "t": "@rabbinvane, thx"
+                },
+                {
+                    "u": "pupilodelpueblo",
+                    "t": "Wow"
+                },
+                {
+                    "u": "fairplay78",
+                    "t": "\u0628\u0644\u0647 \u060c \u0648\u0627\u0642\u0639\u0627 \u0627\u0633\u062a\u0627\u062f \u0627\u062e\u0644\u0627\u0642\u0647"
+                },
+                {
+                    "u": "chess_hater",
+                    "t": "Nihal noob at bullet"
+                },
+                {
+                    "u": "hamidrezabagheri",
+                    "t": "\u0633\u0644\u0627\u0645"
+                },
+                {
+                    "u": "fairplay78",
+                    "t": "\u0647\u0645\u06cc\u0646\u0637\u0648\u0631 \u0627\u0641 \u0627\u0645 \u0645\u062d\u0645\u062f\u06cc\u0627\u0646"
+                },
+                {
+                    "u": "lichess",
+                    "t": "Rematch offer sent"
+                },
+                {
+                    "u": "lichess",
+                    "t": "Rematch offer accepted"
+                },
+                {
+                    "u": "fernan2008",
+                    "t": "alireza es mucho mejor que Zhigalko"
+                }
+            ],
+            "userId": null,
+            "resourceId": "game/LvXvtvCT/w",
+            "loginRequired": true
+        },
+        "i18n": {
+            "talkInChat": "\u0411\u0443\u0434\u044c\u0442\u0435 \u0432\u0435\u0436\u043b\u0438\u0432\u044b \u0432 \u0447\u0430\u0442\u0435!",
+            "toggleTheChat": "\u041f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0442\u044c \u043e\u043a\u043d\u043e \u0447\u0430\u0442\u0430",
+            "loginToChat": "\u0412\u043e\u0439\u0434\u0438\u0442\u0435, \u0447\u0442\u043e\u0431\u044b \u043e\u0431\u0449\u0430\u0442\u044c\u0441\u044f \u0432 \u0447\u0430\u0442\u0435",
+            "youHaveBeenTimedOut": "\u0427\u0430\u0442 \u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e \u043d\u0435\u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d \u0434\u043b\u044f \u0432\u0430\u0441."
+        },
+        "writeable": true,
+        "public": true,
+        "permissions": {
+            "local": false
+        }
+    },
+    "explorer": {
+        "endpoint": "https://explorer.lichess.ovh",
+        "tablebaseEndpoint": "https://tablebase.lichess.ovh"
+    }
+}

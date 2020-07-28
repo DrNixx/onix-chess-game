@@ -1,0 +1,32 @@
+{
+    "game": {       
+        "movesTab": "Ходы",
+        "infoTab": "Информация",
+        "startDate": "Начата",
+        "completeDate": "Завершена",
+        "completeState": "Игра завершена",
+        "datesFmt": "Партия продолжалась с %s по %s",
+        "tournament": "Турнир", 
+        "noTrn": "нет",
+        "canPostpone": "отпуск разрешен",
+        "noPostpone": "без отпуска",
+        "timeControl": "Контроль времени",
+        "privateGame": "Приватная",
+        "ratedGame": "Рейтинговая",
+        "unratedGame": "Без рейтинга",
+        "useCompHints": "Использование подсказок компьютера",
+        "allow": "разрешено",
+        "denied": "запрещено",
+        "gameResultWhite": "Белыми фигурами победил %s (%s) - %s",
+        "gameResultWhite1": "Белыми фигурами победил %s - %s",
+        "gameResultBlack": "Черными фигурами победил %s (%s) - %s",
+        "gameResultBlack1": "Черными фигурами победил %s - %s", 
+        "gameResultDraw": "В партии зафиксирована ничья",
+        "infoLoading": "Информация загружается...",
+        "send": "Отправить"
+    },
+    "app": {
+        "load": "Загрузить",
+        "send": "Отправить"
+    }
+}

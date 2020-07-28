@@ -2,14 +2,12 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Unsubscribe } from 'redux';
 import { Subscription } from 'rxjs';
-import { appInstance } from 'onix-app';
 import { Logger } from 'onix-core';
-import { FenStandartStart, Piece, Square, Chess } from 'onix-chess';
-import { BoardSize, BoardSettings, BoardActions as ba, BoardActionConsts as bac } from 'onix-board';
-import { GameSettings } from './GameSettings';
-import { DumbGame } from './DumbGame';
-import { createPlayStore, PlayState, PlayStore, gameTakePgn, gameLoadInsite } from './GameStore';
-import { createGameState } from './GameReducer';
+import { FenString, Piece, Square, Chess } from 'onix-chess';
+import { createPlayStore, PlayState, PlayStore, gameTakePgn, gameLoadInsite } from '../GameStore';
+import { createGameState } from '../GameReducer';
+import { GameSettings } from '../settings/GameSettings';
+import { BoardSettings } from '../settings/BoardSettings';
 
 export interface ChessGameProps {
     locale?: string,
@@ -26,9 +24,9 @@ export class ViewGame extends React.Component<ChessGameProps, ChessGameState> {
     private holder: number[] = [];
     private storeUnsubscribe: Unsubscribe;
 
-    private gameSubscrption: Subscription = null;
-    private pvtSubscrption: Subscription = null;
-    private pubSubscrption: Subscription = null;
+    private gameSubscrption?: Subscription = undefined;
+    private pvtSubscrption?: Subscription = undefined;
+    private pubSubscrption?: Subscription = undefined;
 
     constructor(props: ChessGameProps) {
         super(props);
@@ -42,7 +40,7 @@ export class ViewGame extends React.Component<ChessGameProps, ChessGameState> {
             pgn: pgn
         };
 
-        const fena = feng || fenb || FenStandartStart;
+        const fena = feng || fenb || FenString.standartStart;
         const gstate = createGameState(game, fena);
 
         let analysis = {
@@ -146,17 +144,17 @@ export class ViewGame extends React.Component<ChessGameProps, ChessGameState> {
 
             if (game.channel && this.gameSubscrption) {
                 stream.removeChannel(game.channel);
-                this.gameSubscrption = null;
+                this.gameSubscrption = undefined;
             }
 
             if (game.chat_pvt && this.pvtSubscrption) {
                 stream.removeChannel(game.chat_pvt);
-                this.pvtSubscrption = null;
+                this.pvtSubscrption = undefined;
             }
 
             if (game.chat_pub && this.pubSubscrption) {
                 stream.removeChannel(game.chat_pub);
-                this.pubSubscrption = null;
+                this.pubSubscrption = undefined;
             }
         }
     }
