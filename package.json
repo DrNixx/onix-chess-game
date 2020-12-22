@@ -83,7 +83,7 @@
     "jsdom": "^16.3.0",
     "merge2": "^1.4.1",
     "mocha": "^8.0.1",
-    "node-notifier": "^7.0.1",
+    "node-notifier": "^8.0.1",
     "onix-board-assets": "^4.2.0",
     "postcss-assets": "^5.0.0",
     "postcss-scss": "^2.1.1",
