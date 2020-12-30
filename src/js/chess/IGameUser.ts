@@ -1,7 +1,6 @@
-import { IUser } from 'onix-core';
-import { IUserAnalysis } from 'onix-chess-analyse';
+import { IChessUser, IUserAnalysis } from 'onix-chess';
 
-export interface IGameUser extends IUser {
+export interface IGameUser extends IChessUser {
     display?: string,
     aurl?: string,
     rating?: number,

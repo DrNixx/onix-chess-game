@@ -1,15 +1,13 @@
+import { GameRelatedStore, GameActions, Move } from 'onix-chess';
 import * as React from 'react';
-import { PlayStore } from '../GameStore';
 import { MovesMode, NavigatorMode } from './Constants';
-import { Move } from 'onix-chess';
 import { DumbMoveList } from './DumbMoveList';
 import { DumbMoveTable } from './DumbMoveTable';
-import { gameNavigateToMove, gameNavigateToKey } from '../GameStore';
 
 export interface ChessMovesProps {
     mode: MovesMode,
     nav: NavigatorMode,
-    store: PlayStore
+    store: GameRelatedStore
 }
 
 export class ChessMoves extends React.Component<ChessMovesProps, {}> {
@@ -20,29 +18,28 @@ export class ChessMoves extends React.Component<ChessMovesProps, {}> {
         super(props);
     }
 
-    private onChangeKey = (move: string) => {
+    private onChangeKey = (key: string) => {
         const { store } = this.props;
-        gameNavigateToKey(store, move);
+        store.dispatch({ type: GameActions.NAVIGATE_TO_KEY, move: key } as GameActions.GameAction);
     }
 
     private onChangePos = (move: Move) => {
         const { store } = this.props;
-        gameNavigateToMove(store, move);
+        store.dispatch({ type: GameActions.NAVIGATE_TO_MOVE, move: move } as GameActions.GameAction);
     }
 
     render() {
         const { store, mode, nav } = this.props;
         const state = store.getState();
-        const { game, analysis, opening } = state.game;
-        const currMove = game.CurrentMove;
+        const { engine } = state.game;
+        const currMove = engine.CurrentMove;
 
         if (mode === MovesMode.Table) {
             return (
                 <DumbMoveTable 
-                    startPly={game.StartPlyCount}
-                    game={game}
-                    analysis={analysis}
-                    opeinig={opening}
+                    startPly={engine.StartPlyCount}
+                    game={engine}
+                    opeinig={engine.Eco}
                     currentMove={currMove}
                     nav={nav} 
                     onChangePos={this.onChangePos} 
@@ -52,10 +49,9 @@ export class ChessMoves extends React.Component<ChessMovesProps, {}> {
         } else if (mode === MovesMode.List) {
             return (
                 <DumbMoveList 
-                    startPly={game.StartPlyCount}
-                    game={game}
-                    analysis={analysis}
-                    opeinig={opening}
+                    startPly={engine.StartPlyCount}
+                    game={engine}
+                    opeinig={engine.Eco}
                     currentMove={currMove} 
                     nav={nav} 
                     onChangePos={this.onChangePos} 

@@ -21,7 +21,7 @@ module.exports = {
 	output: {
         libraryTarget: "umd",
         library: "onix",
-		filename: 'chess-analyse.[name].js',
+		filename: 'chess-game.[name].js',
 		path: path.resolve(__dirname, PATHS.build.scripts),
 		publicPath: '/assets/js',
     },
@@ -48,7 +48,7 @@ module.exports = {
     },
 
     plugins: PRODUCTION ? [] : [new webpack.HotModuleReplacementPlugin()],
-	devtool: PRODUCTION ? false : '#eval-source-map',
+	devtool: PRODUCTION ? false : 'eval-source-map',
 	mode: PRODUCTION ? 'production' : 'development',
 	optimization: {
         runtimeChunk: {
@@ -57,7 +57,7 @@ module.exports = {
         splitChunks: {
             chunks: 'all',
             cacheGroups: {
-                vendor: {
+                defaultVendors: {
                     test: /[\\/]node_modules[\\/]/,
                     name: "vendors",
                     priority: -20,

@@ -7,9 +7,13 @@
         "completeState": "Game complete",
         "datesFmt": "Game was playing sinse %s to %s",
         "tournament": "Tournament", 
+        "viewTournTable": "View tournament table",
         "noTrn": "none",
         "canPostpone": "отпуск разрешен",
         "noPostpone": "без отпуска",
+        "variantVsSpeed": "Rating zone",
+        "varCorrs": "Correspondence",
+        "varAdvance": "Advance",
         "timeControl": "Time control",
         "privateGame": "Private",
         "ratedGame": "Rated",
@@ -17,16 +21,48 @@
         "useCompHints": "Using computer hints",
         "allow": "allow",
         "denied": "denied", 
+        "whiteWin": "White win",
+        "blackWin": "Black win",
+        "drawWin": "Draw",
+
+        "resCreated": "Game created",
+        "resNew": "New game",
+        "resWait": "Wait for opponent",
+        "resAborted": "Game aborted",
+        "resStarted": "Game started",
+        "resPaused": "Game paused",
+        "resCheckmate": "won by checkmate",
+        "resResign": "was resign",
+        "resOutOfTime": "won on time",
+        "resNotMoved": "not moved",
+        "resNotStarted": "Game not started",
+        "resArbiter": "Result by arbiter adjudgement",
+        "resRepeat": "Game draw by position repeating",
+        "res50move": "Game draw by 50th moves rule",
+        "resDrawArbiter": "Game draw by arbiter adjudgement",
+        "resStalemate": "Game draw by stalemate",
+        "resMaterial": "Game draw. No materials",
+        "resDraw": "Game draw by agreement",
+        "resEnd": "Game end",
+
+
         "gameResultWhite": "%s (%s) wins by white - %s",
         "gameResultWhite1": "%s wins by white - %s",
         "gameResultBlack": "%s (%s) wins by black - %s",
         "gameResultBlack1": "%s wins by black - %s",
         "gameResultDraw": "The game ended a draw",
         "infoLoading": "Loading...",
-        "send": "Send"
+        "send": "Send",
+
+        "config": "Configure",
+        "flip": "Flip board",
+
+        "board_size": "Board size",
+        "display_coord": "Coordinates"
     },
     "app": {
         "load": "Load",
-        "send": "Send"
+        "send": "Send",
+        "save": "Save"
     }
 }

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as classNames from 'classnames';
+import classNames from 'classnames';
 import { Container, Modal, CardGroup } from 'react-bootstrap';
 import * as cg from 'chessground/types';
 import { Chessground as ChessgroundNative } from 'chessground';

@@ -1,10 +1,12 @@
 import * as React from 'react';
-import { Intl as IntlCore, sprintf } from 'onix-core';
-import { PlayStore } from './GameStore';
-import { GameState } from './GameState';
+import classNames from 'classnames';
+import { sprintf, _ } from 'onix-core';
+import { Chess as ChessEngine, GameRelatedStore, GameResult, GameState, IChessPlayer, isAdvanceClock, isCorrespondenceClock } from 'onix-chess';
+import { Card, Col, Row, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Fragment } from 'react';
 
 export interface GameInfoProps {
-    store: PlayStore
+    store: GameRelatedStore
 }
 
 export class GameInfo extends React.Component<GameInfoProps, {}> {
@@ -12,149 +14,344 @@ export class GameInfo extends React.Component<GameInfoProps, {}> {
         super(props);
     }
 
-    renderInfo(game: GameState) {
-        return (
-            <span className="info">(
-            { game.private ? (
-                <span className="is_private">{IntlCore.t("game", "privateGame")}, </span>
-            ) : null }
-            { game.rated ? (
-                <span className="is_rated">{IntlCore.t("game", "ratedGame")}</span>
-            ) : (
-                <span className="is_unrated">{IntlCore.t("game", "unratedGame")}</span>
-            )
-            }
-            )</span>
-        );
-    }
+    private renderDates = (engine: ChessEngine) => {
+        let result: JSX.Element | null = null;
+        const { game, correspondence } = engine.RawData;
+        if ((engine.Result > 0) && game) {
+            const from = new Date(game.createdAt ?? 'now');
+            if (isAdvanceClock(correspondence) && correspondence.lastMoveAt) {
+                const to = new Date(correspondence.lastMoveAt);
+                const fmt = _("game", "datesFmt");
 
-    renderName(game: GameState) {
-        if (game.trn_id && game.trn_name) {
-            const trnUrl = `https://www.chess-online.com/tournaments/${game.trn_id}`;
-            return (
-                <div className="game-name game-trn">{IntlCore.t("game", "tournament")}:
-                    <a href={trnUrl} target="_blank">{game.trn_name}</a>
-                    {this.renderInfo(game)}
-                </div>
-            )
-        } else {
-            return (
-                <div className="game-name">
-                    {game.event}
-                    {this.renderInfo(game)}
-                </div>
-            )
-        }
-    }
+                const diff = to.getTime() - from.getTime();
+                console.log(diff);
 
-    renderDates(game: GameState) {
-        if (game.result > 0) {
-            let from = new Date(game.createdAt).toLocaleString();
-            let to = new Date(game.lastMoveAt).toLocaleString();
-            let fmt = IntlCore.t("game", "datesFmt");
-            let strDates = sprintf(fmt, from, to);
-            return (
-                <span>{IntlCore.t("game", "completeState")}.
+                const strDates = (diff > 86400000) ? 
+                    sprintf(fmt, from.toLocaleDateString(), to.toLocaleDateString()) :
+                    sprintf(fmt, from.toLocaleString(), to.toLocaleString());
+
+                result = (
                     <span>{strDates}</span>
-                </span>
+                );
+            } else {
+                result = (
+                    <span>{_("game", "completeState")}</span>
+                );
+            }
+        }
+
+        if (!result) {
+            result = (
+                <span>{_("game", "startDate")}: <span>{new Date(game?.createdAt ?? 'now').toLocaleString()}</span></span>
             );
         }
 
         return (
-            <span>{IntlCore.t("game", "startDate")}: <span>{new Date(game.createdAt).toLocaleString()}</span></span>
+            <Row>
+                <Col className="mb-1" md={12}>{ result }</Col>
+            </Row>
         );
-    }
+        
+    };
 
-    renderResult(game: GameState) {
-        if (game.result > 0) {
-            const { white, black } = game.players;
-            let fmt: string,
-                resStr: string;
+    private playerDisplay = (player?: IChessPlayer) => {
+        if (player) {
+            const { display, name } = player.user;
+            return (
+                <span className="username">{ display ?? name }</span>
+            );
+        } else {
+            return null;
+        }
+    };
 
-            if (game.result == 1) {
-                if (white.display && (white.display != white.name)) {
-                    fmt = IntlCore.t("game", "gameResultWhite");
-                    resStr = sprintf(fmt, white.display, white.name, game.result_name);
-                } else {
-                    fmt = IntlCore.t("game", "gameResultWhite1");
-                    resStr = sprintf(fmt, white.name, game.result_name);
-                }
-                
-                return (
-                    <div className="game-result">
-                        <span className="result-white">{resStr}</span>
-                    </div>
+    private winnerName = (engine: ChessEngine) => {
+        if (engine.Result == GameResult.Color.White) {
+            return this.playerDisplay(engine.White);
+        } else if (engine.Result == GameResult.Color.Black) {
+            return this.playerDisplay(engine.Black);
+        } else {
+            return null;
+        }
+    };
+
+    private looserName = (engine: ChessEngine) => {
+        if (engine.Result == GameResult.Color.White) {
+            return this.playerDisplay(engine.Black);
+        } else if (engine.Result == GameResult.Color.Black) {
+            return this.playerDisplay(engine.White);
+        } else {
+            return null;
+        }
+    };
+
+    private resultColor = (engine: ChessEngine) => {
+        if (engine.Result == GameResult.Color.White) {
+            return (
+                <h4 className="result-color white">{ _("game", "whiteWin") } (1 &ndash; 0)</h4>
+            );
+        } else if (engine.Result == GameResult.Color.Black) {
+            return (
+                <h4 className="result-color black">{ _("game", "blackWin") } (0 &ndash; 1)</h4>
+            );
+        } else {
+            return (
+                <h4 className="result-color draw">{ _("game", "drawWin") } (&frac12; &ndash; &frac12;)</h4>
+            );
+        }
+    };
+
+    private renderResult = (engine: ChessEngine) => {
+        if (engine.Result) {
+            return (
+                <React.Fragment>
+                    { this.resultColor(engine) }
+                </React.Fragment>
+            );
+        } else {
+            return null;
+        }
+    };
+
+    private renderState = (engine: ChessEngine) => {
+        let result: JSX.Element | null = null;
+        const { game } = engine.RawData;
+        if (game) {
+            // 'created' | 'new' | 'wait' | 'started' | 'aborted' | 'mate' | 'resign' | 'stalemate' | 'timeout' | 'draw' | 'outoftime' | 'noStart' | 'cheat' | 'variantEnd' | 'paused' | 'external'
+            const { status } = game;
+            if (status.name == "created") {
+                result = (
+                    <span>{_("game", "resCreated")}</span>
                 );
-            } else if (game.result == 2) {
-                if (black.display && (black.display != black.name)) {
-                    fmt = IntlCore.t("game", "gameResultBlack");
-                    resStr = sprintf(fmt, black.display, black.name, game.result_name);
+            } else if (status.name == "new") {
+                result = (
+                    <span>{_("game", "resNew")}</span>
+                );
+            } else if (status.name == "wait") {
+                result = (
+                    <span>{_("game", "resWait")}</span>
+                );
+            } else if (status.name == "aborted") {
+                result = (
+                    <span>{_("game", "resAborted")}</span>
+                );
+            } else if (status.name == "started") {
+                result = (
+                    <span>{_("game", "resStarted")}</span>
+                );
+            } else if (status.name == "paused") {
+                result = (
+                    <span>{_("game", "resPaused")}</span>
+                );
+            } else if (status.name == "mate") {
+                result = (
+                    <span>{this.winnerName(engine)} {_("game", "resCheckmate")}</span>
+                );
+            } else if (status.name == "resign") {
+                result = (
+                    <span>{this.looserName(engine)} {_("game", "resResign")}</span>
+                );
+            } else if (status.name == "outoftime") {
+                result = (
+                    <span>{this.winnerName(engine)} {_("game", "resOutOfTime")}</span>
+                );
+            } else if (status.name == "timeout") {
+                result = (
+                    <span>{this.looserName(engine)} {_("game", "resNotMoved")}</span>
+                );
+            } else if (status.name == "noStart") {
+                result = (
+                    <span>{_("game", "resNotStarted")}</span>
+                );
+            } else if (status.name == "cheat") {
+                result = (
+                    <span>{_("game", "resArbiter")}</span>
+                );
+            } else if (status.name == "draw") {
+                if (status.subtype == 5) {
+                    result = (
+                        <span>{_("game", "resRepeat")}</span>
+                    );
+                } else if (status.subtype == 6) {
+                    result = (
+                        <span>{_("game", "res50move")}</span>
+                    );
+                } else if (status.subtype == 7) {
+                    result = (
+                        <span>{_("game", "resDrawArbiter")}</span>
+                    );
+                } else if (status.subtype == 8) {
+                    result = (
+                        <span>{_("game", "resStalemate")}</span>
+                    );
+                } else if (status.subtype == 9) {
+                    result = (
+                        <span>{_("game", "resMaterial")}</span>
+                    );
                 } else {
-                    fmt = IntlCore.t("game", "gameResultBlack1");
-                    resStr = sprintf(fmt, black.name, game.result_name);
+                    result = (
+                        <span>{_("game", "resDraw")}</span>
+                    );
                 }
-                
-                return (
-                    <div className="game-result">
-                        <span className="result-black">{resStr}</span>
-                    </div>
+            } else if (status.name == "stalemate") {
+                result = (
+                    <span>{_("game", "resStalemate")}</span>
                 );
             } else {
-                return (
-                    <div className="game-result">
-                        <span className="result-draw">{IntlCore.t("game", "gameResultDraw")}</span>
-                    </div>
+                result = (
+                    <span>{_("game", "resEnd")}</span>
                 );
             }
+        }
+        
+        if (result) {
+            return (
+                <Row>
+                    <Col className="mb-1" md={12}>{ result }</Col>
+                </Row>
+            );
         }
 
         return null;
-    }
+    };
 
-    render() {
-        const { store } = this.props;
-        const state = store.getState();
-        const { game } = state;
-
-        if (!game.clock || !game.players) {
-            return (
-                <div className="ui-game-info">
-                    <div className="loading">{IntlCore.t("game", "infoLoading")}</div>
-                </div>
+    private renderTC = (engine: ChessEngine) => {
+        let result: JSX.Element | null = null;
+        const { correspondence, clock } = engine.RawData;
+        if (isAdvanceClock(correspondence)) {
+            const canPP = (correspondence.can_pause) ? "canPostpone" : "noPostpone";
+            const ppClass = [
+                "label", 
+                "ml-2",
+                {
+                    "label-default": correspondence.can_pause,
+                    "label-warning": !correspondence.can_pause,
+                }
+            ];
+            
+            result = (
+                <Row>
+                    <Col className="mb-1" md={12}>
+                        <span>
+                            <span>{_("game", "timeControl")}</span>: <span className="label">{correspondence.limit}</span>
+                            <span className={classNames(ppClass)}>{_("game", canPP)}</span>
+                        </span>
+                    </Col>
+                </Row>
+                
             );
         }
-        
-        return (
-            <div className="ui-game-info">
-                {this.renderName(game)}
-                <div className="game-dates">{this.renderDates(game)}</div>
-                {this.renderResult(game)}
-                <div className="game-tk">
-                    <span>{IntlCore.t("game", "timeControl")}: 
-                        <span>{game.clock.limit} ({game.clock.can_pause ? IntlCore.t("game", "canPostpone") : IntlCore.t("game", "noPostpone") })</span>
-                    </span>
-                </div>
-                <div className="game-comp">{IntlCore.t("game", "useCompHints")}: 
-                    <span className="game-comp-label">
-                    { game.advance ? (
-                        <span className="is_allow">{IntlCore.t("game", "allow")}, </span>
-                    ) : (
-                        <span className="is_denied">{IntlCore.t("game", "denied")}, </span>
-                    )
+
+        if (result) {
+            return (
+                <Row>
+                    <Col className="mb-1" md={12}>{ result }</Col>
+                </Row>
+            );
+        }
+
+        return null;
+    };
+
+    private renderRZ = (engine: ChessEngine) => {
+        let result: JSX.Element | null = null;
+        const { game } = engine.RawData;
+        if (game) {
+            const rated = (game.rated) ? "ratedGame" : "unratedGame";
+            if (game.speed == "correspondence") {
+                const varName = (game.advance) ? "varAdvance" : "varCorrs";
+                const compName = (game.advance) ? "allow" : "denied";
+                const ucClass = [
+                    "label", 
+                    {
+                        "label-default": !!game.advance,
+                        "label-warning": !game.advance,
                     }
-                    </span>
-                </div>
-            </div>
+                ];
+
+                result = (
+                    <Fragment>
+                        <Row>
+                            <Col className="mb-1" md={12}>
+                                <span>
+                                    <span>{_("game", "variantVsSpeed")}</span>: <span className="label">{_("game", varName)}</span>
+                                    <span className="label ml-2">{_("game", rated)}</span>
+                                </span>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="mb-1" md={12}>
+                                <span>
+                                    <span>{_("game", "useCompHints")}</span>: <span className={classNames(ucClass)}>{_("game", compName)}</span>
+                                </span>
+                            </Col>
+                        </Row>
+                    </Fragment> 
+                );
+            }
+        }
+
+        return result;
+    };
+
+    private renderName = (engine: ChessEngine) => {
+        let result: JSX.Element | null = null;
+        const { game, tournament } = engine.RawData;
+        if (tournament) {
+            const url = tournament.round ? `https://www.chess-online.com/tournaments/round/${tournament.round}` : `https://www.chess-online.com/tournaments/${tournament.id}`;
+            result = (
+                <Row>
+                    <Col className="mb-1" md={12}>
+                        <span className="lead bold">
+                            <a href={url}><span className="p-r-5">
+                                <OverlayTrigger
+                                    key={tournament.id}
+                                    overlay={
+                                        <Tooltip id={`tooltip-${tournament.id}`}>{_("game", "viewTournTable")}</Tooltip>
+                                    }
+                                    >
+                                    <i className="xi-grid1"></i>
+                                </OverlayTrigger>
+                            </span>{tournament.name}</a>
+                        </span>
+                    </Col>
+                </Row>
+            );
+        } else if (game) {
+            result = (
+                <Row>
+                    <Col className="mb-1" md={12}>
+                        <span className="lead bold">{game.event}</span>
+                    </Col>
+                </Row>
+            );
+        }
+
+        return result;
+    };
+
+    render() {
+        const { props, renderResult, renderDates, renderState, renderRZ, renderTC, renderName } = this;
+        const { store } = props;
+        const { game } = store.getState();
+        const { engine } = game;
+
+        return (
+            <Card className="card-transparent">
+                {renderResult(engine)}    
+                {renderState(engine)}
+                <Row>
+                    <Col className="mb-1" md={12}>{ renderDates(engine) }</Col>
+                </Row>
+                {renderRZ(engine)}
+                {renderTC(engine)}
+                {renderName(engine)}
+            </Card>
         );
 
 /*
 Простая партия
 Турнир: нет
-Начата: 03.05.2012 12:34:44
-Контроль времени: Адванс 30+2/30
-Приватная, Рейтинговая
-Отпуск: разрешен
-Использование подсказок компьютера: разрешено
 */
     }
 }

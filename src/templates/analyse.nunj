@@ -1,0 +1,31 @@
+{% extends "./ext/base.nunj" %}
+{% from "parts/piecesBoard.nunj" import piecesBoard %}
+{% block title %}UI test {{ super() }}{% endblock title %}
+
+{% block stylesheets %}
+	{{ super() }}
+	<link rel="stylesheet" href="assets/pieces/external.css" />
+	<link rel="stylesheet" href="assets/css/analyse-game.css" />
+	<link rel="stylesheet" href="assets/css/moves-list.css" />
+	<link rel="stylesheet" href="assets/css/controls.css" />
+	<link rel="stylesheet" href="assets/css/captures.css" />
+	<link rel="stylesheet" href="assets/css/timer.css" />
+	<link rel="stylesheet" href="assets/css/game-result.css" />
+	<link rel="stylesheet" href="assets/css/gameinfo.css" />
+	<style>
+		
+	</style>
+{% endblock stylesheets %}
+
+{% block scripts %}
+	{{ super() }}
+	<script src="assets/js/chess-game.manifest.js"></script>
+    <script src="assets/js/chess-game.vendors.js"></script>
+    <script src="assets/js/chess-game.tests.js"></script>
+{% endblock scripts %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div id="boardHere"></div>
+    </div>
+{% endblock content %}

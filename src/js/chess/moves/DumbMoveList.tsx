@@ -1,20 +1,16 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom'
-import * as classNames from 'classnames';
+import Scrollbar from "react-scrollbars-custom";
+import classNames from 'classnames';
 import { Logger } from 'onix-core';
-import { Chess as ChessGame, Color, Move } from 'onix-chess';
-import { AnalysisResult, Intl as IntlAnalysis } from 'onix-chess-analyse';
+import { Chess as ChessGame, Color, Colors, IChessOpening, Move } from 'onix-chess';
 import { NavigatorMode } from './Constants';
-import { PlayStore } from './GameStore';
 import { MoveNavigator } from './MoveNavigator';
-import { GameAction } from './GameActions';
-import { IOpening } from './IOpening';
+
 
 export interface DumbMoveListProps {
     nav: NavigatorMode,
     game: ChessGame,
-    analysis: AnalysisResult,
-    opeinig?: IOpening,
+    opeinig?: IChessOpening,
     startPly: number,
     currentMove: Move,
     onChangePos: (move: Move) => void,
@@ -22,15 +18,18 @@ export interface DumbMoveListProps {
 }
 
 export class DumbMoveList extends React.Component<DumbMoveListProps, {}> {
+
+    private activeMove?: string;
+    private scrollerRef: HTMLDivElement|null = null;
+
     /**
      * constructor
      */
     constructor(props: DumbMoveListProps) {
         super(props);
-        IntlAnalysis.register();
     }
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate(prevProps: DumbMoveListProps) {
         // only scroll into view if the active item changed last render
         if (this.props.currentMove.moveKey !== prevProps.currentMove.moveKey) {
             this.ensureActiveItemVisible();
@@ -38,17 +37,37 @@ export class DumbMoveList extends React.Component<DumbMoveListProps, {}> {
     }
 
     ensureActiveItemVisible() {
-        var itemComponent = this.refs.activeItem;
-        if (itemComponent) {
-            var domNode = ReactDOM.findDOMNode(itemComponent);
-            this.scrollElementIntoViewIfNeeded(domNode);
+        const itemId = this.activeMove;
+        if (itemId) {
+            const domNode = document.getElementById(itemId);
+            this.scrollElementIntoViewIfNeeded(domNode, this.scrollerRef);
         }
     }
 
-    scrollElementIntoViewIfNeeded(domNode) {
-        // var containerDomNode = ReactDOM.findDOMNode(this);
-        // Determine if `domNode` fully fits inside `containerDomNode`.
-        // If not, set the container's scrollTop appropriately.
+    scrollElementIntoViewIfNeeded(domNode: HTMLElement|null, parent: HTMLElement|null) {
+        if (domNode && parent) {
+            const centerIfNeeded = true;
+            var parentComputedStyle = window.getComputedStyle(parent, null),
+                parentBorderTopWidth = parseInt(parentComputedStyle.getPropertyValue('border-top-width')),
+                parentBorderLeftWidth = parseInt(parentComputedStyle.getPropertyValue('border-left-width')),
+                overTop = domNode.offsetTop - parent.offsetTop < parent.scrollTop,
+                overBottom = (domNode.offsetTop - parent.offsetTop + domNode.clientHeight - parentBorderTopWidth) > (parent.scrollTop + parent.clientHeight),
+                overLeft = domNode.offsetLeft - parent.offsetLeft < parent.scrollLeft,
+                overRight = (domNode.offsetLeft - parent.offsetLeft + domNode.clientWidth - parentBorderLeftWidth) > (parent.scrollLeft + parent.clientWidth),
+                alignWithTop = overTop && !overBottom;
+
+            if ((overTop || overBottom) && centerIfNeeded) {
+                parent.scrollTop = domNode.offsetTop - parent.offsetTop - parent.clientHeight / 2 - parentBorderTopWidth + domNode.clientHeight / 2;
+            }
+
+            if ((overLeft || overRight) && centerIfNeeded) {
+                parent.scrollLeft = domNode.offsetLeft - parent.offsetLeft - parent.clientWidth / 2 - parentBorderLeftWidth + domNode.clientWidth / 2;
+            }
+
+            if ((overTop || overBottom || overLeft || overRight) && !centerIfNeeded) {
+                domNode.scrollIntoView(alignWithTop);
+            }
+        }
     }
 
     private renderNav= (pos: NavigatorMode) => {
@@ -68,35 +87,38 @@ export class DumbMoveList extends React.Component<DumbMoveListProps, {}> {
         }
     }
 
-    private renderMoveNo = (color, ply) => {
+    private renderMoveNo = (color: Colors.BW, ply: number) => {
         if (color === Color.White) {
             var moveNo = ((ply + 1) >> 1);
             return (
-                <span className="moveno" data-moveno={moveNo} key={"mn" + moveNo.toString() }>{moveNo}. </span>
+                <span className="moveno" data-moveno={moveNo} key={"mn" + moveNo.toString() }>{moveNo}.</span>
             );
         }
 
-        return null;
+        return (<></>);
     }
 
-    private renderMove = (x: Move, i: number, p: string, c: number, s: string, n?: string, m?: string, classes?: any) => {
+    private renderMove = (x: Move, uid: string|undefined, i: number, p: string, c: Colors.BW, s: string, n?: string[], m?: string, classes?: any) => {
         let result = [];
         if (c === Color.White) {
             result.push(this.renderMoveNo(c, i));
         }
 
         const myclass = {
-            ['white_move']: (c === Color.White),
-            ['black_move']: (c === Color.Black),
-            ['ui-state-active']: (x.Prev.moveKey === p),
-            ['ui-state-default']: (x.Prev.moveKey !== p),
+            ['white']: (c === Color.White),
+            ['black']: (c === Color.Black),
+            ['active']: (x.moveKey === p)
         };
 
-        const moveClasses = classNames(myclass, classes);
+        const moveClasses = classNames('move', myclass, classes);
 
-        
+        if (x.moveKey === p) {
+            this.activeMove = uid;
+        }
+
         result.push(
-            <span 
+            <span
+                id={uid}
                 className={moveClasses} 
                 data-ply={i} 
                 data-key={p} 
@@ -104,17 +126,19 @@ export class DumbMoveList extends React.Component<DumbMoveListProps, {}> {
                 onClick={this.onMoveClick}>{s}</span>
         );
 
-        if (n) {
-            const evalKey = `ng_${p}`;
-            result.push(
-                <span key={evalKey} className="ui-nag">{n}</span>
-            );
+        if (n && n.length) {
+            for (let i = 0; i < n.length; i++) {
+                const nagKey = `ng_${i}_${p}`;
+                result.push(
+                    <span key={nagKey} className="nag">{n[i]}</span>
+                );
+            }
         }
 
         if (m) {
             const evalKey = `cm_${p}`;
             result.push(
-                <span key={evalKey} className="ui-comment">{m}</span>
+                <span key={evalKey} className="comment">{m}</span>
             );
         }
 
@@ -122,84 +146,100 @@ export class DumbMoveList extends React.Component<DumbMoveListProps, {}> {
     }
 
     private renderMoves = () => {
-        const { currentMove, game, analysis, opeinig } = this.props;
+        const { currentMove, game, opeinig } = this.props;
         let moves = []; 
-        let move = currentMove.First.Next;
+        let move = currentMove.Begin.Next;
+
+        if (currentMove.isBegin()) {
+            this.activeMove = currentMove.uid;
+        }
 
         if (opeinig && opeinig.name) {
             moves.push(
-                <span key="opening" className="ui-comment ui-opening">{opeinig.code} {opeinig.name}</span>
+                <span id={currentMove.Begin.uid} key="opening" className="text-muted opening">{opeinig.code} {opeinig.name}</span>
+            );
+        } else {
+            moves.push(
+                <a id={currentMove.Begin.uid}></a>
             );
         }
 
-        Logger.debug("renderMoves", analysis);
-
-        if (!move.isEnd()) {
-            if (move.moveData.Color === Color.Black) {
+        if ((move) && !move.isEnd()) {
+            if (move.sm?.color === Color.Black) {
                 moves = moves.concat(
-                    this.renderMove(currentMove, game.StartPlyCount, "mn0_" + game.StartPlyCount.toString(), Color.White, "...")
+                    this.renderMove(currentMove, undefined, game.StartPlyCount, "mn0_" + game.StartPlyCount.toString(), Color.White, "...")
                 );
             }
 
             let i = 1;
             do {
-                const data = move.moveData;
-                const ply = game.StartPlyCount + data.PlyCount;
-                let nag = data.Nag || "";
-                const comments = [];
-                if (data.Comments) {
-                    comments.push(data.Comments);
+                const { sm, moveKey } = move!;
+                
+                let nags: string[] = [];
+                if (sm.glyphs) {
+                    nags = sm.glyphs.map(g => g.symbol);
                 }
 
-                const classes = {};
-                if (analysis && analysis.state == "ready") {
-                    const evalItem = analysis.analysis[i];
-                    Logger.debug("evalItem", evalItem);
-                    if (evalItem) {
-                        comments.push(evalItem.desc);
+                const comments: string[] = [];
+                
+                if (move.comments) {
+                    comments.push(move.comments);
+                }
 
-                        classes['best'] = !evalItem.best;
-                        if (evalItem.judgment) {
-                            if (evalItem.judgment.glyph) {
-                                nag = evalItem.judgment.glyph.symbol;
+                const classes = {
+                    "best": false,
+                    "blunder": false,
+                    "mistake": false,
+                    "inaccuracy": false
+                };
+
+                if (sm.eval) {
+                    const ev = sm.eval;
+                    comments.push(ev.desc!);
+
+                    const isBest = !ev.best;
+                    if (!isBest) {
+                        if (sm.judgments) {
+                            for (let j = 0; j < sm.judgments.length; j++) {
+                                const judgment = sm.judgments[j];
+                                switch (judgment.name) {
+                                    case "Blunder":
+                                        classes['blunder'] = true;
+                                        break;
+                                    case "Mistake":
+                                        classes['mistake'] = true;
+                                        break;
+                                    case "Inaccuracy":
+                                        classes['inaccuracy'] = true;
+                                        break;
+                                }
+        
+                                comments.push(judgment.comment);
                             }
-
-                            switch (evalItem.judgment.name) {
-                                case "Blunder":
-                                    classes['blunder'] = true;
-                                    break;
-                                case "Mistake":
-                                    classes['mistake'] = true;
-                                    break;
-                                case "Inaccuracy":
-                                    classes['inaccuracy'] = true;
-                                    break;
-                            }
-
-                            comments.push(evalItem.judgment.comment);
                         }
 
-                        if (evalItem.variation)  {
-                            const sign = (evalItem.ceilPawn > 0) ? "+" : "";
-                            comments.push(" { " +  evalItem.variation + " " + sign + evalItem.ceilPawn + " }");
+                        if (ev.variation) {
+                            const sign = (ev.ceilPawn > 0) ? "+" : "";
+                            comments.push(" { " +  ev.variation + " " + sign + ev.ceilPawn + " }");
                         }
-                        
+                    } else {
+                        classes['best'] = true;
                     }
                 }
 
-                const comment = (comments.length > 0) ? comments.join(" ") : null;
+                const comment = (comments.length > 0) ? comments.join(" ") : undefined;
 
                 moves = moves.concat(
-                    this.renderMove(currentMove, ply, move.moveKey, data.Color, data.San, nag, comment, classes)
+                    this.renderMove(currentMove, move.uid, sm.ply, moveKey, sm.color!, sm.san!, nags, comment, classes)
                 );
 
                 move = move.Next;
                 i++;
-            } while (!move.isEnd());
+            } while (move && !move.isEnd());
         }
-
+        
         moves.push(
-            <span key="game-result" className="game_result">{game.getResultName('short')}</span>
+            <span key="game-result" className="game_result">{game.getResultName('long')}</span>
         );
 
         return moves;
@@ -207,12 +247,18 @@ export class DumbMoveList extends React.Component<DumbMoveListProps, {}> {
 
     render() {
         const { renderNav } = this;
+
+        let s;
         
         return (
-            <div className="ui-movelist-element ui-moves">
+            <div className="movelist moves d-flex flex-column h-100">
                 {renderNav(NavigatorMode.Top)}
-                <div className="ui-movelist-wrap">
-                    {this.renderMoves()}
+                <div className="flex-grow-1">
+                    <Scrollbar trackYProps={{style: {width: 5}}} scrollerProps={{elementRef: (el) => this.scrollerRef = el}}>
+                        <div className="movelist-wrap">
+                            {this.renderMoves()}
+                        </div>
+                    </Scrollbar>
                 </div>
                 {renderNav(NavigatorMode.Bottom)}
             </div>
