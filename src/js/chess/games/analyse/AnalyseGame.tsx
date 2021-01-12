@@ -5,21 +5,17 @@ import Scrollbar from "react-scrollbars-custom";
 import { Unsubscribe } from 'redux';
 import { Container, Row, Col, Tabs, Tab, FormGroup, FormLabel, Nav } from 'react-bootstrap';
 
-import * as cg from 'chessground/types';
 import { Chessground } from 'chessground';
 import { Api } from 'chessground/api';
-import { Config } from 'chessground/config';
-import { dragNewPiece } from 'chessground/drag';
-import { DrawShape } from 'chessground/draw';
-import { eventPosition, isRightButton as isRightButtonEvent } from 'chessground/util';
 
 import { register } from '../../../i18n';
 
 import { _ } from 'onix-core';
 import { IStreamMessage } from 'onix-app';
 import { BoardSizeClass } from 'onix-board-assets';
-import { Chess as ChessEngine, Color, FenString, GameState, i18nRegister as i18nRegisterChess, IChessPlayer } from 'onix-chess';
+import { Chess as ChessEngine, Color, FenString, i18nRegister as i18nRegisterChess } from 'onix-chess';
 import { AnalyseGraphAsync, i18nRegister as i18nRegisterAnalyse  } from 'onix-chess-analyse';
+import { MovesGraphAsync } from 'onix-chess-movetimes';
 
 import { GameProps, defaultProps } from '../GameProps';
 import { createAnalyseGameStore, AnalyseGameStore } from './AnalyseGameStore';
@@ -27,9 +23,9 @@ import { createAnalyseGameState } from './AnalyseGameState';
 import { ChessMoves } from '../../moves/ChessMoves';
 import { MovesMode, NavigatorMode } from '../../moves/Constants';
 import { Captures } from '../../captures/Captures';
-import { renderPlayer, renderResult, renderTimer } from '../GameUtils';
+import { renderPlayer, renderResult } from '../GameUtils';
 import { TextWithCopy } from 'onix-chess-ctrls';
-import { MovesGraphAsync } from 'onix-chess-movetimes';
+
 import { GameInfo } from '../../GameInfo';
 import * as BoardActions from '../../BoardActions';
 
@@ -225,9 +221,11 @@ class AnalyseGameComponent extends React.Component<GameProps, AnalyseGameState> 
         if (engine.RawData.game?.moveCentis) {
             return (
                 <Tab.Pane eventKey="movetime">
+                    <div style={{ width: '100%', height: 400 }}>
                     <MovesGraphAsync 
                         height={400} 
                         store={this.store} />
+                    </div>
                 </Tab.Pane>
             );
         } else {
