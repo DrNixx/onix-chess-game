@@ -120,7 +120,7 @@ class ConfigureGameComponent extends React.Component<BoardSettings, {}> {
                         <Col md={12}>
                             <FormGroup controlId="size">
                                 <FormLabel>{_("game", "board_size")}</FormLabel>
-                                <SizeSelector defaultValue={size} onChangeSize={this.onSizeChange} />
+                                <SizeSelector name="size" defaultValue={size} onChangeSize={this.onSizeChange} />
                             </FormGroup>
                         </Col>
                     </Row>
@@ -128,7 +128,7 @@ class ConfigureGameComponent extends React.Component<BoardSettings, {}> {
                         <Col md={12}>
                             <FormGroup controlId="piece">
                                 <FormLabel>{_("chess", "pieces")}</FormLabel>
-                                <PieceSelector defaultValue={piece} onChangePiece={this.onPieceChange} />
+                                <PieceSelector name="piece" defaultValue={piece} onChangePiece={this.onPieceChange} />
                             </FormGroup>
                         </Col>
                     </Row>
@@ -136,7 +136,7 @@ class ConfigureGameComponent extends React.Component<BoardSettings, {}> {
                         <Col md={12}>
                             <FormGroup controlId="square">
                                 <FormLabel>{_("chess", "squares")}</FormLabel>
-                                <SquareSelector defaultValue={square} onChangeSquare={this.onSquareChange} />
+                                <SquareSelector name="square" defaultValue={square} onChangeSquare={this.onSquareChange} />
                             </FormGroup>
                         </Col>
                     </Row>
@@ -144,8 +144,9 @@ class ConfigureGameComponent extends React.Component<BoardSettings, {}> {
                         <Col md={12}>
                             <FormCheck 
                                 id ="coords" 
+                                name="coords"
                                 type="checkbox"
-                                value="1" 
+                                value="1"
                                 onChange={this.onCoordsChange} 
                                 defaultChecked={coordinates}
                                 label={_("game", "display_coord")} />
@@ -190,11 +191,9 @@ class ConfigureGameComponent extends React.Component<BoardSettings, {}> {
                         <div className="d-block d-lg-flex mb-2">
                             <div>
                                 <div className={classNames("board-container", piece)}>
-                                    <Row className="py-2">
-                                        <Col>
-                                            <div className="main-board" ref={el => this.boardElement = el} />
-                                        </Col>
-                                    </Row>
+                                    <div className="py-2">
+                                        <div className="main-board" ref={el => this.boardElement = el} />
+                                    </div>
                                 </div>
                             </div>
                             <div className="mini-controls mx-3 mt-5">
